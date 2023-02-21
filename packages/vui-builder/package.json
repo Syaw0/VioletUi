@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/vui-builder.js",
+  "bin": {
+    "vui-builder": "./lib/vui-builder.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -22,5 +25,13 @@
   },
   "scripts": {
     "test": "node ./__tests__/@violetui/vui-builder.test.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "rollup": "^3.17.2"
   }
 }

@@ -21,10 +21,14 @@
     "url": "git@syaw0.github.com:Syaw0/VioletUi.git"
   },
   "scripts": {
+    "build": "vui-builder",
     "test": "node ./__tests__/@violetui/vui.test.js"
   },
   "dependencies": {
     "@violetui/button": "^0.0.0",
     "@violetui/text": "^0.0.0"
+  },
+  "devDependencies": {
+    "@violetui/vui-builder": "^0.0.0"
   }
 }

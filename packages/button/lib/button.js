@@ -1,7 +1,3 @@
-'use strict';
-
-module.exports = button;
-
-function button() {
-  return 'Hello from button';
-}
+import React from "react";
+const Button = ({ children }) => <button>{children}</button>;
+export { Button };

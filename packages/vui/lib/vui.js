@@ -1,7 +1,4 @@
-'use strict';
+import { Button } from "../../button/lib/button";
+import { Text } from "../../text/lib/text";
 
-module.exports = vui;
-
-function vui() {
-  return 'Hello from vui';
-}
+export { Button, Text };
