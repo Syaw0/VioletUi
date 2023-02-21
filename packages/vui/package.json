@@ -1,6 +1,6 @@
 {
   "name": "@violetui/vui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
@@ -28,10 +28,10 @@
     "test": "node ./__tests__/@violetui/vui.test.js"
   },
   "dependencies": {
-    "@violetui/button": "^0.0.0",
-    "@violetui/text": "^0.0.0"
+    "@violetui/button": "^0.1.0",
+    "@violetui/text": "^0.1.0"
   },
   "devDependencies": {
-    "@violetui/vui-builder": "^0.0.0"
+    "@violetui/vui-builder": "^0.1.0"
   }
 }
