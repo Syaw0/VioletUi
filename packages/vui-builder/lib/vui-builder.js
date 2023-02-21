@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const rollup = require("rollup");
 const path = require("path");
 const resolve = require("@rollup/plugin-node-resolve").default;
@@ -10,9 +9,6 @@ const { main, name } = require(path.join(cwd, "package.json"));
 
 const inputPath = path.join(cwd, main);
 const fileName = name.replace("@violetui/", "");
-
-console.log("hello");
-console.log(main, name, inputPath);
 
 const inputOpt = {
   input: inputPath,
