@@ -5,12 +5,15 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/vui.js",
+  "main": "dist/vui.cjs.js",
+  "module": "dist/vui.esm.js",
+  "src": "lib/vui.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
+    "dist",
     "dist"
   ],
   "publishConfig": {

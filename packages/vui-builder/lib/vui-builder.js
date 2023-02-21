@@ -6,9 +6,9 @@ const babel = require("@rollup/plugin-babel").default;
 const postcss = require("rollup-plugin-postcss");
 
 const cwd = process.cwd();
-const { main, name } = require(path.join(cwd, "package.json"));
+const { src, name } = require(path.join(cwd, "package.json"));
 
-const inputPath = path.join(cwd, main);
+const inputPath = path.join(cwd, src);
 const fileName = name.replace("@violetui/", "");
 
 const inputOpt = {

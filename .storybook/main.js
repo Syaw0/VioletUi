@@ -22,6 +22,7 @@ module.exports = {
         },
       ],
     });
+    config.resolve.mainFields = ["src", "module", "main"];
     return config;
   },
 };

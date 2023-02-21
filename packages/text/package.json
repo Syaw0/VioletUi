@@ -5,13 +5,16 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/text.js",
+  "main": "dist/text.cjs.js",
+  "module": "dist/text.esm.js",
+  "src": "lib/text.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
