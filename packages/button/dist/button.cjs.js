@@ -31,11 +31,10 @@ var css_248z = ".button-module_button__HXqVu {\n  background-color: rgb(160, 130
 var style = {"button":"button-module_button__HXqVu"};
 styleInject(css_248z);
 
-var Button = function Button(_ref) {
-  var children = _ref.children;
-  return /*#__PURE__*/React.createElement("button", {
-    className: style.button
-  }, children);
+var Button = function (_a) {
+    var children = _a.children;
+    return (React.createElement("button", { className: style.button }, children));
 };
 
 exports.Button = Button;
+//# sourceMappingURL=button.cjs.js.map
