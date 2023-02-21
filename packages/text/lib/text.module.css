@@ -1,7 +1,93 @@
-.text {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.875rem;
+.typography {
+  color: var(--on-background);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.displayLarge {
+  font-size: var(--displayLarge);
+  line-height: var(--displayLarge_lineHeight);
   font-weight: 400;
-  line-height: 1.5;
+}
+
+.displayMedium {
+  font-size: var(--displayMedium);
+  line-height: var(--displayMedium_lineHeight);
+  font-weight: 400;
+}
+
+.displaySmall {
+  font-size: var(--displaySmall);
+  line-height: var(--displaySmall_lineHeight);
+  font-weight: 400;
+}
+
+.headlineLarge {
+  font-size: var(--headlineLarge);
+  line-height: var(--headlineLarge_lineHeight);
+  font-weight: 400;
+}
+
+.headlineMedium {
+  font-size: var(--headlineMedium);
+  line-height: var(--headlineMedium_lineHeight);
+  font-weight: 400;
+}
+
+.headlineSmall {
+  font-size: var(--headlineSmall);
+  line-height: var(--headlineSmall_lineHeight);
+  font-weight: 400;
+}
+
+.titleLarge {
+  font-size: var(--titleLarge);
+  line-height: var(--titleLarge_lineHeight);
+  font-weight: 400;
+}
+
+.titleMedium {
+  font-size: var(--titleMedium);
+  line-height: var(--titleMedium_lineHeight);
+  font-weight: 400;
+}
+
+.titleSmall {
+  font-size: var(--titleSmall);
+  line-height: var(--titleSmall_lineHeight);
+  font-weight: 400;
+}
+
+.bodyLarge {
+  font-size: var(--bodyLarge);
+  line-height: var(--bodyLarge_lineHeight);
+  font-weight: 400;
+}
+
+.bodyMedium {
+  font-size: var(--bodyMedium);
+  line-height: var(--bodyMedium_lineHeight);
+  font-weight: 400;
+}
+
+.bodySmall {
+  font-size: var(--bodySmall);
+  line-height: var(--bodySmall_lineHeight);
+  font-weight: 400;
+}
+
+.labelLarge {
+  font-size: var(--labelLarge);
+  line-height: var(--labelLarge_lineHeight);
+  font-weight: 400;
+}
+
+.labelMedium {
+  font-size: var(--labelMedium);
+  line-height: var(--labelMedium_lineHeight);
+  font-weight: 400;
+}
+.labelSmall {
+  font-size: var(--labelSmall);
+  line-height: var(--labelSmall_lineHeight);
+  font-weight: 400;
 }
