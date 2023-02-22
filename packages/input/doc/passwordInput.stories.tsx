@@ -1,10 +1,13 @@
 import React from "react";
-import { TextInput } from "../lib/input";
+import PasswordInput from "../lib/passwordInput";
+import "../../../t.css";
 
-export default { title: "Input" };
+export default { title: "PasswordInputs" };
 
-export const textInput = () => <TextInput placeholder="Hello Friend!" />;
+export const passwordInput = () => (
+  <PasswordInput placeholder="Hello Friend!" />
+);
 
-export const textInputWithLabel = () => (
-  <TextInput placeholder="Hello Friend!" label="UserName" id="textinput" />
+export const passwordInputWithLabel = () => (
+  <PasswordInput placeholder="Hello Friend!" label="Password" />
 );

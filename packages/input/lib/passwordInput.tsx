@@ -4,30 +4,33 @@ import React, { ReactNode, useState } from "react";
 import style from "./passwordInput.module.css";
 
 interface PasswordInputType extends React.ComponentPropsWithoutRef<"input"> {
-  label: string;
+  label?: string;
   StartIcon?: ReactNode;
 }
 
 const PasswordInput = ({
-  label,
+  label = "",
   className = "",
   id = "",
   StartIcon,
   ...props
 }: PasswordInputType) => {
   const [showPassword, setShowPassword] = useState(false);
-  const changePasswordVisibility = (e: React.MouseEvent<SVGAElement>) => {
-    const { id } = e.currentTarget;
-    setShowPassword(id === "iconEyeClose" ? false : true);
+  const changePasswordVisibility = () => {
+    setShowPassword(showPassword ? false : true);
   };
   return (
     <div className={`${style.holder} ${className}`}>
       <label htmlFor={id}>{label}</label>
       <div>
-        <span className={style.inputHolder}>
+        <div className={style.inputHolder}>
           {StartIcon != null ? StartIcon : ""}
-          <input {...props} type={showPassword ? "text" : "password"} />
-        </span>
+          <input
+            {...props}
+            className={style.input}
+            type={showPassword ? "text" : "password"}
+          />
+        </div>
         {showPassword ? (
           <IconEyeClose
             className={style.eyeIcon}
