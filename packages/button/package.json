@@ -30,13 +30,10 @@
   },
   "devDependencies": {
     "@violetui/vui-builder": "^0.1.0",
-    "typescript": "^4.9.5",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "react": "^18.2.0"
-  },
-  "dependencies": {
-    "clsx": "^1.2.1"
   }
 }

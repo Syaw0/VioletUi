@@ -1,20 +1,20 @@
 {
-  "name": "@violetui/text",
+  "name": "@violetui/input",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/text.cjs.js",
-  "module": "dist/text.esm.js",
-  "src": "lib/text.tsx",
-  "types": "./dist/d/text.d.ts",
+  "main": "dist/input.cjs.js",
+  "module": "dist/input.esm.js",
+  "src": "lib/input.tsx",
+  "types": "./dist/d/input.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "dist",
+    "lib",
     "dist"
   ],
   "publishConfig": {

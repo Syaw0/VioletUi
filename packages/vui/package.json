@@ -14,7 +14,7 @@
     "test": "__tests__"
   },
   "files": [
-    "dist",
+    "lib",
     "dist"
   ],
   "publishConfig": {
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@violetui/button": "^0.1.0",
+    "@violetui/input": "^0.1.0",
     "@violetui/text": "^0.1.0"
   },
   "devDependencies": {
