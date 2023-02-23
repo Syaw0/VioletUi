@@ -4,6 +4,9 @@
   --warnBg: #3e2601;
   --onWarnBg: #f49d1a;
 
+  --successBg: #0f251b;
+  --onSuccessBg: #46c088;
+
   --bgColor: #ffffff;
   --onBgColor: #ffffff;
 }
@@ -59,6 +62,11 @@
   --onBgColor: var(--onWarnBg);
 }
 
+.success {
+  --bgColor: var(--successBg);
+  --onBgColor: var(--onSuccessBg);
+}
+
 .default {
   background-color: var(--bgColor);
 }
@@ -86,7 +94,6 @@
 
 .filled {
   background-color: var(--onBgColor);
-  border: 2px solid var(--onBgColor);
 }
 
 .filled p {

@@ -26,3 +26,21 @@ export const Warning4 = () => (
     You are disabling Cookies that mean may cause functionality problem!
   </Alert>
 );
+
+export const Success = () => (
+  <Alert variant="filled" type="success">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Success2 = () => (
+  <Alert variant="default" title="Success!" type="success">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Success3 = () => (
+  <Alert variant="outlined" type="success">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);

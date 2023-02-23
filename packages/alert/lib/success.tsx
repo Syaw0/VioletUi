@@ -1,18 +1,18 @@
 import React from "react";
 import style from "./alert.module.css";
-import IconWarning from "./icons/warningIcon";
+import IconSuccess from "./icons/successIcon";
 
-const Warning = ({ props, title, hideIcon, variant = "default" }: Alert) => {
+const Success = ({ props, title, hideIcon, variant = "default" }: Alert) => {
   return (
     <div
       {...props}
-      className={`${style.alertHolder} ${style.warning} ${style[variant]} ${
+      className={`${style.alertHolder} ${style.success} ${style[variant]} ${
         props.className != null ? props.className : ""
       }`}
     >
       {!hideIcon && (
         <div className={style.iconHolder}>
-          <IconWarning className={style.icon} />
+          <IconSuccess className={style.icon} />
         </div>
       )}
       <div className={style.textHolder}>
@@ -23,4 +23,4 @@ const Warning = ({ props, title, hideIcon, variant = "default" }: Alert) => {
   );
 };
 
-export default Warning;
+export default Success;

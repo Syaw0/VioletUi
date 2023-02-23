@@ -2,6 +2,7 @@ import style from "./alert.module.css";
 import React from "react";
 import Warning from "./warning";
 import "../../../t.css";
+import Success from "./success";
 
 interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
   type: "warning" | "error" | "success" | "info";
@@ -21,6 +22,14 @@ const Alert = ({
     <div className={style.holder}>
       {type === "warning" && (
         <Warning
+          hideIcon={hideIcon}
+          title={title}
+          variant={variant}
+          props={props}
+        />
+      )}
+      {type === "success" && (
+        <Success
           hideIcon={hideIcon}
           title={title}
           variant={variant}
