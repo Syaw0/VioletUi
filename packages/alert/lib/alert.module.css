@@ -1,0 +1,31 @@
+.holder {
+  min-width: 15rem;
+  width: fit-content;
+  --color1: #3e2601;
+  --color2: #fad194;
+}
+
+.alertHolder {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: var(--color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+  font-size: var(--titleMedium);
+  color: var(--color2);
+  line-height: var(--titleMedium_lineHeight);
+  font-weight: 600;
+}
+
+.subText {
+  font-size: var(--labelSmall);
+  color: var(--color2);
+  line-height: var(--labelSmall_lineHeight);
+}
