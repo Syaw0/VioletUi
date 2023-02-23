@@ -2,11 +2,11 @@ import React from "react";
 import style from "./alert.module.css";
 import IconWarning from "./icons/warning";
 
-const Warning = ({ props, title, hideIcon, variant }: Alert) => {
+const Warning = ({ props, title, hideIcon, variant = "default" }: Alert) => {
   return (
     <div
       {...props}
-      className={`${style.alertHolder} ${style.warning} ${
+      className={`${style.alertHolder} ${style.warning} ${style[variant]} ${
         props.className != null ? props.className : ""
       }`}
     >

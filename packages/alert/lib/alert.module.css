@@ -1,8 +1,11 @@
 .holder {
   min-width: 15rem;
   width: fit-content;
-  --color1: #3e2601;
-  --color2: #fad194;
+  --warnBg: #3e2601;
+  --onWarnBg: #f49d1a;
+
+  --bgColor: #ffffff;
+  --onBgColor: #ffffff;
 }
 
 .alertHolder {
@@ -11,6 +14,9 @@
   border-radius: 0.4rem;
   background-color: var(--color1);
   display: flex;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .textHolder {
@@ -31,19 +37,62 @@
 .icon {
   width: 24px;
   height: 24px;
-  fill: var(--color2);
+  fill: var(--onBgColor);
 }
 
 .title {
   font-size: var(--titleMedium);
-  color: var(--color2);
+  color: var(--onBgColor);
   line-height: var(--titleMedium_lineHeight);
   font-weight: 600;
 }
 
 .subText {
   font-size: var(--labelSmall);
-  color: var(--color2);
+  color: var(--onBgColor);
   line-height: var(--labelSmall_lineHeight);
   font-weight: 600;
+}
+
+.warning {
+  --bgColor: var(--warnBg);
+  --onBgColor: var(--onWarnBg);
+}
+
+.default {
+  background-color: var(--bgColor);
+}
+
+.default p {
+  color: var(--onBgColor);
+}
+
+.default svg {
+  fill: var(--onBgColor);
+}
+
+.outlined {
+  background-color: transparent;
+  border: 2px solid var(--onBgColor);
+}
+
+.outlined p {
+  color: var(--onBgColor);
+}
+
+.outlined svg {
+  fill: var(--onBgColor);
+}
+
+.filled {
+  background-color: var(--onBgColor);
+  border: 2px solid var(--onBgColor);
+}
+
+.filled p {
+  color: var(--bgColor);
+}
+
+.filled svg {
+  fill: var(--bgColor);
 }
