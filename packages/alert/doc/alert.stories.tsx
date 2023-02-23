@@ -8,3 +8,9 @@ export const Warning = () => (
     Some Text
   </Alert>
 );
+
+export const Warning2 = () => (
+  <Alert title="Alert" type="warning">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);

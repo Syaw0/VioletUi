@@ -7,4 +7,5 @@ interface Alert {
   title?: string;
   variant?: "filled" | "outlined" | "default";
   props: any;
+  hideIcon: boolean;
 }

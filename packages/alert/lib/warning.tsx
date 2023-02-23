@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./alert.module.css";
+import IconWarning from "./icons/warning";
 
-const Warning = ({ props, title, variant }: Alert) => {
+const Warning = ({ props, title, hideIcon, variant }: Alert) => {
   return (
     <div
       {...props}
@@ -9,8 +10,15 @@ const Warning = ({ props, title, variant }: Alert) => {
         props.className != null ? props.className : ""
       }`}
     >
-      {title !== "" && <p className={style.title}>{title}</p>}
-      <p className={style.subText}>{props.children}</p>
+      {!hideIcon && (
+        <div className={style.iconHolder}>
+          <IconWarning className={style.icon} />
+        </div>
+      )}
+      <div className={style.textHolder}>
+        {title !== "" && <p className={style.title}>{title}</p>}
+        <p className={style.subText}>{props.children}</p>
+      </div>
     </div>
   );
 };

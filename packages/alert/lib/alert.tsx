@@ -7,13 +7,25 @@ interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
   type: "warning" | "error" | "success" | "info";
   title?: string;
   variant?: "filled" | "outlined" | "default";
+  hideIcon?: boolean;
 }
 
-const Alert = ({ type, title, variant = "default", ...props }: AlertProps) => {
+const Alert = ({
+  type,
+  title,
+  hideIcon = false,
+  variant = "default",
+  ...props
+}: AlertProps) => {
   return (
     <div className={style.holder}>
       {type === "warning" && (
-        <Warning title={title} variant={variant} props={props} />
+        <Warning
+          hideIcon={hideIcon}
+          title={title}
+          variant={variant}
+          props={props}
+        />
       )}
     </div>
   );
