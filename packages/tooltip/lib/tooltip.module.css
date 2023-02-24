@@ -1,0 +1,38 @@
+.holder {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.tooltipHolder {
+  position: absolute;
+  display: none;
+  background-color: var(--on-background);
+  bottom: 0;
+  right: 0;
+  transform: translate(100%, 100%);
+  width: max-content;
+  padding: 0.3rem;
+  border-radius: 5px;
+  animation: show 0.3s ease both;
+}
+
+.tooltipHolder p {
+  color: var(--background);
+  font-family: "Courier New", Courier, monospace;
+  font-size: var(--labelMedium);
+  font-weight: 600;
+}
+
+.holder:hover .tooltipHolder {
+  display: flex;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
