@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./alert.module.css";
-import IconSuccess from "./icons/successIcon";
+import IconInfo from "./icons/infoIcon";
 
 const Info = ({ props, title, hideIcon, variant = "default" }: Alert) => {
   return (
@@ -12,7 +12,7 @@ const Info = ({ props, title, hideIcon, variant = "default" }: Alert) => {
     >
       {!hideIcon && (
         <div className={style.iconHolder}>
-          <IconSuccess className={style.icon} />
+          <IconInfo className={style.icon} />
         </div>
       )}
       <div className={style.textHolder}>
