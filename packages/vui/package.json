@@ -35,7 +35,6 @@
     "@violetui/input": "^0.1.0",
     "@violetui/text": "^0.1.0",
     "@violetui/toggle_button": "^0.1.0",
-    "@violetui/toggleButton": "^0.1.0",
     "@violetui/tooltip": "^0.1.0"
   },
   "devDependencies": {

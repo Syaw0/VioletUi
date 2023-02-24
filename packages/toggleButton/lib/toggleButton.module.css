@@ -1,26 +1,31 @@
 .holder {
+  border: 1.5px solid var(--on-background200);
   width: fit-content;
-  position: relative;
-}
-
-.badgeHolder {
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: translate(60%, -60%);
-  background-color: var(--primary-container);
-  padding: 0.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 16px;
-  height: 20px;
-  width: fit-content;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.2rem;
+  transition: background-color 0.3s;
 }
 
-.badgeHolder p {
-  font-size: var(--labelLarge);
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 600;
-  color: var(--on-primary-container);
+.holder:hover {
+  background-color: var(--on-background200);
+}
+
+.holder svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--on-background800);
+  stroke: var(--on-background800);
+}
+
+.selected {
+  background-color: var(--on-background100);
+}
+
+.selected svg {
+  fill: var(--on-background);
+  stroke: var(--on-background);
 }
