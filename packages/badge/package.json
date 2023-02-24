@@ -1,21 +1,21 @@
 {
-  "name": "@violetui/vui",
+  "name": "@violetui/badge",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/vui.cjs.js",
-  "module": "dist/vui.esm.js",
-  "src": "lib/vui.tsx",
-  "types": "./dist/d/vui.d.ts",
+  "main": "dist/badge.cjs.js",
+  "module": "dist/badge.esm.js",
+  "src": "lib/badge.tsx",
+  "types": "./dist/d/badge.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib",
-    "dist"
+    "dist",
+    "lib"
   ],
   "publishConfig": {
     "access": "public"
@@ -26,17 +26,14 @@
   },
   "scripts": {
     "build": "vui-builder",
-    "test": "node ./__tests__/@violetui/vui.test.js"
-  },
-  "dependencies": {
-    "@violetui/alert": "^0.1.0",
-    "@violetui/button": "^0.1.0",
-    "@violetui/input": "^0.1.0",
-    "@violetui/text": "^0.1.0",
-    "@violetui/tooltip": "^0.1.0"
+    "test": "node ./__tests__/@violetui/text.test.js"
   },
   "devDependencies": {
     "@violetui/vui-builder": "^0.1.0",
+    "react": "^18.2.0",
     "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }

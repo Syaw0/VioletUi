@@ -2,11 +2,11 @@ import style from "./tooltip.module.css";
 import React from "react";
 import "../../../t.css";
 
-interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
+interface TooltipProps extends React.ComponentPropsWithoutRef<"div"> {
   text: string;
 }
 
-const Tooltip = ({ text, ...props }: AlertProps) => {
+const Tooltip = ({ text, ...props }: TooltipProps) => {
   return (
     <div className={style.holder}>
       <div className={style.tooltipHolder} {...props}>
