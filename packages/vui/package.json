@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@violetui/alert": "^0.1.0",
+    "@violetui/badge": "^0.1.0",
     "@violetui/button": "^0.1.0",
     "@violetui/input": "^0.1.0",
     "@violetui/text": "^0.1.0",
