@@ -62,3 +62,21 @@ export const Error3 = () => (
     You are disabling Cookies that mean may cause functionality problem!
   </Alert>
 );
+
+export const Info = () => (
+  <Alert variant="filled" type="info">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Info2 = () => (
+  <Alert variant="default" title="Info!" type="info">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Info3 = () => (
+  <Alert variant="outlined" type="info" title="Information!">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);

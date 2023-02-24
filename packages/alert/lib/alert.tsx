@@ -4,6 +4,7 @@ import Warning from "./warning";
 import "../../../t.css";
 import Success from "./success";
 import Error from "./error";
+import Info from "./info";
 
 interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
   type: "warning" | "error" | "success" | "info";
@@ -39,6 +40,14 @@ const Alert = ({
       )}
       {type === "error" && (
         <Error
+          hideIcon={hideIcon}
+          title={title}
+          variant={variant}
+          props={props}
+        />
+      )}
+      {type === "info" && (
+        <Info
           hideIcon={hideIcon}
           title={title}
           variant={variant}

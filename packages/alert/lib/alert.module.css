@@ -11,10 +11,15 @@
   --successBgFill: #46c088;
   --onSuccessBgFill: #0f251b;
 
-  --errorBg: #3d2020;
-  --onErrorBg: #080303;
+  --errorBg: #361f1f;
+  --onErrorBg: #f19b9b;
   --errorBgFill: #ba1a1a;
   --onErrorBgFill: #ffffff;
+
+  --infoBg: #132037;
+  --onInfoBg: #8fc8fd;
+  --infoBgFill: #8fc8fd;
+  --onInfoBgFill: #132037;
 
   --bgColor: #ffffff;
   --onBgColor: #ffffff;
@@ -87,6 +92,13 @@
   --onBgColor: var(--onErrorBg);
   --fillBg: var(--errorBgFill);
   --onFillBg: var(--onErrorBgFill);
+}
+
+.info {
+  --bgColor: var(--infoBg);
+  --onBgColor: var(--onInfoBg);
+  --fillBg: var(--infoBgFill);
+  --onFillBg: var(--onInfoBgFill);
 }
 
 .default {
