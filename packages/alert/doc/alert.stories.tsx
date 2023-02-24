@@ -3,9 +3,15 @@ import { Alert } from "../lib/alert";
 
 export default { title: "Alert" };
 
-export const Warning = () => (
-  <Alert title="Alert" type="warning">
-    Some Text
+export const Warning1 = () => (
+  <Alert
+    title="Alert"
+    type="warning"
+    onClose={(e) => {
+      console.log("hello friend!");
+    }}
+  >
+    You are disabling Cookies that mean may cause functionality problem!
   </Alert>
 );
 
@@ -45,6 +51,12 @@ export const Success3 = () => (
   </Alert>
 );
 
+export const Success4 = () => (
+  <Alert variant="outlined" type="success" onClose={() => console.log("hello")}>
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
 export const Error = () => (
   <Alert variant="filled" type="error">
     You are disabling Cookies that mean may cause functionality problem!
@@ -63,6 +75,12 @@ export const Error3 = () => (
   </Alert>
 );
 
+export const Error4 = () => (
+  <Alert variant="outlined" type="error" onClose={() => console.log("hello")}>
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
 export const Info = () => (
   <Alert variant="filled" type="info">
     You are disabling Cookies that mean may cause functionality problem!
@@ -75,8 +93,19 @@ export const Info2 = () => (
   </Alert>
 );
 
-export const Info3 = () => (
+export const Info4 = () => (
   <Alert variant="outlined" type="info" title="Information!">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Info3 = () => (
+  <Alert
+    variant="outlined"
+    type="info"
+    title="Information!"
+    onClose={() => console.log("hello")}
+  >
     You are disabling Cookies that mean may cause functionality problem!
   </Alert>
 );

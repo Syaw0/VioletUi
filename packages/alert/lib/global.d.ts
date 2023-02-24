@@ -6,6 +6,8 @@ declare module "*.module.css" {
 interface Alert {
   title?: string;
   variant?: "filled" | "outlined" | "default";
-  props: any;
+  props: React.ComponentPropsWithoutRef<"div"> & {
+    onClose?: (...arg: any) => any;
+  };
   hideIcon: boolean;
 }

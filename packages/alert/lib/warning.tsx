@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./alert.module.css";
+import IconClose from "./icons/closeIcon";
 import IconWarning from "./icons/warningIcon";
 
 const Warning = ({ props, title, hideIcon, variant = "default" }: Alert) => {
@@ -16,8 +17,15 @@ const Warning = ({ props, title, hideIcon, variant = "default" }: Alert) => {
         </div>
       )}
       <div className={style.textHolder}>
-        {title !== "" && <p className={style.title}>{title}</p>}
-        <p className={style.subText}>{props.children}</p>
+        <div>
+          {title !== "" && <p className={style.title}>{title}</p>}
+          <p className={style.subText}>{props.children}</p>
+        </div>
+        <div className={style.closeIconHolder}>
+          {props.onClose != null && (
+            <IconClose onClick={props.onClose} className={style.icon} />
+          )}
+        </div>
       </div>
     </div>
   );

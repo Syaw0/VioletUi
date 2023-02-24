@@ -40,12 +40,30 @@
 
 .textHolder {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 0.5rem;
   font-family: "Courier New", Courier, monospace;
+  width: 100%;
 }
+
+.textHolder div:nth-child(1) {
+  width: 100%;
+}
+
+.closeIconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 0 0 0.5rem;
+}
+
+.closeIconHolder svg {
+  cursor: pointer;
+}
+/* .closeIconHolder svg:hover {
+} */
 
 .iconHolder {
   display: flex;

@@ -11,6 +11,7 @@ interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
   title?: string;
   variant?: "filled" | "outlined" | "default";
   hideIcon?: boolean;
+  onClose?: (e: React.MouseEvent) => any;
 }
 
 const Alert = ({
