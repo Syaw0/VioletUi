@@ -1,15 +1,22 @@
 import React from "react";
-import { Tooltip } from "../lib/tooltip";
-export default { title: "Tooltip" };
+import { Badge } from "../lib/badge";
+import TestIcon from "./testIcon";
+export default { title: "Badge" };
 
-export const Tooltip1 = () => (
-  <Tooltip text="Hello dear">
-    <button>Click</button>
-  </Tooltip>
+export const Badge1 = () => (
+  <Badge content={0}>
+    <TestIcon />
+  </Badge>
 );
 
-export const Tooltip2 = () => (
-  <Tooltip text="By clicking on this you agree with our terms.">
-    <button>Signup</button>
-  </Tooltip>
+export const Badge2 = () => (
+  <Badge content={100}>
+    <TestIcon />
+  </Badge>
+);
+
+export const Badge3 = () => (
+  <Badge content={1000}>
+    <TestIcon />
+  </Badge>
 );
