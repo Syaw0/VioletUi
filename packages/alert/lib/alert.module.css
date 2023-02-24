@@ -3,12 +3,23 @@
   width: fit-content;
   --warnBg: #3e2601;
   --onWarnBg: #f49d1a;
+  --warnBgFill: #f49d1a;
+  --onWarnBgFill: #3e2601;
 
   --successBg: #0f251b;
   --onSuccessBg: #46c088;
+  --successBgFill: #46c088;
+  --onSuccessBgFill: #0f251b;
+
+  --errorBg: #3d2020;
+  --onErrorBg: #080303;
+  --errorBgFill: #ba1a1a;
+  --onErrorBgFill: #ffffff;
 
   --bgColor: #ffffff;
   --onBgColor: #ffffff;
+  --fillBg: #ffffff;
+  --onFillBg: #ffffff;
 }
 
 .alertHolder {
@@ -60,11 +71,22 @@
 .warning {
   --bgColor: var(--warnBg);
   --onBgColor: var(--onWarnBg);
+  --fillBg: var(--warnBgFill);
+  --onFillBg: var(--onWarnBgFill);
 }
 
 .success {
   --bgColor: var(--successBg);
   --onBgColor: var(--onSuccessBg);
+  --fillBg: var(--successBgFill);
+  --onFillBg: var(--onSuccessBgFill);
+}
+
+.error {
+  --bgColor: var(--errorBg);
+  --onBgColor: var(--onErrorBg);
+  --fillBg: var(--errorBgFill);
+  --onFillBg: var(--onErrorBgFill);
 }
 
 .default {
@@ -93,13 +115,13 @@
 }
 
 .filled {
-  background-color: var(--onBgColor);
+  background-color: var(--fillBg);
 }
 
 .filled p {
-  color: var(--bgColor);
+  color: var(--onFillBg);
 }
 
 .filled svg {
-  fill: var(--bgColor);
+  fill: var(--onFillBg);
 }

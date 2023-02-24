@@ -44,3 +44,21 @@ export const Success3 = () => (
     You are disabling Cookies that mean may cause functionality problem!
   </Alert>
 );
+
+export const Error = () => (
+  <Alert variant="filled" type="error">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Error2 = () => (
+  <Alert variant="default" title="Error!" type="error">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
+
+export const Error3 = () => (
+  <Alert variant="outlined" type="error">
+    You are disabling Cookies that mean may cause functionality problem!
+  </Alert>
+);
