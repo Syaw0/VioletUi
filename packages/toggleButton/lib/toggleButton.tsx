@@ -3,7 +3,7 @@ import React from "react";
 import "../../../t.css";
 
 interface ToggleButton extends React.ComponentPropsWithoutRef<"div"> {
-  selected: boolean;
+  selected?: boolean;
   value: string;
 }
 
