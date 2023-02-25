@@ -103,6 +103,7 @@
   --background300: rgba(253, 252, 253, 0.3);
   --background200: rgba(253, 252, 253, 0.2);
   --background100: rgba(253, 252, 253, 0.1);
+  --background50: rgba(253, 252, 253, 0.05);
 
   --on-background: rgba(26, 28, 29, 1);
   --on-background900: rgba(26, 28, 29, 0.9);
@@ -114,6 +115,7 @@
   --on-background300: rgba(26, 28, 29, 0.3);
   --on-background200: rgba(26, 28, 29, 0.2);
   --on-background100: rgba(26, 28, 29, 0.1);
+  --on-background50: rgba(26, 28, 29, 0.05);
 
   --surface: rgba(253, 252, 253, 1);
   --on-surface: rgba(26, 28, 29, 1);

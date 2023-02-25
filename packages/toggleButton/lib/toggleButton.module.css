@@ -13,12 +13,21 @@
 .holder:hover {
   background-color: var(--on-background200);
 }
-
 .holder svg {
   width: 30px;
   height: 30px;
   fill: var(--on-background800);
   stroke: var(--on-background800);
+}
+
+.disabled {
+  background-color: var(--on-background50);
+  pointer-events: none;
+}
+
+.disabled svg {
+  fill: var(--on-background400);
+  stroke: var(--on-background400);
 }
 
 .selected {

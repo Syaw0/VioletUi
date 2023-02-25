@@ -24,6 +24,7 @@ const ToggleButtonGroup = ({
           isSelected = c.props.value == value;
         }
         return React.cloneElement(c, {
+          ...c.props,
           selected: isSelected,
           value: c.props.value,
           changeHandler: onChange,

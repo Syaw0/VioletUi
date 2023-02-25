@@ -39,6 +39,7 @@ export const toggleBtn = () => {
         onClick={(e) => handle(e, "right")}
         selected={state.right}
         value="right"
+        disabled
       >
         <AlignRight />
       </ToggleButton>
