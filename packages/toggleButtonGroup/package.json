@@ -5,10 +5,10 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/toggleButton.cjs.js",
-  "module": "dist/toggleButton.esm.js",
-  "src": "lib/toggleButton.tsx",
-  "types": "./dist/d/toggleButton.d.ts",
+  "main": "dist/toggleButtonGroup.cjs.js",
+  "module": "dist/toggleButtonGroup.esm.js",
+  "src": "lib/toggleButtonGroup.tsx",
+  "types": "./dist/d/toggleButtonGroup.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
