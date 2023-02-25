@@ -7,8 +7,26 @@ import AlignRight from "./alignRight";
 
 export default { title: "ToggleButtonGroup" };
 
-export const toggleButtonGroup = () => (
-  <ToggleButtonGroup>
-    <ToggleButton value="" />
-  </ToggleButtonGroup>
-);
+export const toggleButtonGroup = () => {
+  const [values, setValues] = useState<string | string[]>("");
+  return (
+    <ToggleButtonGroup
+      value={values}
+      onChange={(e, w) => {
+        setValues(w);
+      }}
+    >
+      <ToggleButton value="s">
+        <AlignCenter />
+      </ToggleButton>
+
+      <ToggleButton value="w">
+        <AlignLeft />
+      </ToggleButton>
+
+      <ToggleButton value="z">
+        <AlignRight />
+      </ToggleButton>
+    </ToggleButtonGroup>
+  );
+};
