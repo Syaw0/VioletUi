@@ -17,14 +17,21 @@ const ToggleButton = ({
   ...props
 }: ToggleButton) => {
   const handleClick = (e: React.MouseEvent) => {
-    if (changeHandler != null) {
-      if (selected) {
-        changeHandler(e, "");
-      } else {
-        changeHandler(e, value);
-      }
+    if (changeHandler != null && groupValue != null) {
+      changeHandler(e, getNewValues());
     }
   };
+
+  const getNewValues = () => {
+    if (typeof groupValue != "string" && groupValue != null) {
+      return selected
+        ? groupValue.filter((v) => v != value)
+        : [...groupValue, value];
+    } else {
+      return selected ? "" : value;
+    }
+  };
+
   return (
     <div
       {...props}

@@ -17,8 +17,14 @@ const ToggleButtonGroup = ({
     <div {...props} onChange={() => {}} className={`${style.holder} `}>
       {React.Children.map(props.children, (child) => {
         let c = child as React.ReactElement;
+        let isSelected;
+        if (typeof value != "string") {
+          isSelected = value.find((s) => s == c.props.value) != null;
+        } else {
+          isSelected = c.props.value == value;
+        }
         return React.cloneElement(c, {
-          selected: c.props.value == value,
+          selected: isSelected,
           value: c.props.value,
           changeHandler: onChange,
           groupValue: value,
