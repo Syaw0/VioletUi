@@ -1,39 +1,180 @@
 .button {
-  --buttonBgColor: #ffffff;
-  --buttonOnBgColor: #ffffff;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.1rem 0.4rem;
+  padding: 0.2rem 0.4rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: var(--titleMedium);
+  font-size: var(--titleSmall);
+  line-height: var(--titleSmall_lineHeight);
+  font-family: "Courier New", Courier, monospace;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  background-color: var(--main);
+  color: var(--onMain);
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: var(--shadow1dp);
+  min-width: fit-content;
+  transition: background-color 0.4s, color 0.4s;
 }
 
 .button svg {
-  width: 24px;
-  height: 24px;
+  fill: var(--onMain);
+  width: 20px;
+  height: 20px;
+  margin: 0 0.1rem;
+}
+
+.leftIcon {
+  margin-right: 0.5rem;
+}
+
+.rightIcon {
+  margin-left: 0.5rem;
+}
+
+.button:hover {
+  background-color: var(--onMain);
+  color: var(--main);
+}
+
+.button:hover svg {
+  fill: var(--main);
+}
+
+.button:hover span {
+  border-top: 3px solid var(--main);
+}
+
+.button:hover .loader div {
+  border: 2px solid var(--main);
+  border-color: var(--main) transparent transparent transparent;
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+.button:disabled {
+  background-color: var(--on-background500);
+  color: var(--on-background800);
+  cursor: not-allowed;
+}
+
+.button:disabled span {
+  border-top: 3px solid var(--on-background800);
+}
+
+.button:disabled svg {
+  fill: var(--on-background800);
+}
+.button:disabled:hover svg {
+  fill: var(--on-background800);
+}
+
+.button:disabled:hover {
+  background-color: var(--on-background500);
+}
+.button:disabled:active {
+  box-shadow: var(--shadow3dp);
+}
+
+.contained {
+  background-color: var(--main);
+  color: var(--onMain);
+}
+
+.shadow {
+  box-shadow: none;
+  background-color: transparent;
+  color: var(--onMain);
+}
+
+.shadow:hover {
+  box-shadow: none;
+  background-color: var(--onMain200);
+  color: var(--onMain);
+}
+
+.shadow:hover svg {
+  fill: var(--onMain);
+}
+
+.shadow:active {
+  box-shadow: none;
+  background-color: var(--onMain500);
+  color: var(--onMain);
+}
+
+.outlined {
+  border: 1.5px solid var(--onMain);
+  background-color: transparent;
+  color: var(--onMain);
+  box-shadow: none;
+}
+
+.outlined:hover {
+  border: 1.5px solid var(--onMain);
+  background-color: var(--onMain200);
+  color: var(--onMain);
+  box-shadow: none;
+}
+
+.outlined:hover svg {
+  fill: var(--onMain);
+}
+
+.outlined:active {
+  background-color: var(--onMain500);
+}
+
+.primary {
+  --main: var(--primary-container);
+  --onMain: var(--on-primary-container);
+  --onMain500: var(--on-primary-container500);
+  --onMain200: var(--on-primary-container200);
+}
+.secondary {
+  --main: var(--secondary-container);
+  --onMain: var(--on-secondary-container);
+  --onMain500: var(--on-secondary-container500);
+  --onMain200: var(--on-secondary-container200);
+}
+
+.tertiary {
+  --main: var(--tertiary-container);
+  --onMain: var(--on-tertiary-container);
+  --onMain500: var(--on-tertiary-container500);
+  --onMain200: var(--on-tertiary-container200);
+}
+
+.error {
+  --main: var(--error);
+  --onMain: var(--on-error);
+  --onMain500: var(--on-error500);
+  --onMain200: var(--on-error200);
 }
 
 .loader {
   display: inline-block;
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
+  margin: 0 0.2rem;
 }
 .loader div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  margin: 2px;
-  border: 2px solid #fff;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  border: 2px solid var(--onMain);
   border-radius: 50%;
   animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: var(--onMain) transparent transparent transparent;
 }
 .loader div:nth-child(1) {
   animation-delay: -0.45s;

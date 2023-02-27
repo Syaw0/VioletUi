@@ -5,8 +5,8 @@ import style from "./loadingButton.module.css";
 export interface LoadingButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   variant?: "contained" | "outlined" | "shadow";
-  color: "primary" | "secondary" | "tertiary" | "error";
-  loading: boolean;
+  color?: "primary" | "secondary" | "tertiary" | "error";
+  loading?: boolean;
   startIcon?: React.ReactElement;
   endIcon?: React.ReactElement;
 }
@@ -29,7 +29,6 @@ const LoadingButton = ({
       {props.children}
 
       {props.endIcon != null ? loading ? <Loader /> : props.endIcon : ""}
-      <Loader />
     </button>
   );
 };
