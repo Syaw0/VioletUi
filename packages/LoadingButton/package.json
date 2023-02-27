@@ -1,0 +1,39 @@
+{
+  "name": "@violetui/loading_button",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Siavash <siamhb7@protonmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/loadingButton.cjs.js",
+  "module": "dist/loadingButton.esm.js",
+  "src": "lib/loadingButton.tsx",
+  "types": "./dist/d/loadingButton.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@syaw0.github.com:Syaw0/VioletUi.git"
+  },
+  "scripts": {
+    "build": "vui-builder",
+    "test": "node ./__tests__/@violetui/button.test.js"
+  },
+  "devDependencies": {
+    "@violetui/vui-builder": "^0.1.0",
+    "react": "^18.2.0",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
