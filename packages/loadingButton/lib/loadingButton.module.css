@@ -48,11 +48,6 @@
   border-top: 3px solid var(--main);
 }
 
-.button:hover .loader div {
-  border: 2px solid var(--main);
-  border-color: var(--main) transparent transparent transparent;
-}
-
 .button:active {
   box-shadow: none;
 }
@@ -132,12 +127,14 @@
 
 .primary {
   --main: var(--primary-container);
+  --main300: var(--primary-container300);
   --onMain: var(--on-primary-container);
   --onMain500: var(--on-primary-container500);
   --onMain200: var(--on-primary-container200);
 }
 .secondary {
   --main: var(--secondary-container);
+  --main300: var(--secondary-container300);
   --onMain: var(--on-secondary-container);
   --onMain500: var(--on-secondary-container500);
   --onMain200: var(--on-secondary-container200);
@@ -145,6 +142,7 @@
 
 .tertiary {
   --main: var(--tertiary-container);
+  --main300: var(--tertiary-container300);
   --onMain: var(--on-tertiary-container);
   --onMain500: var(--on-tertiary-container500);
   --onMain200: var(--on-tertiary-container200);
@@ -152,6 +150,7 @@
 
 .error {
   --main: var(--error);
+  --main300: var(--error300);
   --onMain: var(--on-error);
   --onMain500: var(--on-error500);
   --onMain200: var(--on-error200);
@@ -171,10 +170,10 @@
   width: 15px;
   height: 15px;
   margin: 1px;
-  border: 2px solid var(--onMain);
+  border: 2px solid var(--onMain200);
   border-radius: 50%;
   animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--onMain) transparent transparent transparent;
+  border-color: var(--onMain200) transparent transparent transparent;
 }
 .loader div:nth-child(1) {
   animation-delay: -0.45s;
@@ -192,4 +191,12 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.loading {
+  pointer-events: none;
+  border: 1.5px solid var(--onMain200);
+  background-color: var(--main300);
+  color: var(--onMain200);
+  box-shadow: none;
 }

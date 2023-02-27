@@ -10,21 +10,33 @@ export const loadingButton = () => {
   return (
     <>
       <LoadingButton>Hello button</LoadingButton>
-
+      <br />
       <LoadingButton startIcon={<FingerPrintIcon />}>
         Hello button
       </LoadingButton>
+      <br />
       <LoadingButton endIcon={<FingerPrintIcon />}>Hello button</LoadingButton>
-      <LoadingButton loading endIcon={<FingerPrintIcon />}>
+      <br />
+      <LoadingButton variant="outlined" loading endIcon={<FingerPrintIcon />}>
         Hello button
       </LoadingButton>
-
+      <br />{" "}
+      <LoadingButton
+        variant="shadow"
+        color="secondary"
+        loading
+        endIcon={<FingerPrintIcon />}
+      >
+        Hello button
+      </LoadingButton>
+      <br />
       <div>
         <LoadingButton
           onClick={() => setLoad((s) => !s)}
           loading={load}
           startIcon={<FingerPrintIcon />}
           loaderText="Loading..."
+          color="tertiary"
         >
           Submit
         </LoadingButton>
