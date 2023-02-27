@@ -3,11 +3,6 @@ const keyframe: Keyframe[] = [
   { width: "100%", height: "100%", opacity: "0" },
 ];
 
-// const keyframe: Keyframe[] = [
-//   { width: "1px", height: "1px", opacity: "1" },
-//   { transform: "scale(2)", opacity: "0" },
-// ];
-
 const timing: KeyframeAnimationOptions = {
   duration: 500,
   fill: "both",
