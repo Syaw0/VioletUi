@@ -7,6 +7,7 @@ import { Badge } from "@violetui/badge";
 import { ToggleButton } from "@violetui/toggle_button";
 import { ToggleButtonGroup } from "@violetui/toggle_button_group";
 import { IconButton } from "@violetui/icon_button";
+import { LoadingButton } from "@violetui/loading_button";
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   ToggleButton,
   ToggleButtonGroup,
   IconButton,
+  LoadingButton,
 };

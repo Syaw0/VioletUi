@@ -24,6 +24,7 @@ export const loadingButton = () => {
           onClick={() => setLoad((s) => !s)}
           loading={load}
           startIcon={<FingerPrintIcon />}
+          loaderText="Loading..."
         >
           Submit
         </LoadingButton>

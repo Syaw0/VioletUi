@@ -9,6 +9,7 @@ export interface LoadingButtonProps
   loading?: boolean;
   startIcon?: React.ReactElement;
   endIcon?: React.ReactElement;
+  loaderText?: string;
 }
 
 const LoadingButton = ({
@@ -26,7 +27,19 @@ const LoadingButton = ({
       {...props}
     >
       {props.startIcon != null ? loading ? <Loader /> : props.startIcon : ""}
-      {props.children}
+      {!loading ? (
+        props.children
+      ) : props.startIcon || props.endIcon ? (
+        props.loaderText ? (
+          props.loaderText
+        ) : (
+          props.children
+        )
+      ) : props.loaderText ? (
+        props.loaderText
+      ) : (
+        <Loader />
+      )}
 
       {props.endIcon != null ? loading ? <Loader /> : props.endIcon : ""}
     </button>
