@@ -90,7 +90,9 @@
   --on-error200: rgba(255, 255, 255, 0.2);
 
   --error-container: rgba(255, 218, 214, 1);
+  --error-container900: rgba(255, 218, 214, 0.9);
   --error-container200: rgba(255, 218, 214, 0.2);
+  --error-container400: rgba(255, 218, 214, 0.4);
   --on-error-container: rgba(65, 0, 2, 1);
   --outline: rgba(116, 119, 123, 1);
 

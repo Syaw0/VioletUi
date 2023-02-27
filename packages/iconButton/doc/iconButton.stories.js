@@ -22,5 +22,9 @@ export const iconButton1 = () => (
     <IconButton color="error">
       <FingerPrintIcon />
     </IconButton>
+
+    <IconButton disabled color="error">
+      <FingerPrintIcon />
+    </IconButton>
   </>
 );
