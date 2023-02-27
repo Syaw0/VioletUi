@@ -1,0 +1,47 @@
+.button {
+  --iconColor: #ffffff;
+  --iconHoverColor: #ffffff;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+.button:hover {
+  background-color: var(--iconHoverColor);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.primary {
+  --iconColor: var(--primary);
+  --iconHoverColor: var(--primary-container200);
+}
+
+.secondary {
+  --iconColor: var(--secondary);
+  --iconHoverColor: var(--secondary-container200);
+}
+
+.tertiary {
+  --iconColor: var(--tertiary);
+  --iconHoverColor: var(--tertiary-container200);
+}
+
+.error {
+  --iconColor: var(--error);
+  --iconHoverColor: var(--error-container200);
+}
+
+.button svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--iconColor);
+  stroke: var(var(--iconColor));
+}
