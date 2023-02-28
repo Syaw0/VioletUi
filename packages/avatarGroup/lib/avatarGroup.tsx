@@ -8,6 +8,7 @@ interface AvatarGroupProps extends React.ComponentPropsWithoutRef<"div"> {
 }
 
 const AvatarGroup = ({ total, max = 4, ...props }: AvatarGroupProps) => {
+  const avatars = Children.toArray(props.children);
   return (
     <div
       {...props}
@@ -15,14 +16,11 @@ const AvatarGroup = ({ total, max = 4, ...props }: AvatarGroupProps) => {
         props.className != null ? props.className : ""
       }`}
     >
-      {Children.map(props.children, (child, index) => {
+      {avatars.map((child, index) => {
         return index < max && child;
       })}
       <Avatar>
-        +
-        {total != null
-          ? total + max - Children.count(props.children)
-          : Children.count(props.children) - max}
+        +{total != null ? total + max - avatars.length : avatars.length - max}
       </Avatar>
     </div>
   );

@@ -30,6 +30,8 @@
   },
   "dependencies": {
     "@violetui/alert": "^0.1.0",
+    "@violetui/avatar": "^0.1.0",
+    "@violetui/avatar_group": "^0.1.0",
     "@violetui/badge": "^0.1.0",
     "@violetui/button": "^0.1.0",
     "@violetui/icon_button": "^0.1.0",

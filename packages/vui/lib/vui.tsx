@@ -8,6 +8,8 @@ import { ToggleButton } from "@violetui/toggle_button";
 import { ToggleButtonGroup } from "@violetui/toggle_button_group";
 import { IconButton } from "@violetui/icon_button";
 import { LoadingButton } from "@violetui/loading_button";
+import { Avatar } from "@violetui/avatar";
+import { AvatarGroup } from "@violetui/avatar_group";
 
 export {
   Button,
@@ -20,4 +22,6 @@ export {
   ToggleButtonGroup,
   IconButton,
   LoadingButton,
+  Avatar,
+  AvatarGroup,
 };
