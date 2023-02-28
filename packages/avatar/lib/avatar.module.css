@@ -19,6 +19,17 @@
   width: 100%;
   height: auto;
 }
+.fallbackIcon {
+  width: 70%;
+  fill: var(--on-background700);
+  stroke: var(--on-background700);
+}
+
+.holder svg:not(.fallbackIcon) {
+  width: 70%;
+  fill: var(--on-background700);
+  stroke: var(--on-background700);
+}
 
 .small {
   width: 24px;
@@ -36,8 +47,13 @@
   height: 65px;
 }
 
-.fallbackIcon {
-  width: 70%;
-  fill: var(--on-background700);
-  stroke: var(--on-background700);
+.square {
+  border-radius: 0;
+}
+.round {
+  border-radius: 0.5rem;
+}
+
+.circle {
+  border-radius: 50%;
 }
