@@ -18,7 +18,16 @@
 .imgHolder {
   width: 100%;
   height: auto;
+  color: var(--on-background700);
+  font-size: 0;
+  display: block;
+  text-align: center;
 }
+
+.imgHolder:first-letter {
+  font-size: 30px;
+}
+
 .fallbackIcon {
   width: 70%;
   fill: var(--on-background700);

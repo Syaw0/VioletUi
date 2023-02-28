@@ -32,6 +32,10 @@ const Avatar = ({
       {src == null && props.children == null && (
         <FallBackIcon className={style.fallbackIcon} />
       )}
+
+      {src == null && props.children == null && (
+        <FallBackIcon className={style.fallbackIcon} />
+      )}
     </div>
   );
 };
