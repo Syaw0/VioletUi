@@ -29,9 +29,6 @@ const Avatar = ({
         <img className={style.imgHolder} src={src} alt={alt}></img>
       )}
       {src == null && props.children != null && props.children}
-      {src == null && props.children == null && (
-        <FallBackIcon className={style.fallbackIcon} />
-      )}
 
       {src == null && props.children == null && (
         <FallBackIcon className={style.fallbackIcon} />
