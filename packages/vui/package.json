@@ -35,9 +35,9 @@
     "@violetui/badge": "^0.1.0",
     "@violetui/button": "^0.1.0",
     "@violetui/icon_button": "^0.1.0",
-    "@violetui/input": "^0.1.0",
     "@violetui/loading_button": "^0.1.0",
     "@violetui/text": "^0.1.0",
+    "@violetui/text_field": "^0.1.0",
     "@violetui/toggle_button": "^0.1.0",
     "@violetui/toggle_button_group": "^0.1.0",
     "@violetui/tooltip": "^0.1.0"

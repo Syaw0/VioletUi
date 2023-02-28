@@ -1,20 +1,19 @@
-import { Button } from "@violetui/button";
-import { Text } from "@violetui/text";
-import { TextInput } from "@violetui/input";
-import { Alert } from "@violetui/alert";
-import { Tooltip } from "@violetui/tooltip";
-import { Badge } from "@violetui/badge";
-import { ToggleButton } from "@violetui/toggle_button";
-import { ToggleButtonGroup } from "@violetui/toggle_button_group";
-import { IconButton } from "@violetui/icon_button";
-import { LoadingButton } from "@violetui/loading_button";
-import { Avatar } from "@violetui/avatar";
-import { AvatarGroup } from "@violetui/avatar_group";
+import Button from "@violetui/button";
+import Text from "@violetui/text";
+import Alert from "@violetui/alert";
+import Tooltip from "@violetui/tooltip";
+import Badge from "@violetui/badge";
+import ToggleButton from "@violetui/toggle_button";
+import ToggleButtonGroup from "@violetui/toggle_button_group";
+import IconButton from "@violetui/icon_button";
+import LoadingButton from "@violetui/loading_button";
+import Avatar from "@violetui/avatar";
+import AvatarGroup from "@violetui/avatar_group";
+import TextField from "@violetui/text_field";
 
 export {
   Button,
   Text,
-  TextInput,
   Alert,
   Tooltip,
   Badge,
@@ -24,4 +23,5 @@ export {
   LoadingButton,
   Avatar,
   AvatarGroup,
+  TextField,
 };

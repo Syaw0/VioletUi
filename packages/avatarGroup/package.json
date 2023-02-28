@@ -5,8 +5,8 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/avatarGroup.cjs.js",
-  "module": "dist/avatarGroup.esm.js",
+  "main": "dist/avatar_group.cjs.js",
+  "module": "dist/avatar_group.esm.js",
   "src": "lib/avatarGroup.tsx",
   "types": "./dist/d/avatarGroup.d.ts",
   "directories": {
@@ -29,12 +29,14 @@
     "test": "node ./__tests__/@violetui/text.test.js"
   },
   "devDependencies": {
-    "@violetui/avatar": "^0.1.0",
     "@violetui/vui-builder": "^0.1.0",
     "react": "^18.2.0",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@violetui/avatar": "^0.1.0"
   }
 }

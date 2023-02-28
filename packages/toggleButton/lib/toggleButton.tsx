@@ -49,4 +49,4 @@ const ToggleButton = ({
     </div>
   );
 };
-export { ToggleButton };
+export default ToggleButton;

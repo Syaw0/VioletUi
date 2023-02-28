@@ -5,8 +5,8 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/iconButton.cjs.js",
-  "module": "dist/iconButton.esm.js",
+  "main": "dist/icon_button.cjs.js",
+  "module": "dist/icon_button.esm.js",
   "src": "lib/iconButton.tsx",
   "types": "./dist/d/iconButton.d.ts",
   "directories": {

@@ -41,4 +41,4 @@ const Text = ({
     </TypographyComponent>
   );
 };
-export { Text };
+export default Text;

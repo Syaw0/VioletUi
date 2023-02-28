@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Badge } from "../lib/badge";
+import Badge from "../lib/badge";
 import TestIcon from "./testIcon";
 export default { title: "Badge" };
 

@@ -46,4 +46,4 @@ const LoadingButton = ({
   );
 };
 
-export { LoadingButton };
+export default LoadingButton;

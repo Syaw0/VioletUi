@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToggleButton } from "../lib/toggleButton";
+import ToggleButton from "../lib/toggleButton";
 import AlignCenter from "./alignCenter";
 import AlignLeft from "./alignLeft";
 import AlignRight from "./alignRight";

@@ -1,7 +1,7 @@
 import style from "./avatarGroup.module.css";
 import React, { Children } from "react";
 import "../../../t.css";
-import { Avatar } from "@violetui/avatar";
+import Avatar from "@violetui/avatar";
 interface AvatarGroupProps extends React.ComponentPropsWithoutRef<"div"> {
   max?: number;
   total?: number;
@@ -25,4 +25,4 @@ const AvatarGroup = ({ total, max = 4, ...props }: AvatarGroupProps) => {
     </div>
   );
 };
-export { AvatarGroup };
+export default AvatarGroup;

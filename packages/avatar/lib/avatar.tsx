@@ -35,4 +35,5 @@ const Avatar = ({
     </div>
   );
 };
-export { Avatar };
+
+export default Avatar;

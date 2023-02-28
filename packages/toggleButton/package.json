@@ -5,8 +5,8 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/toggleButton.cjs.js",
-  "module": "dist/toggleButton.esm.js",
+  "main": "dist/toggle_button.cjs.js",
+  "module": "dist/toggle_button.esm.js",
   "src": "lib/toggleButton.tsx",
   "types": "./dist/d/toggleButton.d.ts",
   "directories": {

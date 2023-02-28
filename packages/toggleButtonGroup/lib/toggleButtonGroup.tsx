@@ -34,4 +34,4 @@ const ToggleButtonGroup = ({
     </div>
   );
 };
-export { ToggleButtonGroup };
+export default ToggleButtonGroup;

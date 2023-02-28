@@ -5,8 +5,8 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/textField.cjs.js",
-  "module": "dist/textField.esm.js",
+  "main": "dist/text_field.cjs.js",
+  "module": "dist/text_field.esm.js",
   "src": "lib/textField.tsx",
   "types": "./dist/d/textField.d.ts",
   "directories": {

@@ -16,4 +16,4 @@ const Tooltip = ({ text, ...props }: TooltipProps) => {
     </div>
   );
 };
-export { Tooltip };
+export default Tooltip;

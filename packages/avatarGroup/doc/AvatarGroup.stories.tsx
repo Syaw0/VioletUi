@@ -1,6 +1,6 @@
 import React from "react";
-import { AvatarGroup } from "../lib/avatarGroup";
-import { Avatar } from "@violetui/avatar";
+import AvatarGroup from "../lib/avatarGroup";
+import Avatar from "@violetui/avatar";
 
 export default { title: "AvatarGroup" };
 

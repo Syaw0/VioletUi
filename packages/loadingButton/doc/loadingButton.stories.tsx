@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoadingButton } from "../lib/loadingButton";
+import LoadingButton from "../lib/loadingButton";
 import "../../../t.css";
 import FingerPrintIcon from "./fingerPrintIcon";
 

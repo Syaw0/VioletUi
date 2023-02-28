@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar } from "../lib/avatar";
+import Avatar from "../lib/avatar";
 import FingerPrintIcon from "./fingerPrintIcon";
 
 export default { title: "Avatar" };

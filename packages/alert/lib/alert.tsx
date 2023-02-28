@@ -58,4 +58,4 @@ const Alert = ({
     </div>
   );
 };
-export { Alert };
+export default Alert;

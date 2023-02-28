@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton } from "../lib/iconButton";
+import IconButton from "../lib/iconButton";
 import "../../../t.css";
 import FingerPrintIcon from "./fingerPrintIcon";
 

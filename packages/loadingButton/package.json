@@ -5,8 +5,8 @@
   "author": "Siavash <siamhb7@protonmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/loadingButton.cjs.js",
-  "module": "dist/loadingButton.esm.js",
+  "main": "dist/loading_button.cjs.js",
+  "module": "dist/loading_button.esm.js",
   "src": "lib/loadingButton.tsx",
   "types": "./dist/d/loadingButton.d.ts",
   "directories": {
