@@ -17,7 +17,6 @@ const Avatar = ({
   alt = "",
   ...props
 }: AvatarProps) => {
-  console.log(src == null, props.children == null);
   return (
     <div
       {...props}

@@ -1,17 +1,30 @@
-import style from "./avatar.module.css";
-import React from "react";
+import style from "./avatarGroup.module.css";
+import React, { Children } from "react";
 import "../../../t.css";
+import { Avatar } from "@violetui/avatar";
+interface AvatarGroupProps extends React.ComponentPropsWithoutRef<"div"> {
+  max?: number;
+  total?: number;
+}
 
-interface AvatarGroupProps extends React.ComponentPropsWithoutRef<"div"> {}
-
-const AvatarGroup = ({ ...props }: AvatarGroupProps) => {
+const AvatarGroup = ({ total, max = 4, ...props }: AvatarGroupProps) => {
   return (
     <div
       {...props}
       className={`${style.holder} ${
         props.className != null ? props.className : ""
       }`}
-    ></div>
+    >
+      {Children.map(props.children, (child, index) => {
+        return index < max && child;
+      })}
+      <Avatar>
+        +
+        {total != null
+          ? total + max - Children.count(props.children)
+          : Children.count(props.children) - max}
+      </Avatar>
+    </div>
   );
 };
 export { AvatarGroup };

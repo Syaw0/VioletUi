@@ -81,6 +81,8 @@
   --on-tertiary-container200: rgba(30, 24, 44, 0.2);
   --on-tertiary-container100: rgba(30, 24, 44, 0.1);
 
+  --gray: rgb(233, 233, 233);
+
   --error: rgba(186, 26, 26, 1);
 
   --error100: rgba(186, 26, 26, 0.1);

@@ -1,0 +1,10 @@
+.holder {
+  display: flex;
+  background-color: inherit;
+}
+
+.holder > div {
+  margin-right: -0.5rem;
+  background-color: var(--gray);
+  outline: 3px solid var(--background);
+}
