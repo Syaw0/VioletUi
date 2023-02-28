@@ -7,6 +7,12 @@
   align-items: center;
   border-radius: 50%;
   overflow: hidden;
+  user-select: none;
+  background-color: var(--on-background100);
+  font-size: var(--titleLarge);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  color: var(--on-background700);
 }
 
 .imgHolder {
@@ -17,13 +23,21 @@
 .small {
   width: 24px;
   height: 24px;
+  font-size: var(--labelSmall);
 }
 
 .medium {
   width: 50px;
   height: 50px;
+  font-size: var(--titleMedium);
 }
 .large {
   width: 65px;
   height: 65px;
+}
+
+.fallbackIcon {
+  width: 70%;
+  fill: var(--on-background700);
+  stroke: var(--on-background700);
 }
