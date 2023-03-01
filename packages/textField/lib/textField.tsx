@@ -45,7 +45,11 @@ const TextField = ({
       {label != null && (
         <label
           onClick={labelClickHandler}
-          className={`${isLabelFocused ? style.label_focused : style.label} `}
+          className={`${
+            isLabelFocused
+              ? style[variant + "_label_focused"]
+              : style[variant + "_label"]
+          } `}
         >
           {label}
         </label>

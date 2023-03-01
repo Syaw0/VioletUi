@@ -12,7 +12,7 @@
 .input:focus {
   outline: none;
 }
-.label {
+.filled_label {
   position: absolute;
   left: 1rem;
   top: 14px;
@@ -24,7 +24,7 @@
   cursor: text;
   user-select: none;
 }
-.label_focused {
+.filled_label_focused {
   position: absolute;
   left: 1rem;
   top: 2px;
@@ -35,27 +35,21 @@
   transition: 250ms;
 }
 
-.label_focused + .inactiveLabel {
-  color: var(--on-background100);
-}
-
 .filled {
   background-color: var(--primary-container200);
-  /* border-bottom: 2px solid var(--primary-container800); */
   border-bottom: 3px solid var(--on-background200);
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 1.4rem 1rem 0.4rem 1rem;
   transition: border-color 0.2s;
   color: var(--on-background900);
+  font-size: var(--labelLarge);
+  line-height: var(--labelSmall_lineHeight);
 }
 
 .filled:focus {
   background-color: var(--primary-container300);
-  border-bottom: 3px solid var(--on-primary-container);
-}
-
-.filled:focus + .label {
-  /* color: red; */
+  margin-bottom: -1px;
+  border-bottom: 4px solid var(--on-primary-container);
 }
 
 .filled:focus:hover {
@@ -64,4 +58,54 @@
 
 .filled:hover {
   background-color: var(--primary-container400);
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid var(--on-background200);
+  border-radius: 0.5rem;
+  padding: calc(1.8rem / 2) 1rem;
+  transition: border-color 0.2s;
+  color: var(--on-background900);
+  font-size: var(--labelLarge);
+  line-height: var(--labelSmall_lineHeight);
+}
+
+.outlined:focus {
+  margin: -1px;
+  border: 2px solid var(--on-primary-container);
+}
+
+.outlined:focus:hover {
+  border: 2px solid var(--on-primary-container);
+}
+
+.outlined:hover {
+  margin: -1px;
+  border: 2px solid var(--on-background400);
+}
+
+.outlined_label {
+  position: absolute;
+  left: 1rem;
+  top: 14px;
+  font-weight: 500;
+  font-size: var(--labelLarge);
+  line-height: var(--labelLarge_lineHeight);
+  color: var(--on-background600);
+  transition: 250ms;
+  cursor: text;
+  user-select: none;
+}
+.outlined_label_focused {
+  position: absolute;
+  left: 0.4rem;
+  top: -8px;
+  background-color: var(--background);
+  padding: 0rem 0.4rem;
+  font-weight: 500;
+  font-size: var(--labelSmall);
+  line-height: var(--labelSmall_lineHeight);
+  color: var(--on-primary-container);
+  transition: 250ms;
 }
