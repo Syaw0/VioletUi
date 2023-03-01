@@ -1,0 +1,45 @@
+.holder {
+  position: relative;
+}
+.input {
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.input:focus {
+  outline: none;
+}
+.label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  font-size: var(--labelMedium);
+  visibility: hidden;
+}
+
+.filled {
+  background-color: var(--primary-container200);
+  /* border-bottom: 2px solid var(--primary-container800); */
+  border-bottom: 3px solid var(--on-background200);
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.2rem 1rem 0.5rem 1rem;
+  transition: border-color 0.2s;
+}
+
+.filled:focus {
+  background-color: var(--primary-container300);
+  border-bottom: 3px solid var(--primary-container);
+}
+
+.filled:focus + .label {
+  color: red;
+}
+
+.filled:focus:hover {
+  background-color: var(--primary-container300);
+}
+
+.filled:hover {
+  background-color: var(--primary-container400);
+}
