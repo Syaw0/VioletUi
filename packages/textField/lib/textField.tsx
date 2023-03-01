@@ -4,12 +4,14 @@ import style from "./textField.module.css";
 interface TextFieldType extends React.ComponentPropsWithoutRef<"input"> {
   variant?: "outlined" | "filled" | "standard";
   label?: string;
+  color?: "primary" | "secondary" | "tertiary";
 }
 
 const TextField = ({
   className = "",
   variant = "filled",
   label,
+  color = "primary",
   ...props
 }: TextFieldType) => {
   const [isLabelFocused, setIsLabelFocused] = useState(false);
@@ -41,7 +43,7 @@ const TextField = ({
     }
   };
   return (
-    <div className={`${style.holder} `}>
+    <div className={`${style.holder}  ${style[color]}`}>
       {label != null && (
         <label
           onClick={labelClickHandler}
@@ -49,7 +51,7 @@ const TextField = ({
             isLabelFocused
               ? style[variant + "_label_focused"]
               : style[variant + "_label"]
-          } `}
+          }  `}
         >
           {label}
         </label>

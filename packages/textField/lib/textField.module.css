@@ -31,12 +31,12 @@
   font-weight: 500;
   font-size: var(--labelSmall);
   line-height: var(--labelSmall_lineHeight);
-  color: var(--on-primary-container);
+  color: var(--onMain);
   transition: 250ms;
 }
 
 .filled {
-  background-color: var(--primary-container200);
+  background-color: var(--main200);
   border-bottom: 3px solid var(--on-background200);
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 1.4rem 1rem 0.4rem 1rem;
@@ -47,17 +47,17 @@
 }
 
 .filled:focus {
-  background-color: var(--primary-container300);
+  background-color: var(--main300);
   margin-bottom: -1px;
   border-bottom: 4px solid var(--on-primary-container);
 }
 
 .filled:focus:hover {
-  background-color: var(--primary-container300);
+  background-color: var(--main300);
 }
 
 .filled:hover {
-  background-color: var(--primary-container400);
+  background-color: var(--main400);
 }
 
 .outlined {
@@ -73,11 +73,11 @@
 
 .outlined:focus {
   margin: -1px;
-  border: 2px solid var(--on-primary-container);
+  border: 2px solid var(--onMain);
 }
 
 .outlined:focus:hover {
-  border: 2px solid var(--on-primary-container);
+  border: 2px solid var(--onMain);
 }
 
 .outlined:hover {
@@ -106,7 +106,7 @@
   font-weight: 500;
   font-size: var(--labelSmall);
   line-height: var(--labelSmall_lineHeight);
-  color: var(--on-primary-container);
+  color: var(--onMain);
   transition: 250ms;
 }
 
@@ -129,7 +129,7 @@
   font-weight: 500;
   font-size: var(--labelSmall);
   line-height: var(--labelSmall_lineHeight);
-  color: var(--on-primary-container);
+  color: var(--onMain);
   transition: 250ms;
 }
 
@@ -146,14 +146,38 @@
 
 .standard:focus {
   margin-bottom: -1px;
-  border-bottom: 4px solid var(--on-primary-container);
+  border-bottom: 4px solid var(--onMain);
 }
 
 .standard:focus:hover {
   margin-bottom: -1px;
-  border-bottom: 4px solid var(--on-primary-container);
+  border-bottom: 4px solid var(--onMain);
 }
 
 .standard:hover {
   border-bottom: 3px solid var(--on-background600);
+}
+
+.primary {
+  --main: var(--primary-container);
+  --main200: var(--primary-container200);
+  --main300: var(--primary-container300);
+  --main400: var(--primary-container400);
+  --onMain: var(--on-primary-container);
+}
+
+.secondary {
+  --main: var(--secondary-container);
+  --main200: var(--secondary-container200);
+  --main300: var(--secondary-container300);
+  --main400: var(--secondary-container400);
+  --onMain: var(--on-secondary-container);
+}
+
+.tertiary {
+  --main: var(--tertiary-container);
+  --main200: var(--tertiary-container200);
+  --main300: var(--tertiary-container300);
+  --main400: var(--tertiary-container400);
+  --onMain: var(--on-tertiary-container);
 }
