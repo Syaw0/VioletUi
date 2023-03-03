@@ -29,31 +29,25 @@ const TextField = ({
     }
   });
   const focusHandler = () => {
-    console.log("focus");
     setIsInputFocused(true);
     setIsLabelInTheTop(true);
   };
   const blurHandler = () => {
-    console.log("blur");
     setIsInputFocused(false);
   };
 
   const labelClickHandler = () => {
-    if (!isInputFocused) {
+    if (!isInputFocused && !props.disabled) {
       setIsInputFocused(true);
-      // setIsLabelInTheTop(true);
       ref.current.focus();
     }
   };
-
-  console.log(isInputFocused ? variant + "_input_focused" : variant + "_input");
-  console.log(isInputFocused ? variant + "_label_top" : variant + "_label");
   return (
     <div className={`${style.holder}  ${style[color]}`}>
       {label != null && (
         <label
           onClick={labelClickHandler}
-          className={`${style.label}
+          className={`
           ${
             isInputFocused
               ? style[variant + "_input_focused"]
@@ -62,7 +56,7 @@ const TextField = ({
             isLabelInTheTop
               ? style[variant + "_label_top"]
               : style[variant + "_label"]
-          }  `}
+          } ${style.label}  `}
         >
           {label}
         </label>

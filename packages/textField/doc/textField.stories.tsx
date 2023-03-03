@@ -29,3 +29,42 @@ export const textField3 = () => (
     <TextField color="tertiary" variant="standard" label="username" />
   </div>
 );
+
+export const textField4 = () => (
+  <div>
+    <TextField
+      variant="standard"
+      label="username"
+      defaultValue={"this is default value"}
+    />
+
+    <TextField
+      defaultValue={"hello"}
+      disabled
+      color="secondary"
+      variant="standard"
+      label="disabled"
+    />
+    <TextField
+      disabled
+      color="secondary"
+      defaultValue={"hello"}
+      label="disabled"
+    />
+
+    <TextField
+      disabled
+      color="secondary"
+      variant="outlined"
+      defaultValue={"hello"}
+      label="disabled"
+    />
+
+    <TextField
+      type={"password"}
+      color="tertiary"
+      variant="standard"
+      label="username"
+    />
+  </div>
+);

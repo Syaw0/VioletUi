@@ -61,6 +61,13 @@
 .filled:focus:hover {
   background-color: var(--main300);
 }
+.filled:disabled {
+  color: var(--on-background200);
+}
+.filled:disabled:hover {
+  color: var(--on-background200);
+  background-color: var(--main200);
+}
 
 .filled:hover {
   background-color: var(--main400);
@@ -84,6 +91,15 @@
 
 .outlined:focus:hover {
   border: 2px solid var(--onMain);
+}
+.outlined:disabled {
+  color: var(--on-background200);
+}
+
+.outlined:disabled:hover {
+  color: var(--on-background200);
+  margin: 0px;
+  border: 1px solid var(--on-background200);
 }
 
 .outlined:hover {
@@ -152,7 +168,6 @@
 } */
 
 .standard {
-  /* background-color: var(--primary-container200); */
   border-bottom: 3px solid var(--on-background200);
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 1.2rem 0.3rem 0.4rem 0rem;
@@ -174,6 +189,13 @@
 
 .standard:hover {
   border-bottom: 3px solid var(--on-background600);
+}
+.standard:disabled {
+  color: var(--on-background200);
+}
+
+.standard:disabled:hover {
+  border-bottom: 3px solid var(--on-background200);
 }
 
 .primary {
