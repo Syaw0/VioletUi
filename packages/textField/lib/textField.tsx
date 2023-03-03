@@ -14,42 +14,53 @@ const TextField = ({
   color = "primary",
   ...props
 }: TextFieldType) => {
-  const [isLabelFocused, setIsLabelFocused] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
+  const [isLabelInTheTop, setIsLabelInTheTop] = useState(false);
   const ref: any = useRef(null);
   useEffect(() => {
     const input = ref.current as HTMLInputElement;
-    if (document.activeElement == input || isLabelFocused) {
+    if (document.activeElement == input || isInputFocused) {
       return;
     }
     if (input.value != "") {
-      setIsLabelFocused(true);
+      setIsLabelInTheTop(true);
     } else {
-      setIsLabelFocused(false);
+      setIsLabelInTheTop(false);
     }
   });
   const focusHandler = () => {
     console.log("focus");
-    setIsLabelFocused(true);
+    setIsInputFocused(true);
+    setIsLabelInTheTop(true);
   };
   const blurHandler = () => {
     console.log("blur");
-    setIsLabelFocused(false);
+    setIsInputFocused(false);
   };
 
   const labelClickHandler = () => {
-    if (!isLabelFocused) {
-      setIsLabelFocused(true);
+    if (!isInputFocused) {
+      setIsInputFocused(true);
+      // setIsLabelInTheTop(true);
       ref.current.focus();
     }
   };
+
+  console.log(isInputFocused ? variant + "_input_focused" : variant + "_input");
+  console.log(isInputFocused ? variant + "_label_top" : variant + "_label");
   return (
     <div className={`${style.holder}  ${style[color]}`}>
       {label != null && (
         <label
           onClick={labelClickHandler}
-          className={`${
-            isLabelFocused
-              ? style[variant + "_label_focused"]
+          className={`${style.label}
+          ${
+            isInputFocused
+              ? style[variant + "_input_focused"]
+              : style[variant + "_input"]
+          } ${
+            isLabelInTheTop
+              ? style[variant + "_label_top"]
               : style[variant + "_label"]
           }  `}
         >
