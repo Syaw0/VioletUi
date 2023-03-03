@@ -5,6 +5,7 @@ interface TextFieldType extends React.ComponentPropsWithoutRef<"input"> {
   variant?: "outlined" | "filled" | "standard";
   label?: string;
   color?: "primary" | "secondary" | "tertiary";
+  helperText?: string;
 }
 
 const TextField = ({
@@ -12,6 +13,7 @@ const TextField = ({
   variant = "filled",
   label,
   color = "primary",
+  helperText,
   ...props
 }: TextFieldType) => {
   const [isInputFocused, setIsInputFocused] = useState(false);
@@ -74,6 +76,9 @@ const TextField = ({
         ref={ref}
         className={`${style.input} ${style[variant]} ${className}`}
       />
+      {helperText != null && (
+        <span className={style.helperText}>{helperText}</span>
+      )}
     </div>
   );
 };

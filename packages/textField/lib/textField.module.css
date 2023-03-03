@@ -2,13 +2,30 @@
   position: relative;
   min-width: fit-content;
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 .input {
   background-color: transparent;
   border: none;
   transition: background-color 0.3s;
 }
-
+::-webkit-input-placeholder {
+  color: transparent;
+}
+:-moz-placeholder {
+  color: transparent;
+}
+::-moz-placeholder {
+  color: transparent;
+}
+:-ms-input-placeholder {
+  color: transparent;
+}
+input::placeholder {
+  color: transparent;
+}
 .input:focus {
   outline: none;
 }
@@ -196,6 +213,12 @@
 
 .standard:disabled:hover {
   border-bottom: 3px solid var(--on-background200);
+}
+
+.helperText {
+  color: var(--on-background700);
+  font-size: var(--labelSmall);
+  padding: 0.3rem 0.5rem;
 }
 
 .primary {

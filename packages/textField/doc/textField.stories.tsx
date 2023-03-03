@@ -68,3 +68,31 @@ export const textField4 = () => (
     />
   </div>
 );
+
+export const textField5 = () => (
+  <div>
+    <TextField
+      variant="standard"
+      label="username"
+      // defaultValue={"this is default value"}
+      helperText="enter Your name"
+      placeholder="some placeholder"
+    />
+
+    <TextField
+      variant="outlined"
+      label="username"
+      // defaultValue={"this is default value"}
+      helperText="enter Your name"
+      placeholder="some placeholder"
+    />
+
+    <TextField
+      variant="filled"
+      label="username"
+      // defaultValue={"this is default value"}
+      helperText="enter Your name"
+      placeholder="some placeholder"
+    />
+  </div>
+);
