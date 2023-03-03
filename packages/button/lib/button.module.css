@@ -10,13 +10,14 @@
   color: var(--onMain);
   cursor: pointer;
   font-size: var(--titleSmall);
-  font-weight: 700;
+  font-weight: 500;
   box-shadow: var(--shadow1dp);
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: fit-content;
   transition: background-color 0.4s, color 0.4s;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .button svg {
@@ -73,6 +74,11 @@
 }
 
 .contained {
+  background-color: var(--main700);
+  color: var(--onMain);
+}
+
+.contained:hover {
   background-color: var(--main);
   color: var(--onMain);
 }
@@ -123,12 +129,14 @@
 
 .primary {
   --main: var(--primary-container);
+  --main700: var(--primary-container700);
   --onMain: var(--on-primary-container);
   --onMain500: var(--on-primary-container500);
   --onMain200: var(--on-primary-container200);
 }
 .secondary {
   --main: var(--secondary-container);
+  --main700: var(--secondary-container700);
   --onMain: var(--on-secondary-container);
   --onMain500: var(--on-secondary-container500);
   --onMain200: var(--on-secondary-container200);
@@ -136,6 +144,7 @@
 
 .tertiary {
   --main: var(--tertiary-container);
+  --main700: var(--tertiary-container700);
   --onMain: var(--on-tertiary-container);
   --onMain500: var(--on-tertiary-container500);
   --onMain200: var(--on-tertiary-container200);
