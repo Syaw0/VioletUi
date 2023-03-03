@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from "../lib/textField";
 import "../../../t.css";
+import FingerPrintIcon from "./fingerPrintIcon";
 
 export default { title: "Text Field" };
 
@@ -121,9 +122,36 @@ export const textField6 = () => (
       variant="filled"
       label="username"
       error
-      // defaultValue={"this is default value"}
       helperText="enter Your name"
       placeholder="some placeholder"
+    />
+  </div>
+);
+
+export const textField7 = () => (
+  <div>
+    <TextField
+      variant="standard"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      startIcon={<FingerPrintIcon />}
+    />
+
+    <TextField
+      variant="outlined"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      startIcon={<FingerPrintIcon />}
+    />
+
+    <TextField
+      variant="filled"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      startIcon={<FingerPrintIcon />}
     />
   </div>
 );

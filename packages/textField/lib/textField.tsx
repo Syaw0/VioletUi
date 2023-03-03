@@ -7,6 +7,8 @@ interface TextFieldType extends React.ComponentPropsWithoutRef<"input"> {
   color?: "primary" | "secondary" | "tertiary";
   helperText?: string;
   error?: boolean;
+  startIcon?: React.ReactElement;
+  endIcon?: React.ReactElement;
 }
 
 const TextField = ({
@@ -16,6 +18,8 @@ const TextField = ({
   color = "primary",
   helperText,
   error = false,
+  startIcon,
+  endIcon,
   ...props
 }: TextFieldType) => {
   const [isInputFocused, setIsInputFocused] = useState(false);
@@ -60,7 +64,9 @@ const TextField = ({
             isLabelInTheTop
               ? style[variant + "_label_top"]
               : style[variant + "_label"]
-          } ${style.label} ${error ? style.errorLabel : ""}  `}
+          } ${style.label} ${error ? style.errorLabel : ""} ${
+            startIcon != null && !isLabelInTheTop ? style.startIconLabel : ""
+          } `}
         >
           {label}
         </label>
@@ -78,7 +84,7 @@ const TextField = ({
         ref={ref}
         className={`${style.input} ${style[variant]} ${className} ${
           error ? style[variant + "_error"] : ""
-        } `}
+        } ${startIcon != null ? style[variant + "_inputStartPadding"] : ""} `}
       />
       {helperText != null && (
         <span
@@ -87,6 +93,11 @@ const TextField = ({
           }`}
         >
           {helperText}
+        </span>
+      )}
+      {startIcon != null && (
+        <span className={`${style.startIcon} ${style[variant + "_startIcon"]}`}>
+          {startIcon}
         </span>
       )}
     </div>

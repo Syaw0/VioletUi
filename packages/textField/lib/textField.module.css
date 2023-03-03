@@ -32,7 +32,7 @@ input::placeholder {
 .filled_label {
   position: absolute;
   left: 1rem;
-  top: 14px;
+  top: 17px;
   font-weight: 500;
   font-size: var(--labelLarge);
   line-height: var(--labelLarge_lineHeight);
@@ -281,6 +281,41 @@ input::placeholder {
   color: var(--error);
 }
 
+.startIcon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--on-background800);
+}
+
+.standard_inputStartPadding {
+  padding-left: 1.7rem;
+}
+.standard_startIcon {
+  position: absolute;
+  left: 0rem;
+  top: 17px;
+}
+
+.outlined_inputStartPadding {
+  padding-left: 2rem;
+}
+.outlined_startIcon {
+  position: absolute;
+  left: 8px;
+  top: 13px;
+}
+.filled_inputStartPadding {
+  padding-left: 2rem;
+}
+.filled_startIcon {
+  position: absolute;
+  left: 10px;
+  top: 17px;
+}
+
+.startIconLabel {
+  padding-left: 1.5rem;
+}
 .primary {
   --main: var(--primary-container);
   --main200: var(--primary-container200);
