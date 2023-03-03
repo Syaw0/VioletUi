@@ -270,7 +270,7 @@ input::placeholder {
 .helperText {
   color: var(--on-background700);
   font-size: var(--labelSmall);
-  padding: 0.3rem 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .errorLabel {
@@ -279,6 +279,17 @@ input::placeholder {
 
 .errorHelperText {
   color: var(--error);
+}
+
+.startIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: var(--on-background800);
+  font-size: var(--labelLarge);
+  line-height: var(--labelLarge_lineHeight);
 }
 
 .startIcon svg {
@@ -310,12 +321,60 @@ input::placeholder {
 .filled_startIcon {
   position: absolute;
   left: 10px;
-  top: 17px;
+  top: 18px;
 }
 
 .startIconLabel {
   padding-left: 1.5rem;
 }
+
+.endIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: var(--on-background800);
+  font-size: var(--labelLarge);
+  line-height: var(--labelLarge_lineHeight);
+}
+
+.endIcon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--on-background800);
+}
+
+.standard_inputEndPadding {
+  padding-right: 1.7rem;
+}
+.standard_endIcon {
+  position: absolute;
+  right: 0rem;
+  top: 17px;
+}
+
+.outlined_inputEndPadding {
+  padding-right: 2rem;
+}
+.outlined_endIcon {
+  position: absolute;
+  right: 8px;
+  top: 13px;
+}
+.filled_inputEndPadding {
+  padding-right: 2rem;
+}
+.filled_endIcon {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.endIconLabel {
+  padding-right: 1.5rem;
+}
+
 .primary {
   --main: var(--primary-container);
   --main200: var(--primary-container200);

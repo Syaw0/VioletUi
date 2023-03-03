@@ -153,5 +153,47 @@ export const textField7 = () => (
       helperText="enter Your name"
       startIcon={<FingerPrintIcon />}
     />
+    <TextField
+      variant="filled"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      startIcon={<p>$</p>}
+    />
+  </div>
+);
+
+export const textField8 = () => (
+  <div>
+    <TextField
+      variant="standard"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      endIcon={<FingerPrintIcon />}
+    />
+
+    <TextField
+      variant="outlined"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      endIcon={<FingerPrintIcon />}
+    />
+
+    <TextField
+      variant="filled"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      endIcon={<FingerPrintIcon />}
+    />
+    <TextField
+      variant="filled"
+      label="username"
+      defaultValue={"this is default value"}
+      helperText="enter Your name"
+      endIcon={<p>$</p>}
+    />
   </div>
 );

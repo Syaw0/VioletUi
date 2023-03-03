@@ -66,7 +66,7 @@ const TextField = ({
               : style[variant + "_label"]
           } ${style.label} ${error ? style.errorLabel : ""} ${
             startIcon != null && !isLabelInTheTop ? style.startIconLabel : ""
-          } `}
+          } ${endIcon != null && !isLabelInTheTop ? style.endIconLabel : ""} `}
         >
           {label}
         </label>
@@ -84,7 +84,9 @@ const TextField = ({
         ref={ref}
         className={`${style.input} ${style[variant]} ${className} ${
           error ? style[variant + "_error"] : ""
-        } ${startIcon != null ? style[variant + "_inputStartPadding"] : ""} `}
+        } ${startIcon != null ? style[variant + "_inputStartPadding"] : ""} ${
+          endIcon != null ? style[variant + "_inputEndPadding"] : ""
+        } `}
       />
       {helperText != null && (
         <span
@@ -98,6 +100,12 @@ const TextField = ({
       {startIcon != null && (
         <span className={`${style.startIcon} ${style[variant + "_startIcon"]}`}>
           {startIcon}
+        </span>
+      )}
+
+      {endIcon != null && (
+        <span className={`${style.endIcon} ${style[variant + "_endIcon"]}`}>
+          {endIcon}
         </span>
       )}
     </div>
