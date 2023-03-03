@@ -1,5 +1,12 @@
 import React, { useRef } from "react";
-import { keyframe, keyframe2, timing, timing2 } from "./animation";
+import {
+  keyframe,
+  keyframe2,
+  keyframe3,
+  timing,
+  timing2,
+  timing3,
+} from "./animation";
 import style from "./iconButton.module.css";
 
 export interface IconButtonProps
@@ -21,6 +28,12 @@ const IconButton = ({
   const mouseDownHandler = () => {
     const span = ref.current as HTMLSpanElement;
     span.animate(keyframe2, timing2);
+    const mouseupHandler = () => {
+      const span = ref.current as HTMLSpanElement;
+      span.animate(keyframe3, timing3);
+      document.removeEventListener("mouseup", mouseupHandler);
+    };
+    document.addEventListener("mouseup", mouseupHandler);
   };
 
   return (

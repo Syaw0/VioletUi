@@ -44,25 +44,25 @@
 .primary {
   --iconColor: var(--primary);
   --iconHoverColor: var(--primary-container200);
-  --iconClickColor: var(--primary-container900);
+  --iconClickColor: var(--primary-container500);
 }
 
 .secondary {
   --iconColor: var(--secondary);
   --iconHoverColor: var(--secondary-container200);
-  --iconClickColor: var(--secondary-container900);
+  --iconClickColor: var(--secondary-container500);
 }
 
 .tertiary {
   --iconColor: var(--tertiary);
   --iconHoverColor: var(--tertiary-container200);
-  --iconClickColor: var(--tertiary-container900);
+  --iconClickColor: var(--tertiary-container500);
 }
 
 .error {
   --iconColor: var(--error);
   --iconHoverColor: var(--error-container200);
-  --iconClickColor: var(--error-container900);
+  --iconClickColor: var(--error-container500);
 }
 
 .button svg {

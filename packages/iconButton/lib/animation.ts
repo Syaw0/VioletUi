@@ -20,4 +20,12 @@ const timing2: KeyframeAnimationOptions = {
   easing: "ease",
 };
 
-export { timing, keyframe, keyframe2, timing2 };
+const keyframe3: Keyframe[] = [{ opacity: "1" }, { opacity: "0" }];
+
+const timing3: KeyframeAnimationOptions = {
+  duration: 500,
+  fill: "both",
+  easing: "ease",
+};
+
+export { timing, keyframe, keyframe2, timing2, keyframe3, timing3 };
