@@ -6,6 +6,7 @@ interface TextFieldType extends React.ComponentPropsWithoutRef<"input"> {
   label?: string;
   color?: "primary" | "secondary" | "tertiary";
   helperText?: string;
+  error?: boolean;
 }
 
 const TextField = ({
@@ -14,6 +15,7 @@ const TextField = ({
   label,
   color = "primary",
   helperText,
+  error = false,
   ...props
 }: TextFieldType) => {
   const [isInputFocused, setIsInputFocused] = useState(false);
@@ -58,7 +60,7 @@ const TextField = ({
             isLabelInTheTop
               ? style[variant + "_label_top"]
               : style[variant + "_label"]
-          } ${style.label}  `}
+          } ${style.label} ${error ? style.errorLabel : ""}  `}
         >
           {label}
         </label>
@@ -74,10 +76,18 @@ const TextField = ({
           blurHandler();
         }}
         ref={ref}
-        className={`${style.input} ${style[variant]} ${className}`}
+        className={`${style.input} ${style[variant]} ${className} ${
+          error ? style[variant + "_error"] : ""
+        } `}
       />
       {helperText != null && (
-        <span className={style.helperText}>{helperText}</span>
+        <span
+          className={`${style.helperText} ${
+            error ? style.errorHelperText : ""
+          }`}
+        >
+          {helperText}
+        </span>
       )}
     </div>
   );

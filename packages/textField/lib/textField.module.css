@@ -90,6 +90,21 @@ input::placeholder {
   background-color: var(--main400);
 }
 
+.filled_error {
+  border-bottom: 3px solid var(--error);
+}
+
+.filled_error:disabled {
+  color: var(--error);
+}
+.filled_error:disabled:hover {
+  color: var(--error);
+}
+
+.filled_error:focus {
+  border-bottom: 4px solid var(--error);
+}
+
 .outlined {
   background-color: transparent;
   border: 1px solid var(--on-background200);
@@ -152,8 +167,28 @@ input::placeholder {
 .outlined_input {
   color: var(--on-background600);
 }
+
 /* .filled_input_focused {
 } */
+
+.outlined_error {
+  border: 1px solid var(--error);
+}
+
+.outlined_error:focus {
+  margin: -1px;
+  border: 2px solid var(--error);
+}
+
+.outlined_error:focus:hover {
+  margin: -1px;
+  border: 2px solid var(--error);
+}
+
+.outlined_error:hover {
+  margin: 0px;
+  border: 1px solid var(--error);
+}
 
 .standard_label {
   position: absolute;
@@ -215,10 +250,35 @@ input::placeholder {
   border-bottom: 3px solid var(--on-background200);
 }
 
+.standard_error {
+  border-bottom: 3px solid var(--error);
+}
+
+.standard_error:hover {
+  border-bottom: 3px solid var(--error);
+}
+
+.standard_error:focus {
+  margin-bottom: -1px;
+  border-bottom: 4px solid var(--error);
+}
+.standard_error:focus:hover {
+  margin-bottom: -1px;
+  border-bottom: 4px solid var(--error);
+}
+
 .helperText {
   color: var(--on-background700);
   font-size: var(--labelSmall);
   padding: 0.3rem 0.5rem;
+}
+
+.errorLabel {
+  color: var(--error);
+}
+
+.errorHelperText {
+  color: var(--error);
 }
 
 .primary {
