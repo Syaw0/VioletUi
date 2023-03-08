@@ -5,6 +5,7 @@ import "../../../t.css";
 export default { title: "Button" };
 
 export const primary = () => <Button color="primary">Hello Button</Button>;
+export const primary2 = () => <Button variant="elevated">Hello Button</Button>;
 export const secondary = () => <Button color="secondary">Hello Button</Button>;
 export const tertiary = () => <Button color="tertiary">Hello Button</Button>;
 export const error = () => <Button color="error">Hello Button</Button>;

@@ -2,7 +2,7 @@ import React from "react";
 import style from "./button.module.css";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  variant?: "contained" | "outlined" | "shadow";
+  variant?: "contained" | "outlined" | "shadow" | "elevated";
   color: "primary" | "secondary" | "tertiary" | "error";
   StartIcon?: (params: any) => JSX.Element;
   EndIcon?: (params: any) => JSX.Element;
@@ -35,6 +35,7 @@ const Button = ({
       {EndIcon != null && (
         <EndIcon className={style.rightIcon} height="20" width="20" />
       )}
+      <span className={style.surface}></span>
     </button>
   );
 };

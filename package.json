@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "lerna run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build --workspaces --if-present",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
