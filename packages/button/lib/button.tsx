@@ -16,26 +16,26 @@ const Button = ({
   onClick,
   StartIcon,
   EndIcon,
-  disabled = false,
   className = "",
   ...props
 }: ButtonProps) => {
   return (
     <button
-      disabled={disabled}
       id={id}
       onClick={onClick}
       className={`${style.button} ${style[color]} ${style[variant]} ${className} `}
       {...props}
     >
-      {StartIcon != null && (
+      <div className={style.container}></div>
+      <p className={style.label}>{children}</p>
+      {/* {StartIcon != null && (
         <StartIcon className={style.leftIcon} height="20" width="20" />
       )}
-      {children}
+      
       {EndIcon != null && (
         <EndIcon className={style.rightIcon} height="20" width="20" />
-      )}
-      <span className={style.surface}></span>
+      )} */}
+      <span className={style.stateLayer}></span>
     </button>
   );
 };
