@@ -50,6 +50,20 @@ export const primary2 = () => (
     <Button EndIcon={<CloseIcon />} variant="filledTonal" disabled>
       Hello Button
     </Button>
+    <br />
+    <Button variant="outlined">Hello Button</Button>
+    <br />
+    <Button StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button EndIcon={<CloseIcon />} variant="outlined" disabled>
+      Hello Button
+    </Button>
   </div>
 );
 export const secondary = () => <Button color="secondary">Hello Button</Button>;

@@ -2,6 +2,7 @@ import React from "react";
 import ElevatedButton from "./elevated";
 import FilledButton from "./filled";
 import FilledTonalButton from "./filledTonal";
+import OutlinedButton from "./outlined";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   variant?:
@@ -22,6 +23,7 @@ const Button = ({ variant = "contained", ...props }: ButtonProps) => {
       {variant == "elevated" && <ElevatedButton {...props} />}
       {variant == "filled" && <FilledButton {...props} />}
       {variant == "filledTonal" && <FilledTonalButton {...props} />}
+      {variant == "outlined" && <OutlinedButton {...props} />}
     </>
     // <button
     //   id={id}

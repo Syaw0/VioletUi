@@ -1,10 +1,12 @@
 .container {
   position: absolute;
-  width: 200%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--md-sys-color-outline);
 }
 
-.filledTonal {
+.outlined {
   height: 40px;
   padding: 0px 24px;
   border-radius: 20px;
@@ -26,8 +28,8 @@
 }
 .startIcon svg,
 .endIcon svg {
-  fill: var(--md-sys-color-on-secondary-container);
-  stroke: var(--md-sys-color-on-secondary-container);
+  fill: var(--md-sys-color-primary);
+  stroke: var(--md-sys-color-primary);
   height: 18px;
   width: 18px;
 }
@@ -42,6 +44,13 @@
   padding-left: 24px;
 }
 
+.withLeftIcon .container {
+  left: 0;
+}
+.withRightIcon .container {
+  left: 0;
+}
+
 .endIcon {
   padding-right: 16px;
   padding-left: 8px;
@@ -51,12 +60,12 @@
   padding-right: 8px;
 }
 
-.filledTonal .container {
-  background-color: var(--md-sys-color-secondary-container);
+.outlined .container {
+  background-color: transparent;
 }
 
-.filledTonal .label {
-  color: var(--md-sys-color-on-secondary-container);
+.outlined .label {
+  color: var(--md-sys-color-primary);
   position: relative;
   font-family: var(--md-sys-typescale-label-large-font-family-name);
   font-style: var(--md-sys-typescale-label-large-font-family-style);
@@ -66,20 +75,20 @@
   letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
 }
 
-.filledTonal:disabled {
+.outlined:disabled {
   box-shadow: none;
   cursor: default;
 }
 
-.filledTonal:disabled svg {
+.outlined:disabled svg {
   opacity: 36%;
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
 }
-.filledTonal:disabled .container {
+.outlined:disabled .container {
   opacity: 12%;
 }
-.filledTonal:disabled .label {
+.outlined:disabled .label {
   opacity: 36%;
   color: var(--md-sys-color-on-surface);
 }
