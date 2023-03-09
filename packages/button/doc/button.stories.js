@@ -155,9 +155,258 @@ export const primary3 = () => (
     <Button color="warning" EndIcon={<CloseIcon />} variant="elevated" disabled>
       Hello Button
     </Button>
+    <br />{" "}
+    <Button color="success" variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" StartIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" EndIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="elevated" disabled>
+      Hello Button
+    </Button>
     <br />
   </div>
 );
+
+export const primary4 = () => (
+  <div>
+    <Button color="primary" variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" EndIcon={<CloseIcon />} variant="filled" disabled>
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" EndIcon={<CloseIcon />} variant="filled" disabled>
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" EndIcon={<CloseIcon />} variant="filled" disabled>
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="error" variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="filled" disabled>
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="warning" variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="filled" disabled>
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="success" variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="filled" disabled>
+      Hello Button
+    </Button>
+    <br />
+  </div>
+);
+
+export const primary5 = () => (
+  <div>
+    <Button color="primary" variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" StartIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" EndIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="primary"
+      EndIcon={<CloseIcon />}
+      variant="filledTonal"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" variant="filledTonal">
+      Hello Button2
+    </Button>
+    <br />
+    <Button color="secondary" StartIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button2
+    </Button>
+    <br />
+    <Button color="secondary" EndIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button2
+    </Button>
+    <br />
+    <Button
+      color="secondary"
+      EndIcon={<CloseIcon />}
+      variant="filledTonal"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" StartIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" EndIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="tertiary"
+      EndIcon={<CloseIcon />}
+      variant="filledTonal"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="error" variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" StartIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="error"
+      EndIcon={<CloseIcon />}
+      variant="filledTonal"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="warning" variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" StartIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="warning"
+      EndIcon={<CloseIcon />}
+      variant="filledTonal"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="success" variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" StartIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" EndIcon={<CloseIcon />} variant="filledTonal">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="warning"
+      EndIcon={<CloseIcon />}
+      variant="filledTonal"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />
+  </div>
+);
+
 export const secondary = () => <Button color="secondary">Hello Button</Button>;
 export const tertiary = () => <Button color="tertiary">Hello Button</Button>;
 export const error = () => <Button color="error">Hello Button</Button>;

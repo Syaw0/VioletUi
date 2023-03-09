@@ -7,7 +7,7 @@ import TextButton from "./text/text";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   variant?: "outlined" | "elevated" | "filled" | "filledTonal" | "text";
-  color: "primary" | "secondary" | "tertiary" | "error" | "warning";
+  color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
 }

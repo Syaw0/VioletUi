@@ -4,7 +4,7 @@
   --success: rgba(202, 241, 225, 1);
   --onSuccess: rgba(14, 77, 9, 1);
   --onSuccess500: rgba(14, 77, 9, 0.5);
-  --warn: rgba(244, 157, 26, 1);
+  --warn: #f49d1a;
   --onWarn: rgba(244, 157, 26, 1);
   --onWarn500: rgba(77, 54, 9, 0.5);
 
@@ -561,6 +561,15 @@
   );
   --md-sys-color-surface-error-elevated-button: var(--md-ref-palette-error99);
 
-  --md-sys-color-surface-warning-elevated-button: hsl(49, 66%, 92%);
-  --md-sys-color-surface-on-warning-elevated-button: hsl(39, 91%, 39%);
+  --md-sys-color-surface-warning-elevated-button: #f8f3dd;
+  --md-sys-color-surface-on-warning-elevated-button: #be7f09;
+
+  --md-sys-color-surface-success-elevated-button: #c8f4df;
+  --md-sys-color-surface-on-success-elevated-button: #07532e;
+
+  --md-sys-color-success: #156c42;
+  --md-sys-color-on-success: #eafef4;
+
+  --md-sys-color-warning: #96761e;
+  --md-sys-color-on-warning: #f4e9db;
 }

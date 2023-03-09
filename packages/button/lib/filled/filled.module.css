@@ -5,11 +5,12 @@
 }
 
 .filled {
+  --containerColor: var(--md-sys-color-surface-primary-elevated-button);
+  --labelColor: var(--md-sys-color-primary);
   height: 40px;
   padding: 0px 24px;
   border-radius: 20px;
   background-color: transparent;
-  /* box-shadow: var(--shadow1dp); */
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -27,8 +28,8 @@
 }
 .startIcon svg,
 .endIcon svg {
-  fill: var(--md-sys-color-on-primary);
-  stroke: var(--md-sys-color-on-primary);
+  fill: var(--labelColor);
+  stroke: var(--labelColor);
   height: 18px;
   width: 18px;
 }
@@ -53,11 +54,11 @@
 }
 
 .filled .container {
-  background-color: var(--md-sys-color-primary);
+  background-color: var(--containerColor);
 }
 
 .filled .label {
-  color: var(--md-sys-color-on-primary);
+  color: var(--labelColor);
   position: relative;
   font-family: var(--md-sys-typescale-label-large-font-family-name);
   font-style: var(--md-sys-typescale-label-large-font-family-style);
@@ -89,5 +90,34 @@
   position: absolute;
   width: 0px;
   height: 0px;
-  background-color: var(--md-sys-color-on-primary);
+  background-color: var(--labelColor);
+}
+
+.primary {
+  --containerColor: var(--md-sys-color-primary);
+  --labelColor: var(--md-sys-color-on-primary);
+}
+.secondary {
+  --containerColor: var(--md-sys-color-secondary);
+  --labelColor: var(--md-sys-color-on-secondary);
+}
+
+.tertiary {
+  --containerColor: var(--md-sys-color-tertiary);
+  --labelColor: var(--md-sys-color-on-tertiary);
+}
+
+.error {
+  --containerColor: var(--md-sys-color-error);
+  --labelColor: var(--md-sys-color-on-error);
+}
+
+.warning {
+  --containerColor: var(--md-sys-color-warning);
+  --labelColor: var(--md-sys-color-on-warning);
+}
+
+.success {
+  --containerColor: var(--md-sys-color-success);
+  --labelColor: var(--md-sys-color-on-success);
 }

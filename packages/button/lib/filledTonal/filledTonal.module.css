@@ -5,6 +5,9 @@
 }
 
 .filledTonal {
+  --containerColor: var(--md-sys-color-secondary-container);
+  --labelColor: var(--md-sys-color-on-secondary-container);
+
   height: 40px;
   padding: 0px 24px;
   border-radius: 20px;
@@ -26,8 +29,8 @@
 }
 .startIcon svg,
 .endIcon svg {
-  fill: var(--md-sys-color-on-secondary-container);
-  stroke: var(--md-sys-color-on-secondary-container);
+  fill: var(--labelColor);
+  stroke: var(--labelColor);
   height: 18px;
   width: 18px;
 }
@@ -52,11 +55,11 @@
 }
 
 .filledTonal .container {
-  background-color: var(--md-sys-color-secondary-container);
+  background-color: var(--containerColor);
 }
 
 .filledTonal .label {
-  color: var(--md-sys-color-on-secondary-container);
+  color: var(--labelColor);
   position: relative;
   font-family: var(--md-sys-typescale-label-large-font-family-name);
   font-style: var(--md-sys-typescale-label-large-font-family-style);
@@ -88,5 +91,34 @@
   position: absolute;
   width: 0px;
   height: 0px;
-  background-color: var(--md-sys-color-primary);
+  background-color: var(--labelColor);
+}
+
+.primary {
+  --containerColor: var(--md-sys-color-secondary-container);
+  --labelColor: var(--md-sys-color-on-secondary-container);
+}
+.secondary {
+  --containerColor: var(--md-sys-color-tertiary-container);
+  --labelColor: var(--md-sys-color-on-tertiary-container);
+}
+
+.tertiary {
+  --containerColor: var(--md-sys-color-primary-container);
+  --labelColor: var(--md-sys-color-on-primary-container);
+}
+
+.error {
+  --containerColor: var(--md-sys-color-error);
+  --labelColor: var(--md-sys-color-on-error);
+}
+
+.warning {
+  --containerColor: var(--md-sys-color-warning);
+  --labelColor: var(--md-sys-color-on-warning);
+}
+
+.success {
+  --containerColor: var(--md-sys-color-success);
+  --labelColor: var(--md-sys-color-on-success);
 }

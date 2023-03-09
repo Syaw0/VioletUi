@@ -117,3 +117,8 @@
   --containerColor: var(--md-sys-color-surface-warning-elevated-button);
   --labelColor: var(--md-sys-color-surface-on-warning-elevated-button);
 }
+
+.success {
+  --containerColor: var(--md-sys-color-surface-success-elevated-button);
+  --labelColor: var(--md-sys-color-surface-on-success-elevated-button);
+}
