@@ -532,15 +532,35 @@
   --md-sys-color-scrim: var(--md-sys-color-scrim-light);
 }
 
-/* light */
-:root {
-  --md-sys-color-surface-elevated-button: var(
-    --md-ref-palette-neutral-variant99
-  );
-}
 /* dark */
 :root {
-  --md-ref-palette-neutral-elevated-button: var(
-    var(--md-ref-palette-neutral-variant10)
+  --md-sys-color-surface-primary-elevated-button: var(
+    --md-ref-palette-neutral-variant10
   );
+  --md-sys-color-surface-secondary-elevated-button: var(
+    --md-ref-palette-secondary10
+  );
+  --md-sys-color-surface-tertiary-elevated-button: var(
+    --md-ref-palette-tertiary10
+  );
+  --md-sys-color-surface-error-elevated-button: var(--md-ref-palette-error10);
+  --md-sys-color-surface-warning-elevated-button: hsl(55, 98%, 10%);
+  --md-sys-color-surface-on-warning-elevated-button: #e9d502;
+}
+
+/* light */
+:root {
+  --md-sys-color-surface-primary-elevated-button: var(
+    --md-ref-palette-neutral-variant99
+  );
+  --md-sys-color-surface-secondary-elevated-button: var(
+    --md-ref-palette-secondary99
+  );
+  --md-sys-color-surface-tertiary-elevated-button: var(
+    --md-ref-palette-tertiary99
+  );
+  --md-sys-color-surface-error-elevated-button: var(--md-ref-palette-error99);
+
+  --md-sys-color-surface-warning-elevated-button: hsl(49, 66%, 92%);
+  --md-sys-color-surface-on-warning-elevated-button: hsl(39, 91%, 39%);
 }

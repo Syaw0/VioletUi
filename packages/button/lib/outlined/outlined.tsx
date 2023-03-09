@@ -4,7 +4,7 @@ import style from "./outlined.module.css";
 
 export interface OutlinedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color: "primary" | "secondary" | "tertiary" | "error";
+  color: "primary" | "secondary" | "tertiary" | "error" | "warning";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
 }

@@ -80,6 +80,84 @@ export const primary2 = () => (
     </Button>
   </div>
 );
+export const primary3 = () => (
+  <div>
+    <Button color="secondary" variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" StartIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" EndIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="secondary"
+      EndIcon={<CloseIcon />}
+      variant="elevated"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" StartIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" EndIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="tertiary"
+      EndIcon={<CloseIcon />}
+      variant="elevated"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="error" variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" StartIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="elevated" disabled>
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="warning" variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" StartIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="elevated">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="elevated" disabled>
+      Hello Button
+    </Button>
+    <br />
+  </div>
+);
 export const secondary = () => <Button color="secondary">Hello Button</Button>;
 export const tertiary = () => <Button color="tertiary">Hello Button</Button>;
 export const error = () => <Button color="error">Hello Button</Button>;

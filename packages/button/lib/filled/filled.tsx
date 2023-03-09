@@ -4,7 +4,7 @@ import useElevatedEvents from "./hooks";
 
 export interface FilledButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color: "primary" | "secondary" | "tertiary" | "error";
+  color: "primary" | "secondary" | "tertiary" | "error" | "warning";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
 }

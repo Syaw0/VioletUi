@@ -5,6 +5,8 @@
 }
 
 .elevated {
+  --containerColor: var(--md-sys-color-surface-primary-elevated-button);
+  --labelColor: var(--md-sys-color-primary);
   height: 40px;
   padding: 0px 24px;
   border-radius: 20px;
@@ -27,8 +29,8 @@
 }
 .startIcon svg,
 .endIcon svg {
-  fill: var(--md-sys-color-primary);
-  stroke: var(--md-sys-color-primary);
+  fill: var(--labelColor);
+  stroke: var(--labelColor);
   height: 18px;
   width: 18px;
 }
@@ -53,11 +55,11 @@
 }
 
 .elevated .container {
-  background-color: var(--md-sys-color-surface-elevated-button);
+  background-color: var(--containerColor);
 }
 
 .elevated .label {
-  color: var(--md-sys-color-primary);
+  color: var(--labelColor);
   position: relative;
   font-family: var(--md-sys-typescale-label-large-font-family-name);
   font-style: var(--md-sys-typescale-label-large-font-family-style);
@@ -89,5 +91,29 @@
   position: absolute;
   width: 0px;
   height: 0px;
-  background-color: var(--md-sys-color-primary);
+  background-color: var(--labelColor);
+}
+
+.primary {
+  --containerColor: var(--md-sys-color-surface-primary-elevated-button);
+  --labelColor: var(--md-sys-color-primary);
+}
+.secondary {
+  --containerColor: var(--md-sys-color-surface-secondary-elevated-button);
+  --labelColor: var(--md-sys-color-secondary);
+}
+
+.tertiary {
+  --containerColor: var(--md-sys-color-surface-tertiary-elevated-button);
+  --labelColor: var(--md-sys-color-tertiary);
+}
+
+.error {
+  --containerColor: var(--md-sys-color-surface-error-elevated-button);
+  --labelColor: var(--md-sys-color-error);
+}
+
+.warning {
+  --containerColor: var(--md-sys-color-surface-warning-elevated-button);
+  --labelColor: var(--md-sys-color-surface-on-warning-elevated-button);
 }
