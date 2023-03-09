@@ -1,16 +1,20 @@
 import React from "react";
 import ElevatedButton from "./elevated";
+import FilledButton from "./filled";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  variant?: "contained" | "outlined" | "shadow" | "elevated";
+  variant?: "contained" | "outlined" | "shadow" | "elevated" | "filled";
   color: "primary" | "secondary" | "tertiary" | "error";
-  StartIcon?: (params: any) => JSX.Element;
-  EndIcon?: (params: any) => JSX.Element;
+  StartIcon?: React.ReactElement;
+  EndIcon?: React.ReactElement;
 }
 
 const Button = ({ variant = "contained", ...props }: ButtonProps) => {
   return (
-    <>{variant == "elevated" && <ElevatedButton {...props} />}</>
+    <>
+      {variant == "elevated" && <ElevatedButton {...props} />}
+      {variant == "filled" && <FilledButton {...props} />}
+    </>
     // <button
     //   id={id}
     //   onClick={onClick}

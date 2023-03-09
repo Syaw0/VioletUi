@@ -4,12 +4,12 @@
   height: 200%;
 }
 
-.elevated {
+.filled {
   height: 40px;
   padding: 0px 24px;
   border-radius: 20px;
   background-color: transparent;
-  box-shadow: var(--shadow1dp);
+  /* box-shadow: var(--shadow1dp); */
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -27,8 +27,8 @@
 }
 .startIcon svg,
 .endIcon svg {
-  fill: var(--md-sys-color-primary);
-  stroke: var(--md-sys-color-primary);
+  fill: var(--md-sys-color-on-primary);
+  stroke: var(--md-sys-color-on-primary);
   height: 18px;
   width: 18px;
 }
@@ -52,15 +52,15 @@
   padding-right: 8px;
 }
 
-.elevated:hover {
+.filled:hover {
   box-shadow: var(--shadow2dp);
 }
-.elevated .container {
-  background-color: var(--md-sys-color-surface-elevated-button);
+.filled .container {
+  background-color: var(--md-sys-color-primary);
 }
 
-.elevated .label {
-  color: var(--md-sys-color-primary);
+.filled .label {
+  color: var(--md-sys-color-on-primary);
   position: relative;
   font-family: var(--md-sys-typescale-label-large-font-family-name);
   font-style: var(--md-sys-typescale-label-large-font-family-style);
@@ -70,27 +70,27 @@
   letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
 }
 
-.elevated:disabled {
+.filled:disabled {
   box-shadow: none;
   cursor: default;
 }
-
-.elevated:disabled svg {
+.filled:disabled .container {
+  opacity: 12%;
+  background-color: var(--md-sys-color-on-surface);
+}
+.filled:disabled .label {
+  opacity: 36%;
+  color: var(--md-sys-color-on-surface);
+}
+.filled:disabled svg {
   opacity: 36%;
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
-}
-.elevated:disabled .container {
-  opacity: 12%;
-}
-.elevated:disabled .label {
-  opacity: 36%;
-  color: var(--md-sys-color-on-surface);
 }
 
 .stateLayer {
   position: absolute;
   width: 0px;
   height: 0px;
-  background-color: var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-on-primary);
 }

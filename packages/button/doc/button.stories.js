@@ -19,7 +19,21 @@ export const primary2 = () => (
       Hello Button
     </Button>
     <br />
-    <Button variant="elevated" disabled>
+    <Button EndIcon={<CloseIcon />} variant="elevated" disabled>
+      Hello Button
+    </Button>
+    <br />
+    <Button variant="filled">Hello Button</Button>
+    <br />
+    <Button StartIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button EndIcon={<CloseIcon />} variant="filled">
+      Hello Button
+    </Button>
+    <br />
+    <Button EndIcon={<CloseIcon />} variant="filled" disabled>
       Hello Button
     </Button>
   </div>
