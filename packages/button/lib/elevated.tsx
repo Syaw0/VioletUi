@@ -4,8 +4,8 @@ import style from "./elevated.module.css";
 export interface ElevatedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error";
-  StartIcon?: (params: any) => JSX.Element;
-  EndIcon?: (params: any) => JSX.Element;
+  StartIcon?: React.ReactElement;
+  EndIcon?: React.ReactElement;
 }
 
 const ElevatedButton = ({
@@ -48,6 +48,9 @@ const ElevatedButton = ({
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    if (props.disabled) {
+      return;
+    }
     setIsClicked(true);
     const span = pressStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
@@ -61,6 +64,9 @@ const ElevatedButton = ({
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleMouseUp = (e: React.MouseEvent) => {
+    if (props.disabled) {
+      return;
+    }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
     span.animate(keyframe2, timing2);
@@ -69,6 +75,9 @@ const ElevatedButton = ({
     setIsClicked(false);
   };
   const handleFocus = (e: any) => {
+    if (props.disabled) {
+      return;
+    }
     if (isClicked) {
       return;
     }
@@ -82,6 +91,9 @@ const ElevatedButton = ({
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleBlur = () => {
+    if (props.disabled) {
+      return;
+    }
     if (isClicked) {
       return;
     }
@@ -91,17 +103,23 @@ const ElevatedButton = ({
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleHover = (e: React.MouseEvent) => {
+    if (props.disabled) {
+      return;
+    }
     const span = hoverStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
     console.log(e.pageX, e.pageY, e.pageY - top, e.pageX - left);
-    span.style.width = "100%";
-    span.style.height = "100%";
+    span.style.width = "200%";
+    span.style.height = "200%";
     span.style.borderRadius = "0";
     span.animate(keyframe3, timing2);
     console.log("hover");
     btn.current.style.boxShadow = "var(--shadow2dp)";
   };
   const handleUnHover = (e: React.MouseEvent) => {
+    if (props.disabled) {
+      return;
+    }
     const span = hoverStateSpan.current as HTMLSpanElement;
     span.animate(keyframe4, timing3);
     console.log("no hover");
@@ -117,17 +135,17 @@ const ElevatedButton = ({
       onMouseOver={handleHover}
       onMouseLeave={handleUnHover}
       ref={btn}
-      className={`${style.elevated} ${style[color]}${className} `}
+      className={`${style.elevated} ${style[color]} ${
+        StartIcon != null ? style.withLeftIcon : ""
+      } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
     >
       <div className={style.container}></div>
-      <p className={style.label}>{children}</p>
-      {/* {StartIcon != null && (
-        <StartIcon className={style.leftIcon} height="20" width="20" />
+
+      {StartIcon != null && (
+        <span className={style.startIcon}>{StartIcon}</span>
       )}
-      
-      {EndIcon != null && (
-        <EndIcon className={style.rightIcon} height="20" width="20" />
-      )} */}
+      <p className={style.label}>{children}</p>
+      {EndIcon != null && <span className={style.endIcon}>{EndIcon}</span>}
       <span ref={hoverStateSpan} className={style.stateLayer}></span>
       <span ref={pressStateSpan} className={style.stateLayer}></span>
     </button>
