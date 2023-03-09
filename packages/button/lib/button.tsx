@@ -1,9 +1,9 @@
 import React from "react";
-import ElevatedButton from "./elevated";
-import FilledButton from "./filled";
-import FilledTonalButton from "./filledTonal";
-import OutlinedButton from "./outlined";
-import TextButton from "./text";
+import ElevatedButton from "./elevated/elevated";
+import FilledButton from "./filled/filled";
+import FilledTonalButton from "./filledTonal/filledTonal";
+import OutlinedButton from "./outlined/outlined";
+import TextButton from "./text/text";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   variant?: "outlined" | "elevated" | "filled" | "filledTonal" | "text";

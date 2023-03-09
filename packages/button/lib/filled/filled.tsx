@@ -1,30 +1,28 @@
 import React, { useRef, useState } from "react";
 import {
-  fadeHoverSpan,
   fadeHoverTiming,
   fadePressSpan,
   fadePressTiming,
-  growHoverSpan,
   growPressSpan,
   growPressTiming,
-} from "./animations";
-import style from "./elevated.module.css";
+} from "../animations";
+import style from "./filled.module.css";
 
-export interface ElevatedButtonProps
+export interface FilledButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
 }
 
-const ElevatedButton = ({
+const FilledButton = ({
   children,
   color = "primary",
   StartIcon,
   EndIcon,
   className = "",
   ...props
-}: ElevatedButtonProps) => {
+}: FilledButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
   const btn: any = useRef(null);
@@ -46,7 +44,7 @@ const ElevatedButton = ({
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
     span.animate(growPressSpan, growPressTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "none";
   };
   const handleMouseUp = () => {
     if (props.disabled) {
@@ -54,8 +52,8 @@ const ElevatedButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "var(--shadow2dp)";
+    span.animate(fadePressSpan, fadeHoverTiming);
+    btn.current.style.boxShadow = "var(--shadow1dp)";
     btn.current.blur();
     setIsClicked(false);
   };
@@ -72,7 +70,7 @@ const ElevatedButton = ({
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
     span.animate(growPressSpan, growPressTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "none";
   };
   const handleBlur = () => {
     if (props.disabled) {
@@ -84,33 +82,22 @@ const ElevatedButton = ({
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
     span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
   };
-  const handleHover = (e: React.MouseEvent) => {
+  const handleHover = () => {
     if (props.disabled) {
       return;
     }
     if (isClicked || isHover) {
       return;
     }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    const { top, left } = e.currentTarget.getBoundingClientRect();
-    console.log(e.pageX, e.pageY, e.pageY - top, e.pageX - left);
-    span.style.width = "200%";
-    span.style.height = "200%";
-    span.style.borderRadius = "0";
-    span.animate(growHoverSpan, growPressTiming);
-    btn.current.style.boxShadow = "var(--shadow2dp)";
+    btn.current.style.boxShadow = "var(--shadow1dp)";
     setIsHover(true);
   };
   const handleUnHover = () => {
     if (props.disabled) {
       return;
     }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.animate(fadeHoverSpan, fadeHoverTiming);
-    console.log("no hover");
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "none";
     setIsHover(false);
   };
 
@@ -134,7 +121,7 @@ const ElevatedButton = ({
         props.onBlur && props.onBlur(e);
       }}
       onMouseOver={(e) => {
-        handleHover(e);
+        handleHover();
         props.onMouseOver && props.onMouseOver(e);
       }}
       onMouseLeave={(e) => {
@@ -142,7 +129,7 @@ const ElevatedButton = ({
         props.onMouseLeave && props.onMouseLeave(e);
       }}
       ref={btn}
-      className={`${style.elevated} ${style[color]} ${
+      className={`${style.filled} ${style[color]} ${
         StartIcon != null ? style.withLeftIcon : ""
       } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
     >
@@ -159,4 +146,4 @@ const ElevatedButton = ({
   );
 };
 
-export default ElevatedButton;
+export default FilledButton;

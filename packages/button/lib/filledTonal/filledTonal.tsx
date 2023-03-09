@@ -8,35 +8,35 @@ import {
   growHoverTiming,
   growPressSpan,
   growPressTiming,
-} from "./animations";
-import style from "./text.module.css";
+} from "../animations";
+import style from "./filledTonal.module.css";
 
-export interface TextButtonProps
+export interface ElevatedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
 }
 
-const TextButton = ({
+const FilledButton = ({
   children,
   color = "primary",
   StartIcon,
   EndIcon,
   className = "",
   ...props
-}: TextButtonProps) => {
+}: ElevatedButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
   const btn: any = useRef(null);
-
-  const [isClicked, setIsClicked] = useState(false);
   const [isHover, setIsHover] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (props.disabled) {
       return;
     }
+    setIsClicked(true);
 
     const span = pressStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
@@ -47,8 +47,6 @@ const TextButton = ({
     span.style.height = "100%";
     span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
-    setIsClicked(true);
-    console.log("mouse down");
   };
   const handleMouseUp = () => {
     if (props.disabled) {
@@ -57,7 +55,7 @@ const TextButton = ({
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
     span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "none";
+    btn.current.style.boxShadow = "var(--shadow1dp)";
     btn.current.blur();
     setIsClicked(false);
   };
@@ -90,17 +88,16 @@ const TextButton = ({
     if (props.disabled) {
       return;
     }
-
     if (isClicked || isHover) {
       return;
     }
-    setIsHover(true);
     const span = hoverStateSpan.current as HTMLSpanElement;
     span.style.width = "200%";
     span.style.height = "200%";
     span.style.borderRadius = "0";
     span.animate(growHoverSpan, growHoverTiming);
-    btn.current.style.boxShadow = "none";
+    btn.current.style.boxShadow = "var(--shadow1dp)";
+    setIsHover(true);
   };
   const handleUnHover = () => {
     if (props.disabled) {
@@ -140,21 +137,21 @@ const TextButton = ({
         props.onMouseLeave && props.onMouseLeave(e);
       }}
       ref={btn}
-      className={`${style.text} ${style[color]} ${
+      className={`${style.filledTonal} ${style[color]} ${
         StartIcon != null ? style.withLeftIcon : ""
       } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
     >
+      <div className={style.container}></div>
+
       {StartIcon != null && (
         <span className={style.startIcon}>{StartIcon}</span>
       )}
       <p className={style.label}>{children}</p>
       {EndIcon != null && <span className={style.endIcon}>{EndIcon}</span>}
-      <div className={style.container}></div>
-
       <span ref={hoverStateSpan} className={style.stateLayer}></span>
       <span ref={pressStateSpan} className={style.stateLayer}></span>
     </button>
   );
 };
 
-export default TextButton;
+export default FilledButton;

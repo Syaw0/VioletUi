@@ -8,7 +8,7 @@ import {
   growHoverTiming,
   growPressSpan,
   growPressTiming,
-} from "./animations";
+} from "../animations";
 import style from "./outlined.module.css";
 
 export interface OutlinedButtonProps

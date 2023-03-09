@@ -1,40 +1,43 @@
 import React, { useRef, useState } from "react";
 import {
+  fadeHoverSpan,
   fadeHoverTiming,
   fadePressSpan,
   fadePressTiming,
+  growHoverSpan,
+  growHoverTiming,
   growPressSpan,
   growPressTiming,
-} from "./animations";
-import style from "./filled.module.css";
+} from "../animations";
+import style from "./text.module.css";
 
-export interface FilledButtonProps
+export interface TextButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
 }
 
-const FilledButton = ({
+const TextButton = ({
   children,
   color = "primary",
   StartIcon,
   EndIcon,
   className = "",
   ...props
-}: FilledButtonProps) => {
+}: TextButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
   const btn: any = useRef(null);
 
-  const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (props.disabled) {
       return;
     }
-    setIsClicked(true);
+
     const span = pressStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
     span.style.left = e.clientX - left + "px";
@@ -42,9 +45,10 @@ const FilledButton = ({
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.style.transition = "width 1s ,height 1s";
     span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
+    setIsClicked(true);
+    console.log("mouse down");
   };
   const handleMouseUp = () => {
     if (props.disabled) {
@@ -52,8 +56,8 @@ const FilledButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(fadePressSpan, fadeHoverTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    span.animate(fadePressSpan, fadePressTiming);
+    btn.current.style.boxShadow = "none";
     btn.current.blur();
     setIsClicked(false);
   };
@@ -68,7 +72,6 @@ const FilledButton = ({
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.style.transition = "width 1s ,height 1s";
     span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
   };
@@ -87,16 +90,24 @@ const FilledButton = ({
     if (props.disabled) {
       return;
     }
+
     if (isClicked || isHover) {
       return;
     }
-    btn.current.style.boxShadow = "var(--shadow1dp)";
     setIsHover(true);
+    const span = hoverStateSpan.current as HTMLSpanElement;
+    span.style.width = "200%";
+    span.style.height = "200%";
+    span.style.borderRadius = "0";
+    span.animate(growHoverSpan, growHoverTiming);
+    btn.current.style.boxShadow = "none";
   };
   const handleUnHover = () => {
     if (props.disabled) {
       return;
     }
+    const span = hoverStateSpan.current as HTMLSpanElement;
+    span.animate(fadeHoverSpan, fadeHoverTiming);
     btn.current.style.boxShadow = "none";
     setIsHover(false);
   };
@@ -129,21 +140,21 @@ const FilledButton = ({
         props.onMouseLeave && props.onMouseLeave(e);
       }}
       ref={btn}
-      className={`${style.filled} ${style[color]} ${
+      className={`${style.text} ${style[color]} ${
         StartIcon != null ? style.withLeftIcon : ""
       } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
     >
-      <div className={style.container}></div>
-
       {StartIcon != null && (
         <span className={style.startIcon}>{StartIcon}</span>
       )}
       <p className={style.label}>{children}</p>
       {EndIcon != null && <span className={style.endIcon}>{EndIcon}</span>}
+      <div className={style.container}></div>
+
       <span ref={hoverStateSpan} className={style.stateLayer}></span>
       <span ref={pressStateSpan} className={style.stateLayer}></span>
     </button>
   );
 };
 
-export default FilledButton;
+export default TextButton;
