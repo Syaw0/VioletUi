@@ -19,6 +19,7 @@ const OutlinedButton = ({
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
   const btn: any = useRef(null);
+  const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const keyframe = [
     { width: "0px", height: "0px", opacity: "12%" },
@@ -101,7 +102,7 @@ const OutlinedButton = ({
     if (props.disabled) {
       return;
     }
-    if (isClicked) {
+    if (isClicked || isHover) {
       return;
     }
     const span = hoverStateSpan.current as HTMLSpanElement;
@@ -110,6 +111,7 @@ const OutlinedButton = ({
     span.style.borderRadius = "0";
     span.animate(keyframe3, timing2);
     btn.current.style.boxShadow = "none";
+    setIsHover(true);
   };
   const handleUnHover = () => {
     if (props.disabled) {
@@ -118,6 +120,7 @@ const OutlinedButton = ({
     const span = hoverStateSpan.current as HTMLSpanElement;
     span.animate(keyframe4, timing3);
     btn.current.style.boxShadow = "none";
+    setIsHover(false);
   };
 
   return (

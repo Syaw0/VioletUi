@@ -63,6 +63,20 @@ export const primary2 = () => (
     <br />
     <Button EndIcon={<CloseIcon />} variant="outlined" disabled>
       Hello Button
+    </Button>{" "}
+    <br />
+    <Button variant="text">Hello Button</Button>
+    <br />
+    <Button StartIcon={<CloseIcon />} variant="text">
+      Hello Button
+    </Button>
+    <br />
+    <Button EndIcon={<CloseIcon />} variant="text">
+      Hello Button
+    </Button>
+    <br />
+    <Button EndIcon={<CloseIcon />} variant="text" disabled>
+      Hello Button
     </Button>
   </div>
 );

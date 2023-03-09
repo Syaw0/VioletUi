@@ -18,6 +18,7 @@ const FilledButton = ({
 }: FilledButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
+  const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const btn: any = useRef(null);
   const keyframe = [
@@ -95,11 +96,12 @@ const FilledButton = ({
     if (props.disabled) {
       return;
     }
-    if (isClicked) {
+    if (isClicked || isHover) {
       return;
     }
 
     btn.current.style.boxShadow = "var(--shadow1dp)";
+    setIsHover(true);
   };
   const handleUnHover = () => {
     if (props.disabled) {
@@ -107,6 +109,7 @@ const FilledButton = ({
     }
 
     btn.current.style.boxShadow = "none";
+    setIsHover(false);
   };
 
   return (
