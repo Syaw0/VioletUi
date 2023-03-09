@@ -1,4 +1,11 @@
 import React, { useRef, useState } from "react";
+import {
+  fadeHoverTiming,
+  fadePressSpan,
+  fadePressTiming,
+  growPressSpan,
+  growPressTiming,
+} from "./animations";
 import style from "./filled.module.css";
 
 export interface FilledButtonProps
@@ -18,25 +25,10 @@ const FilledButton = ({
 }: FilledButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
+  const btn: any = useRef(null);
+
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const btn: any = useRef(null);
-  const keyframe = [
-    { width: "0px", height: "0px", opacity: "12%" },
-    { transform: "scale(3)", opacity: "12%" },
-  ];
-  const keyframe2 = [{ opacity: "12%" }, { opacity: 0 }];
-  const timing: KeyframeAnimationOptions = {
-    duration: 900,
-    fill: "both",
-    easing: "ease",
-  };
-
-  const timing2: KeyframeAnimationOptions = {
-    duration: 800,
-    fill: "both",
-    easing: "ease",
-  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (props.disabled) {
@@ -51,7 +43,7 @@ const FilledButton = ({
     span.style.width = "100%";
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
-    span.animate(keyframe, timing);
+    span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
   };
   const handleMouseUp = () => {
@@ -60,7 +52,7 @@ const FilledButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(keyframe2, timing2);
+    span.animate(fadePressSpan, fadeHoverTiming);
     btn.current.style.boxShadow = "var(--shadow1dp)";
     btn.current.blur();
     setIsClicked(false);
@@ -77,7 +69,7 @@ const FilledButton = ({
     span.style.width = "100%";
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
-    span.animate(keyframe, timing);
+    span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
   };
   const handleBlur = () => {
@@ -89,8 +81,7 @@ const FilledButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(keyframe2, timing2);
-    // btn.current.style.boxShadow = "var(--shadow1dp)";
+    span.animate(fadePressSpan, fadePressTiming);
   };
   const handleHover = () => {
     if (props.disabled) {
@@ -99,7 +90,6 @@ const FilledButton = ({
     if (isClicked || isHover) {
       return;
     }
-
     btn.current.style.boxShadow = "var(--shadow1dp)";
     setIsHover(true);
   };
@@ -107,7 +97,6 @@ const FilledButton = ({
     if (props.disabled) {
       return;
     }
-
     btn.current.style.boxShadow = "none";
     setIsHover(false);
   };

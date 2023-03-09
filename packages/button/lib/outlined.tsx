@@ -1,4 +1,14 @@
 import React, { useRef, useState } from "react";
+import {
+  fadeHoverSpan,
+  fadeHoverTiming,
+  fadePressSpan,
+  fadePressTiming,
+  growHoverSpan,
+  growHoverTiming,
+  growPressSpan,
+  growPressTiming,
+} from "./animations";
 import style from "./outlined.module.css";
 
 export interface OutlinedButtonProps
@@ -19,32 +29,9 @@ const OutlinedButton = ({
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
   const btn: any = useRef(null);
+
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const keyframe = [
-    { width: "0px", height: "0px", opacity: "12%" },
-    { transform: "scale(3)", opacity: "12%" },
-  ];
-  const keyframe2 = [{ opacity: "12%" }, { opacity: 0 }];
-  const timing: KeyframeAnimationOptions = {
-    duration: 900,
-    fill: "both",
-    easing: "ease",
-  };
-  const keyframe3 = [{ opacity: "0" }, { opacity: "8%" }];
-
-  const keyframe4 = [{ opacity: "8%" }, { opacity: "0" }];
-  const timing3: KeyframeAnimationOptions = {
-    duration: 500,
-    fill: "both",
-    easing: "ease",
-  };
-
-  const timing2: KeyframeAnimationOptions = {
-    duration: 800,
-    fill: "both",
-    easing: "ease",
-  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (props.disabled) {
@@ -59,7 +46,7 @@ const OutlinedButton = ({
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.animate(keyframe, timing);
+    span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
   };
   const handleMouseUp = () => {
@@ -68,7 +55,7 @@ const OutlinedButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(keyframe2, timing2);
+    span.animate(fadePressSpan, fadePressTiming);
     btn.current.style.boxShadow = "none";
     btn.current.blur();
     setIsClicked(false);
@@ -84,7 +71,7 @@ const OutlinedButton = ({
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.animate(keyframe, timing);
+    span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "none";
   };
   const handleBlur = () => {
@@ -96,7 +83,7 @@ const OutlinedButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(keyframe2, timing2);
+    span.animate(fadePressSpan, fadePressTiming);
   };
   const handleHover = () => {
     if (props.disabled) {
@@ -109,7 +96,7 @@ const OutlinedButton = ({
     span.style.width = "200%";
     span.style.height = "200%";
     span.style.borderRadius = "0";
-    span.animate(keyframe3, timing2);
+    span.animate(growHoverSpan, growHoverTiming);
     btn.current.style.boxShadow = "none";
     setIsHover(true);
   };
@@ -118,7 +105,7 @@ const OutlinedButton = ({
       return;
     }
     const span = hoverStateSpan.current as HTMLSpanElement;
-    span.animate(keyframe4, timing3);
+    span.animate(fadeHoverSpan, fadeHoverTiming);
     btn.current.style.boxShadow = "none";
     setIsHover(false);
   };

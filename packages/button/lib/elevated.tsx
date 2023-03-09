@@ -1,4 +1,13 @@
 import React, { useRef, useState } from "react";
+import {
+  fadeHoverSpan,
+  fadeHoverTiming,
+  fadePressSpan,
+  fadePressTiming,
+  growHoverSpan,
+  growPressSpan,
+  growPressTiming,
+} from "./animations";
 import style from "./elevated.module.css";
 
 export interface ElevatedButtonProps
@@ -18,33 +27,10 @@ const ElevatedButton = ({
 }: ElevatedButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
+  const btn: any = useRef(null);
+
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const btn: any = useRef(null);
-  const keyframe = [
-    { width: "0px", height: "0px", opacity: "12%" },
-    { transform: "scale(3)", opacity: "12%" },
-  ];
-  const keyframe2 = [{ opacity: "12%" }, { opacity: 0 }];
-  const timing: KeyframeAnimationOptions = {
-    duration: 900,
-    fill: "both",
-    easing: "ease",
-  };
-  const keyframe3 = [{ opacity: "0" }, { opacity: "8%" }];
-
-  const keyframe4 = [{ opacity: "8%" }, { opacity: "0" }];
-  const timing3: KeyframeAnimationOptions = {
-    duration: 500,
-    fill: "both",
-    easing: "ease",
-  };
-
-  const timing2: KeyframeAnimationOptions = {
-    duration: 800,
-    fill: "both",
-    easing: "ease",
-  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (props.disabled) {
@@ -59,7 +45,7 @@ const ElevatedButton = ({
     span.style.width = "100%";
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
-    span.animate(keyframe, timing);
+    span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleMouseUp = () => {
@@ -68,7 +54,7 @@ const ElevatedButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(keyframe2, timing2);
+    span.animate(fadePressSpan, fadePressTiming);
     btn.current.style.boxShadow = "var(--shadow2dp)";
     btn.current.blur();
     setIsClicked(false);
@@ -85,7 +71,7 @@ const ElevatedButton = ({
     span.style.width = "100%";
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
-    span.animate(keyframe, timing);
+    span.animate(growPressSpan, growPressTiming);
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleBlur = () => {
@@ -97,7 +83,7 @@ const ElevatedButton = ({
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(keyframe2, timing2);
+    span.animate(fadePressSpan, fadePressTiming);
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleHover = (e: React.MouseEvent) => {
@@ -113,7 +99,7 @@ const ElevatedButton = ({
     span.style.width = "200%";
     span.style.height = "200%";
     span.style.borderRadius = "0";
-    span.animate(keyframe3, timing2);
+    span.animate(growHoverSpan, growPressTiming);
     btn.current.style.boxShadow = "var(--shadow2dp)";
     setIsHover(true);
   };
@@ -122,7 +108,7 @@ const ElevatedButton = ({
       return;
     }
     const span = hoverStateSpan.current as HTMLSpanElement;
-    span.animate(keyframe4, timing3);
+    span.animate(fadeHoverSpan, fadeHoverTiming);
     console.log("no hover");
     btn.current.style.boxShadow = "var(--shadow1dp)";
     setIsHover(false);
