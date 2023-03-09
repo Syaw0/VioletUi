@@ -1,9 +1,7 @@
 import {
-  fadeHoverSpan,
   fadeHoverTiming,
   fadePressSpan,
   fadePressTiming,
-  growHoverSpan,
   growPressSpan,
   growPressTiming,
 } from "../animations";
@@ -15,8 +13,7 @@ const useElevatedEvents = (
   pressStateSpan: any,
   btn: any,
   isHover: boolean,
-  setIsHover: (b: boolean) => void,
-  hoverStateSpan: any
+  setIsHover: (b: boolean) => void
 ) => {
   const handleMouseDown = (e: React.MouseEvent) => {
     if (isDisabled) {
@@ -30,18 +27,18 @@ const useElevatedEvents = (
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
+    span.style.transition = "width 1s ,height 1s";
     span.animate(growPressSpan, growPressTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "none";
   };
-
   const handleMouseUp = () => {
     if (isDisabled) {
       return;
     }
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
-    span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "var(--shadow2dp)";
+    span.animate(fadePressSpan, fadeHoverTiming);
+    btn.current.style.boxShadow = "var(--shadow1dp)";
     btn.current.blur();
     setIsClicked(false);
   };
@@ -58,7 +55,7 @@ const useElevatedEvents = (
     span.style.height = "100%";
     span.style.transition = "width 1s ,height 1s";
     span.animate(growPressSpan, growPressTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "none";
   };
   const handleBlur = () => {
     if (isDisabled) {
@@ -70,7 +67,6 @@ const useElevatedEvents = (
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
     span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleHover = () => {
     if (isDisabled) {
@@ -79,21 +75,14 @@ const useElevatedEvents = (
     if (isClicked || isHover) {
       return;
     }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.style.width = "200%";
-    span.style.height = "200%";
-    span.style.borderRadius = "0";
-    span.animate(growHoverSpan, growPressTiming);
-    btn.current.style.boxShadow = "var(--shadow2dp)";
+    btn.current.style.boxShadow = "var(--shadow1dp)";
     setIsHover(true);
   };
   const handleUnHover = () => {
     if (isDisabled) {
       return;
     }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.animate(fadeHoverSpan, fadeHoverTiming);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "none";
     setIsHover(false);
   };
   return {

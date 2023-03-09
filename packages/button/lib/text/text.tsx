@@ -1,14 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  fadeHoverSpan,
-  fadeHoverTiming,
-  fadePressSpan,
-  fadePressTiming,
-  growHoverSpan,
-  growHoverTiming,
-  growPressSpan,
-  growPressTiming,
-} from "../animations";
+import useElevatedEvents from "./hooks";
 import style from "./text.module.css";
 
 export interface TextButtonProps
@@ -24,6 +15,7 @@ const TextButton = ({
   StartIcon,
   EndIcon,
   className = "",
+  disabled = false,
   ...props
 }: TextButtonProps) => {
   const hoverStateSpan: any = useRef(null);
@@ -33,84 +25,23 @@ const TextButton = ({
   const [isClicked, setIsClicked] = useState(false);
   const [isHover, setIsHover] = useState(false);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (props.disabled) {
-      return;
-    }
-
-    const span = pressStateSpan.current as HTMLSpanElement;
-    const { top, left } = e.currentTarget.getBoundingClientRect();
-    span.style.left = e.clientX - left + "px";
-    span.style.top = e.clientY - top + "px";
-    span.style.borderRadius = "50%";
-    span.style.width = "100%";
-    span.style.height = "100%";
-    span.animate(growPressSpan, growPressTiming);
-    btn.current.style.boxShadow = "none";
-    setIsClicked(true);
-    console.log("mouse down");
-  };
-  const handleMouseUp = () => {
-    if (props.disabled) {
-      return;
-    }
-    const span = pressStateSpan.current as HTMLSpanElement;
-    span.style.borderRadius = "50%";
-    span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "none";
-    btn.current.blur();
-    setIsClicked(false);
-  };
-  const handleFocus = () => {
-    if (props.disabled) {
-      return;
-    }
-    if (isClicked) {
-      return;
-    }
-    const span = pressStateSpan.current as HTMLSpanElement;
-    span.style.borderRadius = "50%";
-    span.style.width = "100%";
-    span.style.height = "100%";
-    span.animate(growPressSpan, growPressTiming);
-    btn.current.style.boxShadow = "none";
-  };
-  const handleBlur = () => {
-    if (props.disabled) {
-      return;
-    }
-    if (isClicked) {
-      return;
-    }
-    const span = pressStateSpan.current as HTMLSpanElement;
-    span.style.borderRadius = "50%";
-    span.animate(fadePressSpan, fadePressTiming);
-  };
-  const handleHover = () => {
-    if (props.disabled) {
-      return;
-    }
-
-    if (isClicked || isHover) {
-      return;
-    }
-    setIsHover(true);
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.style.width = "200%";
-    span.style.height = "200%";
-    span.style.borderRadius = "0";
-    span.animate(growHoverSpan, growHoverTiming);
-    btn.current.style.boxShadow = "none";
-  };
-  const handleUnHover = () => {
-    if (props.disabled) {
-      return;
-    }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.animate(fadeHoverSpan, fadeHoverTiming);
-    btn.current.style.boxShadow = "none";
-    setIsHover(false);
-  };
+  const {
+    handleMouseDown,
+    handleMouseUp,
+    handleBlur,
+    handleFocus,
+    handleHover,
+    handleUnHover,
+  } = useElevatedEvents(
+    disabled,
+    setIsClicked,
+    isClicked,
+    pressStateSpan,
+    btn,
+    isHover,
+    setIsHover,
+    hoverStateSpan
+  );
 
   return (
     <button
@@ -143,6 +74,7 @@ const TextButton = ({
       className={`${style.text} ${style[color]} ${
         StartIcon != null ? style.withLeftIcon : ""
       } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
+      disabled={disabled}
     >
       {StartIcon != null && (
         <span className={style.startIcon}>{StartIcon}</span>

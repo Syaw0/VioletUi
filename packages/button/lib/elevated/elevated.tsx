@@ -62,7 +62,7 @@ const ElevatedButton = ({
         props.onBlur && props.onBlur(e);
       }}
       onMouseOver={(e) => {
-        handleHover(e);
+        handleHover();
         props.onMouseOver && props.onMouseOver(e);
       }}
       onMouseLeave={(e) => {
