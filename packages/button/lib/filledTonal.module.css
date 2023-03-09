@@ -4,12 +4,12 @@
   height: 200%;
 }
 
-.elevated {
+.filledTonal {
   height: 40px;
   padding: 0px 24px;
   border-radius: 20px;
   background-color: transparent;
-  box-shadow: var(--shadow1dp);
+  /* box-shadow: none; */
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -27,8 +27,8 @@
 }
 .startIcon svg,
 .endIcon svg {
-  fill: var(--md-sys-color-primary);
-  stroke: var(--md-sys-color-primary);
+  fill: var(--md-sys-color-on-secondary-container);
+  stroke: var(--md-sys-color-on-secondary-container);
   height: 18px;
   width: 18px;
 }
@@ -52,11 +52,11 @@
   padding-right: 8px;
 }
 
-.elevated .container {
-  background-color: var(--md-sys-color-surface-elevated-button);
+.filledTonal .container {
+  background-color: var(--md-sys-color-secondary-container);
 }
 
-.elevated .label {
+.filledTonal .label {
   color: var(--md-sys-color-primary);
   position: relative;
   font-family: var(--md-sys-typescale-label-large-font-family-name);
@@ -67,20 +67,20 @@
   letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
 }
 
-.elevated:disabled {
+.filledTonal:disabled {
   box-shadow: none;
   cursor: default;
 }
 
-.elevated:disabled svg {
+.filledTonal:disabled svg {
   opacity: 36%;
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
 }
-.elevated:disabled .container {
+.filledTonal:disabled .container {
   opacity: 12%;
 }
-.elevated:disabled .label {
+.filledTonal:disabled .label {
   opacity: 36%;
   color: var(--md-sys-color-on-surface);
 }

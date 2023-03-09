@@ -52,8 +52,8 @@ const ElevatedButton = ({
     setIsClicked(true);
     const span = pressStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
-    span.style.left = e.pageX - left + "px";
-    span.style.top = e.pageY - top + "px";
+    span.style.left = e.clientX - left + "px";
+    span.style.top = e.clientY - top + "px";
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
@@ -68,7 +68,7 @@ const ElevatedButton = ({
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
     span.animate(keyframe2, timing2);
-    btn.current.style.boxShadow = "var(--shadow1dp)";
+    btn.current.style.boxShadow = "var(--shadow2dp)";
     btn.current.blur();
     setIsClicked(false);
   };
@@ -103,6 +103,9 @@ const ElevatedButton = ({
     if (props.disabled) {
       return;
     }
+    if (isClicked) {
+      return;
+    }
     const span = hoverStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
     console.log(e.pageX, e.pageY, e.pageY - top, e.pageX - left);
@@ -110,7 +113,6 @@ const ElevatedButton = ({
     span.style.height = "200%";
     span.style.borderRadius = "0";
     span.animate(keyframe3, timing2);
-    console.log("hover");
     btn.current.style.boxShadow = "var(--shadow2dp)";
   };
   const handleUnHover = () => {

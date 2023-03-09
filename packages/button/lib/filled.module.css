@@ -52,9 +52,6 @@
   padding-right: 8px;
 }
 
-.filled:hover {
-  box-shadow: var(--shadow2dp);
-}
 .filled .container {
   background-color: var(--md-sys-color-primary);
 }

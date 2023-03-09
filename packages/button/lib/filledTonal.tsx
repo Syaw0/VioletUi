@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import style from "./filled.module.css";
+import style from "./filledTonal.module.css";
 
-export interface FilledButtonProps
+export interface ElevatedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error";
   StartIcon?: React.ReactElement;
@@ -15,11 +15,11 @@ const FilledButton = ({
   EndIcon,
   className = "",
   ...props
-}: FilledButtonProps) => {
+}: ElevatedButtonProps) => {
   const hoverStateSpan: any = useRef(null);
   const pressStateSpan: any = useRef(null);
-  const [isClicked, setIsClicked] = useState(false);
   const btn: any = useRef(null);
+  const [isClicked, setIsClicked] = useState(false);
   const keyframe = [
     { width: "0px", height: "0px", opacity: "12%" },
     { transform: "scale(3)", opacity: "12%" },
@@ -27,6 +27,14 @@ const FilledButton = ({
   const keyframe2 = [{ opacity: "12%" }, { opacity: 0 }];
   const timing: KeyframeAnimationOptions = {
     duration: 900,
+    fill: "both",
+    easing: "ease",
+  };
+  const keyframe3 = [{ opacity: "0" }, { opacity: "8%" }];
+
+  const keyframe4 = [{ opacity: "8%" }, { opacity: "0" }];
+  const timing3: KeyframeAnimationOptions = {
+    duration: 500,
     fill: "both",
     easing: "ease",
   };
@@ -42,6 +50,7 @@ const FilledButton = ({
       return;
     }
     setIsClicked(true);
+
     const span = pressStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
     span.style.left = e.clientX - left + "px";
@@ -49,7 +58,6 @@ const FilledButton = ({
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.style.transition = "width 1s ,height 1s";
     span.animate(keyframe, timing);
     btn.current.style.boxShadow = "none";
   };
@@ -75,7 +83,6 @@ const FilledButton = ({
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.style.transition = "width 1s ,height 1s";
     span.animate(keyframe, timing);
     btn.current.style.boxShadow = "none";
   };
@@ -89,7 +96,6 @@ const FilledButton = ({
     const span = pressStateSpan.current as HTMLSpanElement;
     span.style.borderRadius = "50%";
     span.animate(keyframe2, timing2);
-    // btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleHover = () => {
     if (props.disabled) {
@@ -98,14 +104,19 @@ const FilledButton = ({
     if (isClicked) {
       return;
     }
-
+    const span = hoverStateSpan.current as HTMLSpanElement;
+    span.style.width = "200%";
+    span.style.height = "200%";
+    span.style.borderRadius = "0";
+    span.animate(keyframe3, timing2);
     btn.current.style.boxShadow = "var(--shadow1dp)";
   };
   const handleUnHover = () => {
     if (props.disabled) {
       return;
     }
-
+    const span = hoverStateSpan.current as HTMLSpanElement;
+    span.animate(keyframe4, timing3);
     btn.current.style.boxShadow = "none";
   };
 
@@ -137,7 +148,7 @@ const FilledButton = ({
         props.onMouseLeave && props.onMouseLeave(e);
       }}
       ref={btn}
-      className={`${style.filled} ${style[color]} ${
+      className={`${style.filledTonal} ${style[color]} ${
         StartIcon != null ? style.withLeftIcon : ""
       } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
     >

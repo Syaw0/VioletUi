@@ -1,9 +1,16 @@
 import React from "react";
 import ElevatedButton from "./elevated";
 import FilledButton from "./filled";
+import FilledTonalButton from "./filledTonal";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  variant?: "contained" | "outlined" | "shadow" | "elevated" | "filled";
+  variant?:
+    | "contained"
+    | "outlined"
+    | "shadow"
+    | "elevated"
+    | "filled"
+    | "filledTonal";
   color: "primary" | "secondary" | "tertiary" | "error";
   StartIcon?: React.ReactElement;
   EndIcon?: React.ReactElement;
@@ -14,6 +21,7 @@ const Button = ({ variant = "contained", ...props }: ButtonProps) => {
     <>
       {variant == "elevated" && <ElevatedButton {...props} />}
       {variant == "filled" && <FilledButton {...props} />}
+      {variant == "filledTonal" && <FilledTonalButton {...props} />}
     </>
     // <button
     //   id={id}
