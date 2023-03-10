@@ -1,6 +1,16 @@
 import Button from "../lib/button";
 import React from "react";
 import CloseIcon from "./close";
+
+const colors = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "error",
+  "warning",
+  "success",
+];
+
 export default {
   title: "Button",
   component: Button,
@@ -34,14 +44,7 @@ export default {
         defaultValue: { summary: "primary" },
       },
       control: "select",
-      options: [
-        "primary",
-        "secondary",
-        "tertiary",
-        "error",
-        "warning",
-        "success",
-      ],
+      options: colors,
     },
 
     disabled: {
@@ -90,9 +93,48 @@ export default {
     },
   },
 };
-const Template = (args) => <Button {...args} />;
+const Template = (args) => {
+  const com = [];
+  colors.forEach((c) => {
+    com.push(
+      <div>
+        <Button {...args} color={c} />
+      </div>
+    );
+  });
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      {com}
+    </div>
+  );
+};
 
 export const Filled = Template.bind({});
 Filled.args = {
   children: "Button",
+  variant: "filled",
+};
+
+export const Elevated = Template.bind({});
+Elevated.args = {
+  children: "Button",
+  variant: "elevated",
+};
+
+export const FilledTonal = Template.bind({});
+FilledTonal.args = {
+  children: "Button",
+  variant: "filledTonal",
+};
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+  children: "Button",
+  variant: "outlined",
+};
+
+export const Text = Template.bind({});
+Text.args = {
+  children: "Button",
+  variant: "text",
 };
