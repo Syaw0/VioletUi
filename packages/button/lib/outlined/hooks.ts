@@ -20,31 +20,58 @@ const useElevatedEvents = (
   hoverStateSpan: any
 ) => {
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (isDisabled) {
-      return;
-    }
+    // if (isDisabled) {
+    //   return;
+    // }
     setIsClicked(true);
+    const span = document.createElement("span");
+    span.style.backgroundColor = "var(--labelColor)";
+    span.style.position = "absolute";
+    btn.current.appendChild(span);
 
-    const span = pressStateSpan.current as HTMLSpanElement;
+    // const span = pressStateSpan.current as HTMLSpanElement;
     const { top, left } = e.currentTarget.getBoundingClientRect();
     span.style.left = e.clientX - left + "px";
     span.style.top = e.clientY - top + "px";
     span.style.borderRadius = "50%";
     span.style.width = "100%";
     span.style.height = "100%";
-    span.animate(growPressSpan, growPressTiming);
+    const animation = new Animation(
+      new KeyframeEffect(span, growPressSpan, growPressTiming),
+      document.timeline
+    );
+    animation.play();
     btn.current.style.boxShadow = "none";
+    const s = () => {
+      if (isDisabled) {
+        return;
+      }
+      btn.current.removeEventListener("mouseup", s);
+      span.style.borderRadius = "50%";
+      const animation2 = new Animation(
+        new KeyframeEffect(span, fadePressSpan, fadePressTiming),
+        document.timeline
+      );
+
+      animation2.addEventListener("finish", (e) => {
+        btn.current.removeChild(span);
+        setIsClicked(false);
+        btn.current.blur();
+      });
+      animation2.play();
+      btn.current.style.boxShadow = "none";
+    };
+    btn.current.addEventListener("mouseup", s);
   };
   const handleMouseUp = () => {
-    if (isDisabled) {
-      return;
-    }
-    const span = pressStateSpan.current as HTMLSpanElement;
-    span.style.borderRadius = "50%";
-    span.animate(fadePressSpan, fadePressTiming);
-    btn.current.style.boxShadow = "none";
-    btn.current.blur();
-    setIsClicked(false);
+    // if (isDisabled) {
+    //   return;
+    // }
+    // const span = pressStateSpan.current as HTMLSpanElement;
+    // span.style.borderRadius = "50%";
+    // span.animate(fadePressSpan, fadePressTiming);
+    // btn.current.style.boxShadow = "none";
+    // btn.current.blur();
   };
   const handleFocus = () => {
     if (isDisabled) {

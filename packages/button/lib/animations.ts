@@ -1,13 +1,9 @@
 const growPressSpan: Keyframe[] = [
-  { width: "0px", height: "0px", opacity: "12%" },
+  { width: "0px", height: "0px", opacity: "0" },
   { transform: "scale(3)", opacity: "12%" },
 ];
 const fadePressSpan: Keyframe[] = [{ opacity: "12%" }, { opacity: 0 }];
-const timing: KeyframeAnimationOptions = {
-  duration: 900,
-  fill: "both",
-  easing: "ease",
-};
+
 const growHoverSpan: Keyframe[] = [{ opacity: "0" }, { opacity: "8%" }];
 
 const fadeHoverSpan: Keyframe[] = [{ opacity: "8%" }, { opacity: "0" }];
@@ -38,7 +34,6 @@ const fadePressTiming: KeyframeAnimationOptions = {
 export {
   fadeHoverSpan,
   fadePressSpan,
-  timing,
   growHoverSpan,
   growPressSpan,
   fadeHoverTiming,
