@@ -5,15 +5,15 @@ import style from "./outlined.module.css";
 export interface OutlinedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
-  StartIcon?: React.ReactElement;
-  EndIcon?: React.ReactElement;
+  startIcon?: React.ReactElement;
+  endIcon?: React.ReactElement;
 }
 
 const OutlinedButton = ({
   children,
   color = "primary",
-  StartIcon,
-  EndIcon,
+  startIcon,
+  endIcon,
   className = "",
   disabled = false,
   ...props
@@ -72,15 +72,15 @@ const OutlinedButton = ({
       }}
       ref={btn}
       className={`${style.outlined} ${style[color]} ${
-        StartIcon != null ? style.withLeftIcon : ""
-      } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
+        startIcon != null ? style.withLeftIcon : ""
+      } ${endIcon != null ? style.withRightIcon : ""} ${className} `}
       disabled={disabled}
     >
-      {StartIcon != null && (
-        <span className={style.startIcon}>{StartIcon}</span>
+      {startIcon != null && (
+        <span className={style.startIcon}>{startIcon}</span>
       )}
       <p className={style.label}>{children}</p>
-      {EndIcon != null && <span className={style.endIcon}>{EndIcon}</span>}
+      {endIcon != null && <span className={style.endIcon}>{endIcon}</span>}
       <div className={style.container}></div>
 
       <span ref={hoverStateSpan} className={style.stateLayer}></span>

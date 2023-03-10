@@ -5,16 +5,16 @@ import useElevatedEvents from "./hooks";
 export interface ElevatedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
-  StartIcon?: React.ReactElement;
-  EndIcon?: React.ReactElement;
+  startIcon?: React.ReactElement;
+  endIcon?: React.ReactElement;
 }
 
 const ElevatedButton = ({
   children,
   disabled = false,
   color = "primary",
-  StartIcon,
-  EndIcon,
+  startIcon,
+  endIcon,
   className = "",
   ...props
 }: ElevatedButtonProps) => {
@@ -71,17 +71,17 @@ const ElevatedButton = ({
       }}
       ref={btn}
       className={`${style.elevated} ${style[color]} ${
-        StartIcon != null ? style.withLeftIcon : ""
-      } ${EndIcon != null ? style.withRightIcon : ""} ${className} `}
+        startIcon != null ? style.withLeftIcon : ""
+      } ${endIcon != null ? style.withRightIcon : ""} ${className} `}
       disabled={disabled}
     >
       <div className={style.container}></div>
 
-      {StartIcon != null && (
-        <span className={style.startIcon}>{StartIcon}</span>
+      {startIcon != null && (
+        <span className={style.startIcon}>{startIcon}</span>
       )}
       <p className={style.label}>{children}</p>
-      {EndIcon != null && <span className={style.endIcon}>{EndIcon}</span>}
+      {endIcon != null && <span className={style.endIcon}>{endIcon}</span>}
       <span ref={hoverStateSpan} className={style.stateLayer}></span>
       <span ref={pressStateSpan} className={style.stateLayer}></span>
     </button>

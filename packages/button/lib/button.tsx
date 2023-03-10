@@ -7,19 +7,31 @@ import TextButton from "./text/text";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   variant?: "outlined" | "elevated" | "filled" | "filledTonal" | "text";
-  color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
-  StartIcon?: React.ReactElement;
-  EndIcon?: React.ReactElement;
+  color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "error"
+    | "warning"
+    | "success";
+  startIcon?: React.ReactElement;
+  endIcon?: React.ReactElement;
 }
 
-const Button = ({ variant = "filled", ...props }: ButtonProps) => {
+const Button = ({
+  variant = "filled",
+  color = "primary",
+  ...props
+}: ButtonProps) => {
   return (
     <>
-      {variant == "elevated" && <ElevatedButton {...props} />}
-      {variant == "filled" && <FilledButton {...props} />}
-      {variant == "filledTonal" && <FilledTonalButton {...props} />}
-      {variant == "outlined" && <OutlinedButton {...props} />}
-      {variant == "text" && <TextButton {...props} />}
+      {variant == "elevated" && <ElevatedButton {...props} color={color} />}
+      {variant == "filled" && <FilledButton {...props} color={color} />}
+      {variant == "filledTonal" && (
+        <FilledTonalButton {...props} color={color} />
+      )}
+      {variant == "outlined" && <OutlinedButton {...props} color={color} />}
+      {variant == "text" && <TextButton {...props} color={color} />}
     </>
   );
 };
