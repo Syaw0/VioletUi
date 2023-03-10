@@ -95,30 +95,30 @@
 }
 
 .primary {
+  --containerColor: var(--md-sys-color-primary-container);
+  --labelColor: var(--md-sys-color-on-primary-container);
+}
+.secondary {
   --containerColor: var(--md-sys-color-secondary-container);
   --labelColor: var(--md-sys-color-on-secondary-container);
 }
-.secondary {
+
+.tertiary {
   --containerColor: var(--md-sys-color-tertiary-container);
   --labelColor: var(--md-sys-color-on-tertiary-container);
 }
 
-.tertiary {
-  --containerColor: var(--md-sys-color-primary-container);
-  --labelColor: var(--md-sys-color-on-primary-container);
-}
-
 .error {
-  --containerColor: var(--md-sys-color-error);
-  --labelColor: var(--md-sys-color-on-error);
+  --containerColor: var(--md-sys-color-filledTonal-error);
+  --labelColor: var(--md-sys-color-on-filledTonal-error);
 }
 
 .warning {
-  --containerColor: var(--md-sys-color-warning);
-  --labelColor: var(--md-sys-color-on-warning);
+  --containerColor: var(--md-sys-color-filledTonal-warning);
+  --labelColor: var(--md-sys-color-on-filledTonal-warning);
 }
 
 .success {
-  --containerColor: var(--md-sys-color-success);
-  --labelColor: var(--md-sys-color-on-success);
+  --containerColor: var(--md-sys-color-filledTonal-success);
+  --labelColor: var(--md-sys-color-on-filledTonal-success);
 }

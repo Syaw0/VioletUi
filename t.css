@@ -561,15 +561,26 @@
   );
   --md-sys-color-surface-error-elevated-button: var(--md-ref-palette-error99);
 
-  --md-sys-color-surface-warning-elevated-button: #f8f3dd;
+  --md-sys-color-surface-warning-elevated-button: #fffcf1;
   --md-sys-color-surface-on-warning-elevated-button: #be7f09;
 
-  --md-sys-color-surface-success-elevated-button: #c8f4df;
+  --md-sys-color-surface-success-elevated-button: #f2fff9;
   --md-sys-color-surface-on-success-elevated-button: #07532e;
 
-  --md-sys-color-success: #156c42;
-  --md-sys-color-on-success: #eafef4;
+  --md-sys-color-success: #057840;
+  --md-sys-color-on-success: #ffffff;
 
-  --md-sys-color-warning: #96761e;
-  --md-sys-color-on-warning: #f4e9db;
+  --md-sys-color-warning: #e19a00;
+  --md-sys-color-on-warning: #ffffff;
+
+  --md-sys-color-filledTonal-warning: #fae0a8;
+  --md-sys-color-on-filledTonal-warning: #4d3400;
+
+  --md-sys-color-filledTonal-success: #baf0d6;
+  --md-sys-color-on-filledTonal-success: #004523;
+
+  --md-sys-color-filledTonal-error: var(--md-sys-color-error-container-light);
+  --md-sys-color-on-filledTonal-error: var(
+    --md-sys-color-on-error-container-light
+  );
 }
