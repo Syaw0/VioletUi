@@ -407,6 +407,117 @@ export const primary5 = () => (
   </div>
 );
 
+export const primary6 = () => (
+  <div>
+    <Button color="primary" variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="primary" EndIcon={<CloseIcon />} variant="outlined" disabled>
+      Hello Button
+    </Button>
+    <br />
+    <Button color="secondary" variant="outlined">
+      Hello Button2
+    </Button>
+    <br />
+    <Button color="secondary" StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button2
+    </Button>
+    <br />
+    <Button color="secondary" EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button2
+    </Button>
+    <br />
+    <Button
+      color="secondary"
+      EndIcon={<CloseIcon />}
+      variant="outlined"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="tertiary" EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button
+      color="tertiary"
+      EndIcon={<CloseIcon />}
+      variant="outlined"
+      disabled
+    >
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="error" variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="error" EndIcon={<CloseIcon />} variant="outlined" disabled>
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="warning" variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="outlined" disabled>
+      Hello Button
+    </Button>
+    <br />{" "}
+    <Button color="success" variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" StartIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="success" EndIcon={<CloseIcon />} variant="outlined">
+      Hello Button
+    </Button>
+    <br />
+    <Button color="warning" EndIcon={<CloseIcon />} variant="outlined" disabled>
+      Hello Button
+    </Button>
+    <br />
+  </div>
+);
+
 export const secondary = () => <Button color="secondary">Hello Button</Button>;
 export const tertiary = () => <Button color="tertiary">Hello Button</Button>;
 export const error = () => <Button color="error">Hello Button</Button>;
