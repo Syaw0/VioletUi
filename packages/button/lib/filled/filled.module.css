@@ -86,13 +86,6 @@
   stroke: var(--md-sys-color-on-surface);
 }
 
-.stateLayer {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  background-color: var(--labelColor);
-}
-
 .primary {
   --containerColor: var(--md-sys-color-primary);
   --labelColor: var(--md-sys-color-on-primary);

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import useElevatedEvents from "./hooks";
+import useOutlinedEvents from "./useOutlinedEvents";
 import style from "./outlined.module.css";
 
 export interface OutlinedButtonProps
@@ -23,12 +23,7 @@ const OutlinedButton = ({
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
-  const {
-    handleMouseDown,
-
-    handleFocus,
-    handleHover,
-  } = useElevatedEvents(
+  const { handleMouseDown, handleFocus, handleHover } = useOutlinedEvents(
     disabled,
     setIsClicked,
     isClicked,

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import style from "./filledTonal.module.css";
-import useElevatedEvents from "./hooks";
+import useFilledTonalEvents from "./useFilledTonalEvents";
 
 export interface ElevatedButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -22,7 +22,7 @@ const FilledButton = ({
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
-  const { handleMouseDown, handleFocus, handleHover } = useElevatedEvents(
+  const { handleMouseDown, handleFocus, handleHover } = useFilledTonalEvents(
     disabled,
     setIsClicked,
     isClicked,
