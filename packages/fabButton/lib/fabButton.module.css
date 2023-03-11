@@ -3,10 +3,7 @@
   --labelColor: #111111;
   background-color: transparent;
   position: relative;
-  height: 40px;
-  width: 40px;
-  padding: 0px 12px;
-  border-radius: 12px;
+
   background-color: transparent;
   cursor: pointer;
   display: flex;
@@ -27,23 +24,63 @@
 }
 
 .content {
-  color: var(--labelColor);
   position: relative;
 }
 
 .content svg {
-  width: 24px;
-  height: 24px;
   fill: var(--labelColor);
   stroke: var(--labelColor);
 }
 .small {
+  height: 40px;
+  width: 40px;
+  /* padding: 16px; */
+  border-radius: 12px;
+}
+
+.small svg {
+  width: 24px;
+  height: 24px;
 }
 
 .large {
+  height: 96px;
+  width: 96px;
+  /* padding: 16px; */
+  border-radius: 28px;
+}
+
+.large svg {
+  width: 36px;
+  height: 36px;
 }
 
 .primary {
   --containerColor: var(--md-sys-color-primary-container);
   --labelColor: var(--md-sys-color-on-primary-container);
+}
+
+.secondary {
+  --containerColor: var(--md-sys-color-secondary-container);
+  --labelColor: var(--md-sys-color-on-secondary-container);
+}
+
+.tertiary {
+  --containerColor: var(--md-sys-color-tertiary-container);
+  --labelColor: var(--md-sys-color-on-tertiary-container);
+}
+
+.error {
+  --containerColor: var(--md-sys-color-error-container);
+  --labelColor: var(--md-sys-color-on-error-container);
+}
+
+.warning {
+  --containerColor: var(--md-sys-color-filledTonal-warning);
+  --labelColor: var(--md-sys-color-on-filledTonal-warning);
+}
+
+.success {
+  --containerColor: var(--md-sys-color-filledTonal-success);
+  --labelColor: var(--md-sys-color-on-filledTonal-success);
 }
