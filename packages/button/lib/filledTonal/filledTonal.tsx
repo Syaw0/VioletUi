@@ -18,28 +18,17 @@ const FilledButton = ({
   disabled = false,
   ...props
 }: ElevatedButtonProps) => {
-  const hoverStateSpan: any = useRef(null);
-  const pressStateSpan: any = useRef(null);
   const btn: any = useRef(null);
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
-  const {
-    handleMouseDown,
-    handleMouseUp,
-    handleBlur,
-    handleFocus,
-    handleHover,
-    handleUnHover,
-  } = useElevatedEvents(
+  const { handleMouseDown, handleFocus, handleHover } = useElevatedEvents(
     disabled,
     setIsClicked,
     isClicked,
-    pressStateSpan,
     btn,
     isHover,
-    setIsHover,
-    hoverStateSpan
+    setIsHover
   );
 
   return (
@@ -49,25 +38,13 @@ const FilledButton = ({
         handleMouseDown(e);
         props.onMouseDown && props.onMouseDown(e);
       }}
-      onMouseUp={(e) => {
-        handleMouseUp();
-        props.onMouseUp && props.onMouseUp(e);
-      }}
       onFocus={(e) => {
         handleFocus();
         props.onFocus && props.onFocus(e);
       }}
-      onBlur={(e) => {
-        handleBlur();
-        props.onBlur && props.onBlur(e);
-      }}
       onMouseOver={(e) => {
         handleHover();
         props.onMouseOver && props.onMouseOver(e);
-      }}
-      onMouseLeave={(e) => {
-        handleUnHover();
-        props.onMouseLeave && props.onMouseLeave(e);
       }}
       ref={btn}
       className={`${style.filledTonal} ${style[color]} ${
@@ -82,8 +59,6 @@ const FilledButton = ({
       )}
       <p className={style.label}>{children}</p>
       {endIcon != null && <span className={style.endIcon}>{endIcon}</span>}
-      <span ref={hoverStateSpan} className={style.stateLayer}></span>
-      <span ref={pressStateSpan} className={style.stateLayer}></span>
     </button>
   );
 };

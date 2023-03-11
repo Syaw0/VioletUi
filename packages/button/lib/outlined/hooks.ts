@@ -11,6 +11,7 @@ import {
   growPressSpan,
   growPressTiming,
 } from "../animations";
+import onmousedown from "../shared/onmousedown";
 
 const useElevatedEvents = (
   isDisabled: boolean,
@@ -21,35 +22,7 @@ const useElevatedEvents = (
   setIsHover: (b: boolean) => void
 ) => {
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (isDisabled) {
-      return;
-    }
-    setIsClicked(true);
-    const button = btn.current as HTMLButtonElement;
-    const { top, left } = e.currentTarget.getBoundingClientRect();
-    const span = makeBubbleSpan(e.clientX, e.clientY, left, top);
-    button.appendChild(span);
-    span.animate(growPressSpan, growPressTiming);
-    button.style.boxShadow = "none";
-    const mouseup = () => {
-      if (isDisabled) {
-        return;
-      }
-      button.removeEventListener("mouseup", mouseup);
-      const fadeBubbleAnimation = new Animation(
-        new KeyframeEffect(span, fadePressSpan, fadePressTiming),
-        document.timeline
-      );
-
-      fadeBubbleAnimation.addEventListener("finish", () => {
-        button.removeChild(span);
-        setIsClicked(false);
-        button.blur();
-      });
-      fadeBubbleAnimation.play();
-      button.style.boxShadow = "none";
-    };
-    button.addEventListener("mouseup", mouseup);
+    onmousedown(e, isDisabled, btn, setIsClicked, 0, 0);
   };
 
   const handleFocus = () => {
