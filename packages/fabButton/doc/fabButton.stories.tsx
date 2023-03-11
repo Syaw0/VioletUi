@@ -105,6 +105,11 @@ const Template = (args) => {
         <FabButton size="large" {...args} color={c}>
           <WriteIcon />
         </FabButton>
+
+        <br />
+        <FabButton size="medium" elevationLevel="small" {...args} color={c}>
+          <WriteIcon />
+        </FabButton>
       </div>
     );
   });

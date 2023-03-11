@@ -21,7 +21,7 @@ const onfocus = (
   const button = btn.current as HTMLButtonElement;
   button.style.boxShadow =
     preElevation == 0 ? "none" : `var(--shadow${preElevation}dp`;
-  const span = makeBubbleSpan(0, 0, "50%", -20);
+  const span = makeBubbleSpan(0, 0, "50%", "50%");
   button.appendChild(span);
   span.style.borderRadius = "30px";
   span.style.width = "37%";

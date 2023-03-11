@@ -3,7 +3,8 @@ import style from "./fabButton.module.css";
 import useFabButtonEvents from "./useFabButtonEvents";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  size?: "small" | "large";
+  size?: "small" | "large" | "medium";
+  elevationLevel?: "default" | "small";
   color?:
     | "primary"
     | "secondary"
@@ -19,6 +20,7 @@ const Button = ({
   children,
   disabled = false,
   className,
+  elevationLevel = "default",
   size = "small",
   ...props
 }: ButtonProps) => {
@@ -31,7 +33,8 @@ const Button = ({
     isClick,
     btn,
     isHover,
-    setIsHover
+    setIsHover,
+    elevationLevel
   );
   return (
     <>
@@ -53,7 +56,9 @@ const Button = ({
         disabled={disabled}
         className={`${style.fab} ${className != null ? className : ""} ${
           style[size]
-        } ${style[color]}`}
+        } ${style[color]} ${
+          elevationLevel == "default" ? style.defaultShadow : style.smallShadow
+        }`}
       >
         <div className={style.container}></div>
         <span className={style.content}>{children}</span>

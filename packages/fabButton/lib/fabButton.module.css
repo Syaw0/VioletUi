@@ -13,7 +13,6 @@
   overflow: hidden;
   border: none;
   transition: box-shadow ease 0.1s;
-  box-shadow: var(--shadow3dp);
 }
 .container {
   position: absolute;
@@ -34,7 +33,6 @@
 .small {
   height: 40px;
   width: 40px;
-  /* padding: 16px; */
   border-radius: 12px;
 }
 
@@ -43,16 +41,33 @@
   height: 24px;
 }
 
+.medium {
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
+}
+
+.medium svg {
+  width: 30px;
+  height: 30px;
+}
+
 .large {
   height: 96px;
   width: 96px;
-  /* padding: 16px; */
   border-radius: 28px;
 }
 
 .large svg {
   width: 36px;
   height: 36px;
+}
+
+.defaultShadow {
+  box-shadow: var(--shadow3dp);
+}
+.smallShadow {
+  box-shadow: var(--shadow1dp);
 }
 
 .primary {
