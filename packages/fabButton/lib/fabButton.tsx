@@ -21,7 +21,7 @@ const Button = ({
   disabled = false,
   className,
   elevationLevel = "default",
-  size = "small",
+  size = "medium",
   ...props
 }: ButtonProps) => {
   const [isHover, setIsHover] = useState(false);

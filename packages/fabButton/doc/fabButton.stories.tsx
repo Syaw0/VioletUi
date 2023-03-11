@@ -22,23 +22,35 @@ export default {
   //   },
   // },
   argTypes: {
-    variant: {
-      name: "variant",
+    size: {
+      name: "size",
       type: { name: "string", required: false },
-      defaultValue: "filled",
-      description: "specific the variant of button",
+      defaultValue: "medium",
+      description: "specific the size of fab button",
       table: {
         type: { summary: "string", detail: "" },
-        defaultValue: { summary: "filled" },
+        defaultValue: { summary: "medium" },
       },
       control: "select",
-      options: ["elevated", "filled", "filledTonal", "outlined", "text"],
+      options: ["small", "medium", "large"],
+    },
+    elevationLevel: {
+      name: "elevationLevel",
+      type: { name: "string", required: false },
+      defaultValue: "default",
+      description: "specific the elevation of fab button",
+      table: {
+        type: { summary: "string", detail: "" },
+        defaultValue: { summary: "default" },
+      },
+      control: "select",
+      options: ["default", "small"],
     },
     color: {
       name: "color",
       type: { name: "string", required: false },
       defaultValue: "primary",
-      description: "specific the color of button",
+      description: "specific the color of fab button",
       table: {
         type: { summary: "string", detail: "" },
         defaultValue: { summary: "primary" },
@@ -51,7 +63,7 @@ export default {
       name: "disabled",
       type: { name: "boolean", required: false },
       defaultValue: false,
-      description: "specific the disability of button",
+      description: "specific the disability of fab button",
       table: {
         type: { summary: "string", detail: "" },
         defaultValue: { summary: false },
@@ -59,37 +71,16 @@ export default {
       control: "radio",
       options: [true, false],
     },
-    startIcon: {
-      name: "startIcon",
+    children: {
+      name: "children",
       type: { name: "ReactElement", required: false },
       defaultValue: null,
-      description: "specific the startIcon of button",
+      description: "specific the icon of fab button",
       table: {
         type: { summary: "ReactElement", detail: "" },
         defaultValue: { summary: "null" },
       },
       control: "radio",
-      options: [true, false],
-      mapping: {
-        true: <WriteIcon />,
-        false: null,
-      },
-    },
-    endIcon: {
-      name: "endIcon",
-      type: { name: "ReactElement", required: false },
-      defaultValue: null,
-      description: "specific the endIcon of button",
-      table: {
-        type: { summary: "ReactElement", detail: "" },
-        defaultValue: { summary: "null" },
-      },
-      control: "radio",
-      options: [true, false],
-      mapping: {
-        true: <WriteIcon />,
-        false: null,
-      },
     },
   },
 };
@@ -99,15 +90,6 @@ const Template = (args) => {
     com.push(
       <div>
         <FabButton {...args} color={c}>
-          <WriteIcon />
-        </FabButton>
-        <br />
-        <FabButton size="large" {...args} color={c}>
-          <WriteIcon />
-        </FabButton>
-
-        <br />
-        <FabButton size="medium" elevationLevel="small" {...args} color={c}>
           <WriteIcon />
         </FabButton>
       </div>
@@ -120,7 +102,5 @@ const Template = (args) => {
   );
 };
 
-export const Filled = Template.bind({});
-Filled.args = {
-  children: "Button",
-};
+export const Fab = Template.bind({});
+Fab.args = {};
