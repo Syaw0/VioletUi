@@ -94,13 +94,6 @@
   color: var(--md-sys-color-on-surface);
 }
 
-.stateLayer {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  background-color: var(--labelColor);
-}
-
 .primary {
   --labelColor: var(--md-sys-color-primary);
 }

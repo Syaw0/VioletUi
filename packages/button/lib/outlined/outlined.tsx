@@ -18,7 +18,6 @@ const OutlinedButton = ({
   disabled = false,
   ...props
 }: OutlinedButtonProps) => {
-  const hoverStateSpan: any = useRef(null);
   const btn: any = useRef(null);
 
   const [isHover, setIsHover] = useState(false);
@@ -29,15 +28,13 @@ const OutlinedButton = ({
 
     handleFocus,
     handleHover,
-    handleUnHover,
   } = useElevatedEvents(
     disabled,
     setIsClicked,
     isClicked,
     btn,
     isHover,
-    setIsHover,
-    hoverStateSpan
+    setIsHover
   );
 
   return (
@@ -55,10 +52,6 @@ const OutlinedButton = ({
         handleHover();
         props.onMouseOver && props.onMouseOver(e);
       }}
-      onMouseLeave={(e) => {
-        handleUnHover();
-        props.onMouseLeave && props.onMouseLeave(e);
-      }}
       ref={btn}
       className={`${style.outlined} ${style[color]} ${
         startIcon != null ? style.withLeftIcon : ""
@@ -71,8 +64,6 @@ const OutlinedButton = ({
       <p className={style.label}>{children}</p>
       {endIcon != null && <span className={style.endIcon}>{endIcon}</span>}
       <div className={style.container}></div>
-
-      <span ref={hoverStateSpan} className={style.stateLayer}></span>
     </button>
   );
 };

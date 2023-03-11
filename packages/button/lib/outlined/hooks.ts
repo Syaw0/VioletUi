@@ -18,8 +18,7 @@ const useElevatedEvents = (
   isClicked: boolean,
   btn: any,
   isHover: boolean,
-  setIsHover: (b: boolean) => void,
-  hoverStateSpan: any
+  setIsHover: (b: boolean) => void
 ) => {
   const handleMouseDown = (e: React.MouseEvent) => {
     if (isDisabled) {
@@ -83,36 +82,40 @@ const useElevatedEvents = (
   };
 
   const handleHover = () => {
-    if (isDisabled) {
+    if (isDisabled || isClicked || isHover) {
       return;
     }
-    if (isClicked || isHover) {
-      return;
-    }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.style.width = "200%";
-    span.style.height = "200%";
+
+    const span = makeBubbleSpan(0, 0, 0, 0);
+    const button = btn.current as HTMLButtonElement;
+    button.appendChild(span);
+    span.style.width = "100%";
+    span.style.height = "100%";
     span.style.borderRadius = "0";
     span.animate(growHoverSpan, growHoverTiming);
-    btn.current.style.boxShadow = "none";
     setIsHover(true);
-  };
-  const handleUnHover = () => {
-    if (isDisabled) {
-      return;
-    }
-    const span = hoverStateSpan.current as HTMLSpanElement;
-    span.animate(fadeHoverSpan, fadeHoverTiming);
-    btn.current.style.boxShadow = "none";
-    setIsHover(false);
+    const mouseleave = () => {
+      button.removeEventListener("mouseleave", mouseleave);
+      if (isDisabled) {
+        return;
+      }
+      const fadeBubbleAnimation = new Animation(
+        new KeyframeEffect(span, fadeHoverSpan, fadeHoverTiming),
+        document.timeline
+      );
+      fadeBubbleAnimation.play();
+      fadeBubbleAnimation.addEventListener("finish", () => {
+        button.removeChild(span);
+      });
+      setIsHover(false);
+    };
+    button.addEventListener("mouseleave", mouseleave);
   };
 
   return {
     handleMouseDown,
-
     handleFocus,
     handleHover,
-    handleUnHover,
   };
 };
 
