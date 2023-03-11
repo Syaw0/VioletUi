@@ -16,7 +16,7 @@ use it:
 <Button>Click On Me</Button>
 ```
 
-## Props:
+## Props
 
 1. **variant(optional)**: _"outlined" | "elevated" | "filled" | "filledTonal" | "text"_
 

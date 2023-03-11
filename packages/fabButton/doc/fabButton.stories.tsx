@@ -46,6 +46,17 @@ export default {
       control: "select",
       options: ["default", "small"],
     },
+    text: {
+      name: "text",
+      type: { name: "string", required: false },
+      defaultValue: "null",
+      description: "specific the text of fab button",
+      table: {
+        type: { summary: "string", detail: "" },
+        defaultValue: { summary: "null" },
+      },
+      control: "text",
+    },
     color: {
       name: "color",
       type: { name: "string", required: false },
@@ -81,6 +92,11 @@ export default {
         defaultValue: { summary: "null" },
       },
       control: "radio",
+      options: [true, false],
+      mapping: {
+        true: <WriteIcon />,
+        false: null,
+      },
     },
   },
 };
@@ -90,7 +106,7 @@ const Template = (args) => {
     com.push(
       <div>
         <FabButton {...args} color={c}>
-          <WriteIcon />
+          {/* <WriteIcon /> */}
         </FabButton>
       </div>
     );
@@ -104,3 +120,15 @@ const Template = (args) => {
 
 export const Fab = Template.bind({});
 Fab.args = {};
+
+export const Fab2 = Template.bind({});
+Fab2.args = {
+  text: "Compose",
+};
+
+export const Fab3 = Template.bind({});
+Fab3.args = {
+  text: "Compose",
+  children: null,
+  elevationLevel: "small",
+};

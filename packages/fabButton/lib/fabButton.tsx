@@ -12,7 +12,8 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     | "error"
     | "warning"
     | "success";
-  children: React.ReactElement;
+  children?: React.ReactElement;
+  text?: string;
 }
 
 const Button = ({
@@ -22,6 +23,7 @@ const Button = ({
   className,
   elevationLevel = "default",
   size = "medium",
+  text,
   ...props
 }: ButtonProps) => {
   const [isHover, setIsHover] = useState(false);
@@ -58,10 +60,27 @@ const Button = ({
           style[size]
         } ${style[color]} ${
           elevationLevel == "default" ? style.defaultShadow : style.smallShadow
-        }`}
+        } ${text != "" && text != null ? style.withText : style.noText}`}
       >
         <div className={style.container}></div>
-        <span className={style.content}>{children}</span>
+        {children != null && (
+          <span
+            className={`${style.icon} ${
+              text != "" && text != null ? style.iconWithText : ""
+            }`}
+          >
+            {children}
+          </span>
+        )}
+        {text != "" && text != null && (
+          <p
+            className={`${style.content} ${
+              children != null ? style.contentWithIcon : ""
+            }`}
+          >
+            {text}
+          </p>
+        )}
       </button>
     </>
   );
