@@ -1,13 +1,13 @@
 {
-  "name": "@violetui/button",
+  "name": "@violetui/fab_button",
   "version": "0.1.0",
-  "description": "Vui Button Component Repository.",
+  "description": "Vui Fab Button Component Repository.",
   "author": "Siavash <siamhb7@protonmail.com>",
   "license": "MIT",
-  "main": "dist/button.cjs.js",
-  "module": "dist/button.esm.js",
-  "src": "lib/button.tsx",
-  "types": "dist/d/button.d.ts",
+  "main": "dist/fab_button.cjs.js",
+  "module": "dist/fab_button.esm.js",
+  "src": "lib/fabButton.tsx",
+  "types": "./dist/d/fabButton.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"

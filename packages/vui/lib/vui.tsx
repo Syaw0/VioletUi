@@ -10,6 +10,7 @@ import LoadingButton from "@violetui/loading_button";
 import Avatar from "@violetui/avatar";
 import AvatarGroup from "@violetui/avatar_group";
 import TextField from "@violetui/text_field";
+import FabButton from "@violetui/fab_button";
 
 export {
   Button,
@@ -24,4 +25,5 @@ export {
   Avatar,
   AvatarGroup,
   TextField,
+  FabButton,
 };

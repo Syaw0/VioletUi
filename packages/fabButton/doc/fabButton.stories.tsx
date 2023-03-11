@@ -1,6 +1,6 @@
-import Button from "../lib/button";
+import FabButton from "../lib/fabButton";
 import React from "react";
-import CloseIcon from "./close";
+import WriteIcon from "./writeIcon";
 
 const colors = [
   "primary",
@@ -12,8 +12,8 @@ const colors = [
 ];
 
 export default {
-  title: "Button",
-  component: Button,
+  title: "Fab Button",
+  component: FabButton,
   // parameters: {
   //   docs: {
   //     page: () => {
@@ -71,7 +71,7 @@ export default {
       control: "radio",
       options: [true, false],
       mapping: {
-        true: <CloseIcon />,
+        true: <WriteIcon />,
         false: null,
       },
     },
@@ -87,20 +87,20 @@ export default {
       control: "radio",
       options: [true, false],
       mapping: {
-        true: <CloseIcon />,
+        true: <WriteIcon />,
         false: null,
       },
     },
   },
 };
 const Template = (args) => {
-  const com = [];
+  const com: any = [];
   colors.forEach((c) => {
     com.push(
       <div>
-        <Button {...args} color={c}>
+        <FabButton {...args} color={c}>
           {c.toLocaleUpperCase()}
-        </Button>
+        </FabButton>
       </div>
     );
   });
@@ -114,29 +114,4 @@ const Template = (args) => {
 export const Filled = Template.bind({});
 Filled.args = {
   children: "Button",
-  variant: "filled",
-};
-
-export const Elevated = Template.bind({});
-Elevated.args = {
-  children: "Button",
-  variant: "elevated",
-};
-
-export const FilledTonal = Template.bind({});
-FilledTonal.args = {
-  children: "Button",
-  variant: "filledTonal",
-};
-
-export const Outlined = Template.bind({});
-Outlined.args = {
-  children: "Button",
-  variant: "outlined",
-};
-
-export const Text = Template.bind({});
-Text.args = {
-  children: "Button",
-  variant: "text",
 };
