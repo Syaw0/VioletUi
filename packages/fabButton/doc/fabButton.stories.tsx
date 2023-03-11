@@ -99,7 +99,7 @@ const Template = (args) => {
     com.push(
       <div>
         <FabButton {...args} color={c}>
-          {c.toLocaleUpperCase()}
+          <WriteIcon />
         </FabButton>
       </div>
     );
