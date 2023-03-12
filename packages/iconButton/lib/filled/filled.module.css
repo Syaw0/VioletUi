@@ -48,66 +48,66 @@
   --containerColorNotToggle: var(--md-sys-color-primary);
   --labelColorNotToggle: var(--md-sys-color-on-primary);
 
-  --containerColorSelected: var(--md-sys-color-surface-variant);
-  --labelColorSelected: var(--md-sys-color-primary);
+  --containerColorNotSelected: var(--md-sys-color-surface-variant);
+  --labelColorNotSelected: var(--md-sys-color-primary);
 
-  --containerColorNotSelected: var(--md-sys-color-primary);
-  --labelColorNotSelected: var(--md-sys-color-on-primary);
+  --containerColorSelected: var(--md-sys-color-primary);
+  --labelColorSelected: var(--md-sys-color-on-primary);
 }
 
 .secondary {
   --containerColorNotToggle: var(--md-sys-color-secondary);
   --labelColorNotToggle: var(--md-sys-color-on-secondary);
 
-  --containerColorSelected: var(--md-sys-color-surface-variant);
-  --labelColorSelected: var(--md-sys-color-secondary);
+  --containerColorNotSelected: var(--md-sys-color-filledIconButton-secondary);
+  --labelColorNotSelected: var(--md-sys-color-secondary);
 
-  --containerColorNotSelected: var(--md-sys-color-secondary);
-  --labelColorNotSelected: var(--md-sys-color-on-secondary);
+  --containerColorSelected: var(--md-sys-color-secondary);
+  --labelColorSelected: var(--md-sys-color-on-secondary);
 }
 
 .tertiary {
   --containerColorNotToggle: var(--md-sys-color-tertiary);
   --labelColorNotToggle: var(--md-sys-color-on-tertiary);
 
-  --containerColorSelected: var(--md-sys-color-surface-variant);
-  --labelColorSelected: var(--md-sys-color-tertiary);
+  --containerColorNotSelected: var(--md-sys-color-filledIconButton-tertiary);
+  --labelColorNotSelected: var(--md-sys-color-tertiary);
 
-  --containerColorNotSelected: var(--md-sys-color-tertiary);
-  --labelColorNotSelected: var(--md-sys-color-on-tertiary);
+  --containerColorSelected: var(--md-sys-color-tertiary);
+  --labelColorSelected: var(--md-sys-color-on-tertiary);
 }
 
 .error {
   --containerColorNotToggle: var(--md-sys-color-error);
   --labelColorNotToggle: var(--md-sys-color-on-error);
 
-  --containerColorSelected: var(--md-sys-color-surface-variant);
-  --labelColorSelected: var(--md-sys-color-error);
+  --containerColorNotSelected: var(--md-sys-color-filledIconButton-error);
+  --labelColorNotSelected: var(--md-sys-color-error);
 
-  --containerColorNotSelected: var(--md-sys-color-error);
-  --labelColorNotSelected: var(--md-sys-color-on-error);
+  --containerColorSelected: var(--md-sys-color-error);
+  --labelColorSelected: var(--md-sys-color-on-error);
 }
 
 .warning {
   --containerColorNotToggle: var(--md-sys-color-warning);
   --labelColorNotToggle: var(--md-sys-color-on-warning);
 
-  --containerColorSelected: var(--md-sys-color-surface-variant);
-  --labelColorSelected: var(--md-sys-color-warning);
+  --containerColorNotSelected: var(--md-sys-color-filledIconButton-warning);
+  --labelColorNotSelected: var(--md-sys-color-warning);
 
-  --containerColorNotSelected: var(--md-sys-color-warning);
-  --labelColorNotSelected: var(--md-sys-color-on-warning);
+  --containerColorSelected: var(--md-sys-color-warning);
+  --labelColorSelected: var(--md-sys-color-on-warning);
 }
 
 .success {
   --containerColorNotToggle: var(--md-sys-color-success);
   --labelColorNotToggle: var(--md-sys-color-on-success);
 
-  --containerColorSelected: var(--md-sys-color-surface-variant);
-  --labelColorSelected: var(--md-sys-color-success);
+  --containerColorNotSelected: var(--md-sys-color-filledIconButton-success);
+  --labelColorNotSelected: var(--md-sys-color-success);
 
-  --containerColorNotSelected: var(--md-sys-color-success);
-  --labelColorNotSelected: var(--md-sys-color-on-success);
+  --containerColorSelected: var(--md-sys-color-success);
+  --labelColorSelected: var(--md-sys-color-on-success);
 }
 
 .notToggle {

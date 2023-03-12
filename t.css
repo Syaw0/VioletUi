@@ -586,4 +586,12 @@
   --md-sys-color-on-filledTonal-error: var(
     --md-sys-color-on-error-container-light
   );
+
+  --md-sys-color-filledIconButton-error: var(--md-ref-palette-error95);
+
+  --md-sys-color-filledIconButton-secondary: var(--md-ref-palette-secondary95);
+  --md-sys-color-filledIconButton-tertiary: var(--md-ref-palette-tertiary95);
+
+  --md-sys-color-filledIconButton-warning: #fff2d5;
+  --md-sys-color-filledIconButton-success: #e1fff0;
 }
