@@ -1,48 +1,27 @@
 import React, { useState } from "react";
-import ToggleButton from "../lib/toggleButton";
+import ToggleButton from "../lib/toggleButton2";
 import AlignCenter from "./alignCenter";
 import AlignLeft from "./alignLeft";
 import AlignRight from "./alignRight";
+import FingerPrintIcon from "./fingerPrintIcon";
 
 export default { title: "ToggleButton" };
 
-export const toggleBtn = () => {
-  const [state, setState] = useState({
-    center: false,
-    left: false,
-    right: false,
-  });
+export const ToggleBtn = () => {
+  const [state, setState] = useState([
+    { selected: false, text: "Button", icon: <FingerPrintIcon /> },
+    { selected: false, text: "Button", icon: <FingerPrintIcon /> },
+    {
+      selected: true,
+      text: "Button",
+      icon: <FingerPrintIcon />,
+      disable: true,
+    },
+  ]);
 
   const handle = (e: any, type: string) => {
     setState((s) => ({ ...s, [type]: !s[type] }));
   };
 
-  return (
-    <div style={{ display: "flex" }}>
-      <ToggleButton
-        onClick={(e) => handle(e, "center")}
-        selected={state.center}
-        value="center"
-      >
-        <AlignCenter />
-      </ToggleButton>
-
-      <ToggleButton
-        onClick={(e) => handle(e, "left")}
-        selected={state.left}
-        value="left"
-      >
-        <AlignLeft />
-      </ToggleButton>
-
-      <ToggleButton
-        onClick={(e) => handle(e, "right")}
-        selected={state.right}
-        value="right"
-        disabled
-      >
-        <AlignRight />
-      </ToggleButton>
-    </div>
-  );
+  return <ToggleButton items={state} />;
 };

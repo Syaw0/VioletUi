@@ -1,0 +1,110 @@
+.holder {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 40px;
+  overflow: hidden;
+}
+.holder > button {
+  width: calc(100% / 3);
+}
+
+.button {
+  height: 100%;
+  padding: 0px 16px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: box-shadow ease 0.1s;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.text {
+  color: var(--labelColor);
+  position: relative;
+  font-family: var(--md-sys-typescale-label-large-font-family-name);
+  font-style: var(--md-sys-typescale-label-large-font-family-style);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-size: var(--md-sys-typescale-label-large-font-size);
+  font-weight: var(--md-sys-typescale-label-large-font-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon {
+  padding: 0px 8px 0px 0px;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 20px; */
+}
+
+.selected .container {
+  background-color: aliceblue;
+}
+
+.notSelected {
+}
+
+/* .withBorder {
+  border-right: 1px solid var(--md-sys-color-outline);
+} */
+
+.button:disabled {
+  cursor: default;
+}
+
+.button:disabled .container {
+  /* background-color: var(--md-sys-color-on-surface); */
+  opacity: 12%;
+}
+
+.button:disabled .text {
+  opacity: 36%;
+  color: var(--md-sys-color-on-surface);
+}
+
+.button:disabled .icon {
+  opacity: 36%;
+  fill: var(--md-sys-color-on-surface);
+  stroke: var(--md-sys-color-on-surface);
+}
+
+.startBtn {
+  border-left: 1px solid var(--md-sys-color-outline);
+  border-right: none;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.endBtn {
+  border-right: 1px solid var(--md-sys-color-outline);
+  border-left: none;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.withBorder {
+  border: 1px solid var(--md-sys-color-outline);
+  border-left: none;
+}
