@@ -10,7 +10,11 @@ export default { title: "ToggleButton" };
 export const ToggleBtn = () => {
   const [state, setState] = useState([
     { selected: false, text: "Button", icon: <FingerPrintIcon /> },
-    { selected: false, text: "Button", icon: <FingerPrintIcon /> },
+    {
+      selected: false,
+      text: "Button Wit",
+      icon: <FingerPrintIcon />,
+    },
     {
       selected: true,
       text: "Button",
@@ -23,5 +27,12 @@ export const ToggleBtn = () => {
     setState((s) => ({ ...s, [type]: !s[type] }));
   };
 
-  return <ToggleButton items={state} />;
+  return (
+    <ToggleButton
+      onChange={(newItems) => {
+        setState(newItems);
+      }}
+      items={state}
+    />
+  );
 };

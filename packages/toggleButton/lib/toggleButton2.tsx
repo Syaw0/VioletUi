@@ -9,16 +9,34 @@ interface ToggleButtonItems {
   disable?: boolean;
 }
 
-interface ToggleButton extends React.ComponentPropsWithoutRef<"div"> {
+interface ToggleButton
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "onChange"> {
   items: ToggleButtonItems[];
+  onChange?: (newItems: ToggleButtonItems[]) => void;
 }
 
-const ToggleButton = ({ items, ...props }: ToggleButton) => {
+const ToggleButton = ({ items, onChange, ...props }: ToggleButton) => {
+  const handleClick = (e: React.MouseEvent, item: ToggleButtonItems) => {
+    if (onChange == null) {
+      return;
+    }
+    onChange(
+      items.map((i) => {
+        if (i === item) {
+          i.selected = !i.selected;
+        }
+        return i;
+      })
+    );
+  };
   return (
     <div {...props} className={`${style.holder}`}>
       {items.map((item, index) => {
         return (
           <button
+            onClick={(e) => {
+              handleClick(e, item);
+            }}
             disabled={item.disable != null ? item.disable : false}
             key={index}
             className={`${style.button} ${

@@ -7,14 +7,13 @@
   transition: background-color 0.3s;
   height: 40px;
   overflow: hidden;
-}
-.holder > button {
-  width: calc(100% / 3);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .button {
   height: 100%;
-  padding: 0px 16px;
+  padding: 0px 24px;
   background-color: transparent;
   cursor: pointer;
   display: flex;
@@ -42,6 +41,7 @@
   font-size: var(--md-sys-typescale-label-large-font-size);
   font-weight: var(--md-sys-typescale-label-large-font-weight);
   letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
+  white-space: nowrap;
 }
 
 .icon svg {
@@ -68,16 +68,11 @@
 .notSelected {
 }
 
-/* .withBorder {
-  border-right: 1px solid var(--md-sys-color-outline);
-} */
-
 .button:disabled {
   cursor: default;
 }
 
 .button:disabled .container {
-  /* background-color: var(--md-sys-color-on-surface); */
   opacity: 12%;
 }
 
@@ -91,20 +86,18 @@
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
 }
+.withBorder {
+  border: 1px solid var(--md-sys-color-outline);
+  /* border-left: none; */
+}
 
 .startBtn {
-  border-left: 1px solid var(--md-sys-color-outline);
+  border: 1px solid var(--md-sys-color-outline);
   border-right: none;
   border-radius: 20px 0px 0px 20px;
 }
-
 .endBtn {
-  border-right: 1px solid var(--md-sys-color-outline);
-  border-left: none;
-  border-radius: 0px 20px 20px 0px;
-}
-
-.withBorder {
   border: 1px solid var(--md-sys-color-outline);
-  border-left: none;
+  /* border-left: none; */
+  border-radius: 0px 20px 20px 0px;
 }
