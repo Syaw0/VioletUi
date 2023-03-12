@@ -1,0 +1,142 @@
+.outlined {
+  --containerColorNotToggle: #111111;
+  --labelColorNotToggle: #111111;
+
+  --containerColorSelected: #111111;
+  --labelColorSelected: #111111;
+
+  --containerColorNotSelected: #111111;
+  --labelColorNotSelected: #111111;
+
+  background-color: transparent;
+  position: relative;
+
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: box-shadow ease 0.1s;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--containerColor);
+  border: 1px solid var(--md-sys-color-outline);
+}
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--labelColor);
+  stroke: var(--labelColor);
+}
+
+.primary {
+  --containerColorNotToggle: none;
+  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+
+  --containerColorNotSelected: none;
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-inverse-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.secondary {
+  --containerColorNotToggle: none;
+  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+
+  --containerColorNotSelected: none;
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-inverse-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.tertiary {
+  --containerColorNotToggle: none;
+  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+
+  --containerColorNotSelected: none;
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-inverse-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.error {
+  --containerColorNotToggle: none;
+  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+
+  --containerColorNotSelected: none;
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-inverse-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.warning {
+  --containerColorNotToggle: none;
+  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+
+  --containerColorNotSelected: none;
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-inverse-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.success {
+  --containerColorNotToggle: none;
+  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+
+  --containerColorNotSelected: none;
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-inverse-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.notToggle {
+  --containerColor: var(--containerColorNotToggle);
+  --labelColor: var(--labelColorNotToggle);
+}
+
+.selected {
+  --containerColor: var(--containerColorSelected);
+  --labelColor: var(--labelColorSelected);
+}
+
+.notSelected {
+  --containerColor: var(--containerColorNotSelected);
+  --labelColor: var(--labelColorNotSelected);
+}
+
+.outlined:disabled {
+  cursor: default;
+}
+
+.outlined:disabled .container {
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 12%;
+}
+
+.outlined:disabled .icon svg {
+  fill: var(--md-sys-color-on-surface);
+  stroke: var(--md-sys-color-on-surface);
+  opacity: 38%;
+}

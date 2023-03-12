@@ -166,3 +166,87 @@ export const iconButton2 = () => {
     </>
   );
 };
+
+export const iconButton3 = () => {
+  const [isSelected, setIsSelected] = useState(false);
+  return (
+    <>
+      <IconButton variant="outlined" color="primary">
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton
+        variant="outlined"
+        color="primary"
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton disabled color="primary" variant="outlined">
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton
+        variant="outlined"
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="secondary"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+
+      <br />
+      <IconButton
+        variant="outlined"
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="tertiary"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+
+      <br />
+      <IconButton
+        variant="outlined"
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="warning"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton
+        variant="outlined"
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="error"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton
+        variant="outlined"
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="success"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+    </>
+  );
+};

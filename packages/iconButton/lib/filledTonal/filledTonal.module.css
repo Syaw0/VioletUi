@@ -1,4 +1,4 @@
-.filled {
+.filledTonal {
   --containerColorNotToggle: #111111;
   --labelColorNotToggle: #111111;
 
@@ -125,16 +125,16 @@
   --labelColor: var(--labelColorNotSelected);
 }
 
-.filled:disabled {
+.filledTonal:disabled {
   cursor: default;
 }
 
-.filled:disabled .container {
+.filledTonal:disabled .container {
   background-color: var(--md-sys-color-on-surface);
   opacity: 12%;
 }
 
-.filled:disabled .icon svg {
+.filledTonal:disabled .icon svg {
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
   opacity: 38%;

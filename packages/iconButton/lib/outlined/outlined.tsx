@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import style from "./filledTonal.module.css";
-import useFilledTonalIconButtonEvents from "./useFilledTonalIconButtonEvents";
+import style from "./outlined.module.css";
+import useOutlinedIconButtonEvents from "./useOutlinedIconButtonEvents";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -9,7 +9,7 @@ export interface IconButtonProps
   selected?: boolean;
 }
 
-const FilledTonalIconButton = ({
+const OutlinedIconButton = ({
   color = "primary",
   className = "",
   disabled = false,
@@ -20,7 +20,7 @@ const FilledTonalIconButton = ({
   const [isClicked, setIsClicked] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const { handleFocus, handleHover, handleMouseDown } =
-    useFilledTonalIconButtonEvents(
+    useOutlinedIconButtonEvents(
       disabled,
       setIsClicked,
       isClicked,
@@ -32,7 +32,7 @@ const FilledTonalIconButton = ({
   return (
     <button
       {...props}
-      className={`${style.filledTonal} ${style[color]} ${
+      className={`${style.outlined} ${style[color]} ${
         selected != null
           ? selected
             ? style.selected
@@ -60,4 +60,4 @@ const FilledTonalIconButton = ({
   );
 };
 
-export default FilledTonalIconButton;
+export default OutlinedIconButton;
