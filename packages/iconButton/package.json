@@ -1,10 +1,9 @@
 {
   "name": "@violetui/icon_button",
   "version": "0.1.0",
-  "description": "> TODO: description",
+  "description": "Vui Icon Button Component Repository.",
   "author": "Siavash <siamhb7@protonmail.com>",
-  "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/icon_button.cjs.js",
   "module": "dist/icon_button.esm.js",
   "src": "lib/iconButton.tsx",
@@ -14,7 +13,6 @@
     "test": "__tests__"
   },
   "files": [
-    "lib",
     "dist"
   ],
   "publishConfig": {
