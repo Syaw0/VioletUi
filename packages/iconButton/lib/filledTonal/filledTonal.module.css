@@ -110,6 +110,17 @@
   --labelColorSelected: var(--md-sys-color-on-filledTonal-success);
 }
 
+.neutral {
+  --containerColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-surface-variant);
+
+  --containerColorNotSelected: var(--md-sys-color-surface-variant);
+  --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
+
+  --containerColorSelected: var(--md-sys-color-on-surface-variant);
+  --labelColorSelected: var(--md-sys-color-surface-variant);
+}
+
 .notToggle {
   --containerColor: var(--containerColorNotToggle);
   --labelColor: var(--labelColorNotToggle);

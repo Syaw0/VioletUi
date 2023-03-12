@@ -2,10 +2,18 @@ import React from "react";
 import FilledIconButton from "./filled/filled";
 import FilledTonalIconButton from "./filledTonal/filledTonal";
 import OutlinedIconButton from "./outlined/outlined";
+import StandardIconButton from "./standard/standard";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
+  color:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "error"
+    | "warning"
+    | "success"
+    | "neutral";
   variant: "filled" | "filledTonal" | "outlined" | "standard";
   selected?: boolean;
   children: React.ReactElement;
@@ -25,6 +33,9 @@ const IconButton = ({
       )}
       {variant === "outlined" && (
         <OutlinedIconButton {...props} color={color} />
+      )}
+      {variant === "standard" && (
+        <StandardIconButton {...props} color={color} />
       )}
     </>
   );

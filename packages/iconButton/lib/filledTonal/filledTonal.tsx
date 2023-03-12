@@ -4,7 +4,14 @@ import useFilledTonalIconButtonEvents from "./useFilledTonalIconButtonEvents";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
+  color:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "error"
+    | "warning"
+    | "success"
+    | "neutral";
   children: React.ReactElement;
   selected?: boolean;
 }

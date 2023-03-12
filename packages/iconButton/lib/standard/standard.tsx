@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import style from "./filled.module.css";
-import useFilledIconButtonEvents from "./useFilledIconButtonEvents";
+import style from "./standard.module.css";
+import useStandardIconButtonEvents from "./useStandardIconButtonEvents";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -16,7 +16,7 @@ export interface IconButtonProps
   selected?: boolean;
 }
 
-const FilledIconButton = ({
+const StandardIconButton = ({
   color = "primary",
   className = "",
   disabled = false,
@@ -27,7 +27,7 @@ const FilledIconButton = ({
   const [isClicked, setIsClicked] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const { handleFocus, handleHover, handleMouseDown } =
-    useFilledIconButtonEvents(
+    useStandardIconButtonEvents(
       disabled,
       setIsClicked,
       isClicked,
@@ -39,7 +39,7 @@ const FilledIconButton = ({
   return (
     <button
       {...props}
-      className={`${style.filled} ${style[color]} ${
+      className={`${style.standard} ${style[color]} ${
         selected != null
           ? selected
             ? style.selected
@@ -67,4 +67,4 @@ const FilledIconButton = ({
   );
 };
 
-export default FilledIconButton;
+export default StandardIconButton;

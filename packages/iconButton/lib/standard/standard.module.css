@@ -1,4 +1,4 @@
-.outlined {
+.standard {
   --containerColorNotToggle: #111111;
   --labelColorNotToggle: #111111;
 
@@ -30,7 +30,6 @@
   height: 100%;
   border-radius: 50%;
   background-color: var(--containerColor);
-  border: 1px solid var(--md-sys-color-outline);
 }
 .icon {
   position: relative;
@@ -47,68 +46,68 @@
 
 .primary {
   --containerColorNotToggle: none;
-  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-primary);
 
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-primary);
 }
 
 .secondary {
   --containerColorNotToggle: none;
-  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-secondary);
 
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-secondary);
 }
 
 .tertiary {
   --containerColorNotToggle: none;
-  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-tertiary);
 
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-tertiary);
 }
 
 .error {
   --containerColorNotToggle: none;
-  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-error);
 
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-error);
 }
 
 .warning {
   --containerColorNotToggle: none;
-  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-warning);
 
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-warning);
 }
 
 .success {
   --containerColorNotToggle: none;
-  --labelColorNotToggle: var(--md-sys-color-on-surface-variant);
+  --labelColorNotToggle: var(--md-sys-color-success);
 
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-success);
 }
 
 .neutral {
@@ -118,8 +117,8 @@
   --containerColorNotSelected: none;
   --labelColorNotSelected: var(--md-sys-color-on-surface-variant);
 
-  --containerColorSelected: var(--md-sys-color-inverse-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --containerColorSelected: none;
+  --labelColorSelected: var(--md-sys-color-on-surface-variant);
 }
 
 .notToggle {
@@ -137,16 +136,11 @@
   --labelColor: var(--labelColorNotSelected);
 }
 
-.outlined:disabled {
+.standard:disabled {
   cursor: default;
 }
 
-.outlined:disabled .container {
-  background-color: var(--md-sys-color-on-surface);
-  opacity: 12%;
-}
-
-.outlined:disabled .icon svg {
+.standard:disabled .icon svg {
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
   opacity: 38%;
