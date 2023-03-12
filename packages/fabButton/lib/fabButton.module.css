@@ -92,7 +92,7 @@
 .medium {
   height: 60px;
   width: 60px;
-  border-radius: 20px;
+  border-radius: 16px;
 }
 
 .medium svg {
@@ -123,7 +123,6 @@
 
 .icon {
   position: relative;
-  /* padding: 16px; */
 }
 
 .iconWithText {

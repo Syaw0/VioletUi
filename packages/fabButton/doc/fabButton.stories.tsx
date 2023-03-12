@@ -49,7 +49,7 @@ export default {
     text: {
       name: "text",
       type: { name: "string", required: false },
-      defaultValue: "null",
+      defaultValue: "",
       description: "specific the text of fab button",
       table: {
         type: { summary: "string", detail: "" },

@@ -1,56 +1,51 @@
-import React, { useRef } from "react";
-import {
-  keyframe,
-  keyframe2,
-  keyframe3,
-  timing,
-  timing2,
-  timing3,
-} from "./animation";
+import React, { useRef, useState } from "react";
 import style from "./iconButton.module.css";
+import useIconButtonEvents from "./useIconButtonEvents";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
   color: "primary" | "secondary" | "tertiary" | "error";
+  children: React.ReactElement;
 }
 
 const IconButton = ({
   color = "primary",
   className = "",
+  disabled = false,
   ...props
 }: IconButtonProps) => {
-  const ref: any = useRef(null);
-  const clickHandle = () => {
-    const span = ref.current as HTMLSpanElement;
-    span.animate(keyframe, timing);
-  };
-
-  const mouseDownHandler = () => {
-    const span = ref.current as HTMLSpanElement;
-    span.animate(keyframe2, timing2);
-    const mouseupHandler = () => {
-      const span = ref.current as HTMLSpanElement;
-      span.animate(keyframe3, timing3);
-      document.removeEventListener("mouseup", mouseupHandler);
-    };
-    document.addEventListener("mouseup", mouseupHandler);
-  };
+  const btn: any = useRef(null);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+  const { handleFocus, handleHover, handleMouseDown } = useIconButtonEvents(
+    disabled,
+    setIsClicked,
+    isClicked,
+    btn,
+    isHover,
+    setIsHover
+  );
 
   return (
     <button
       {...props}
-      className={`${style.button} ${style[color]} ${className} `}
-      onClick={(e) => {
-        clickHandle();
-        props && props.onClick && props.onClick(e);
-      }}
+      className={`${style.iconButton} ${style[color]} ${className} `}
       onMouseDown={(e) => {
-        mouseDownHandler();
-        props && props.onMouseDown && props.onMouseDown(e);
+        handleMouseDown(e);
+        props.onMouseDown && props.onMouseDown(e);
       }}
+      onFocus={(e) => {
+        handleFocus();
+        props.onFocus && props.onFocus(e);
+      }}
+      onMouseOver={(e) => {
+        handleHover();
+        props.onMouseOver && props.onMouseOver(e);
+      }}
+      ref={btn}
+      disabled={disabled}
     >
       {props.children}
-      <span ref={ref} className={style.span}></span>
     </button>
   );
 };

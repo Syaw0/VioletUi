@@ -1,4 +1,4 @@
-.button {
+.iconButton {
   --iconColor: #ffffff;
   --iconHoverColor: #ffffff;
   --iconClickColor: #ffffff;
@@ -14,20 +14,20 @@
   position: relative;
   overflow: hidden;
 }
-.button:hover {
+.iconButton:hover {
   background-color: var(--iconHoverColor);
 }
 
-.button:disabled {
+.iconButton:disabled {
   cursor: default;
 }
 
-.button:disabled svg {
+.iconButton:disabled svg {
   fill: gray;
   stroke: gray;
 }
 
-.button:disabled:hover {
+.iconButton:disabled:hover {
   background-color: transparent;
 }
 
@@ -65,7 +65,7 @@
   --iconClickColor: var(--error-container500);
 }
 
-.button svg {
+.iconButton svg {
   width: 24px;
   height: 24px;
   fill: var(--iconColor);
