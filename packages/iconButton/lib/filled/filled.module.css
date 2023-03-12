@@ -1,6 +1,13 @@
 .filled {
-  --containerColor: #111111;
-  --labelColor: #111111;
+  --containerColorNotToggle: #111111;
+  --labelColorNotToggle: #111111;
+
+  --containerColorSelected: #111111;
+  --labelColorSelected: #111111;
+
+  --containerColorNotSelected: #111111;
+  --labelColorNotSelected: #111111;
+
   background-color: transparent;
   position: relative;
 
@@ -38,48 +45,84 @@
 }
 
 .primary {
-  --containerColor: var(--md-sys-color-primary);
-  --labelColor: var(--md-sys-color-on-primary);
+  --containerColorNotToggle: var(--md-sys-color-primary);
+  --labelColorNotToggle: var(--md-sys-color-on-primary);
+
+  --containerColorSelected: var(--md-sys-color-surface-variant);
+  --labelColorSelected: var(--md-sys-color-primary);
+
+  --containerColorNotSelected: var(--md-sys-color-primary);
+  --labelColorNotSelected: var(--md-sys-color-on-primary);
 }
 
 .secondary {
-  --containerColor: var(--md-sys-color-secondary-container);
-  --labelColor: var(--md-sys-color-on-secondary-container);
+  --containerColorNotToggle: var(--md-sys-color-secondary);
+  --labelColorNotToggle: var(--md-sys-color-on-secondary);
+
+  --containerColorSelected: var(--md-sys-color-surface-variant);
+  --labelColorSelected: var(--md-sys-color-secondary);
+
+  --containerColorNotSelected: var(--md-sys-color-secondary);
+  --labelColorNotSelected: var(--md-sys-color-on-secondary);
 }
 
 .tertiary {
-  --containerColor: var(--md-sys-color-tertiary-container);
-  --labelColor: var(--md-sys-color-on-tertiary-container);
+  --containerColorNotToggle: var(--md-sys-color-tertiary);
+  --labelColorNotToggle: var(--md-sys-color-on-tertiary);
+
+  --containerColorSelected: var(--md-sys-color-surface-variant);
+  --labelColorSelected: var(--md-sys-color-tertiary);
+
+  --containerColorNotSelected: var(--md-sys-color-tertiary);
+  --labelColorNotSelected: var(--md-sys-color-on-tertiary);
 }
 
 .error {
-  --containerColor: var(--md-sys-color-error-container);
-  --labelColor: var(--md-sys-color-on-error-container);
+  --containerColorNotToggle: var(--md-sys-color-error);
+  --labelColorNotToggle: var(--md-sys-color-on-error);
+
+  --containerColorSelected: var(--md-sys-color-surface-variant);
+  --labelColorSelected: var(--md-sys-color-error);
+
+  --containerColorNotSelected: var(--md-sys-color-error);
+  --labelColorNotSelected: var(--md-sys-color-on-error);
 }
 
 .warning {
-  --containerColor: var(--md-sys-color-filledTonal-warning);
-  --labelColor: var(--md-sys-color-on-filledTonal-warning);
+  --containerColorNotToggle: var(--md-sys-color-warning);
+  --labelColorNotToggle: var(--md-sys-color-on-warning);
+
+  --containerColorSelected: var(--md-sys-color-surface-variant);
+  --labelColorSelected: var(--md-sys-color-warning);
+
+  --containerColorNotSelected: var(--md-sys-color-warning);
+  --labelColorNotSelected: var(--md-sys-color-on-warning);
 }
 
 .success {
-  --containerColor: var(--md-sys-color-filledTonal-success);
-  --labelColor: var(--md-sys-color-on-filledTonal-success);
+  --containerColorNotToggle: var(--md-sys-color-success);
+  --labelColorNotToggle: var(--md-sys-color-on-success);
+
+  --containerColorSelected: var(--md-sys-color-surface-variant);
+  --labelColorSelected: var(--md-sys-color-success);
+
+  --containerColorNotSelected: var(--md-sys-color-success);
+  --labelColorNotSelected: var(--md-sys-color-on-success);
 }
 
 .notToggle {
-  --containerColor: var(--md-sys-color-primary);
-  --labelColor: var(--md-sys-color-on-primary);
+  --containerColor: var(--containerColorNotToggle);
+  --labelColor: var(--labelColorNotToggle);
 }
 
 .selected {
-  --containerColor: var(--md-sys-color-primary);
-  --labelColor: var(--md-sys-color-on-primary);
+  --containerColor: var(--containerColorSelected);
+  --labelColor: var(--labelColorSelected);
 }
 
 .notSelected {
-  --containerColor: var(--md-sys-color-surface-variant);
-  --labelColor: var(--md-sys-color-primary);
+  --containerColor: var(--containerColorNotSelected);
+  --labelColor: var(--labelColorNotSelected);
 }
 
 .filled:disabled {

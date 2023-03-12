@@ -27,6 +27,58 @@ export const iconButton1 = () => {
         <FingerPrintIcon />
       </IconButton>
       <br />
+      <IconButton
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="secondary"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+
+      <br />
+      <IconButton
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="tertiary"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+
+      <br />
+      <IconButton
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="warning"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="error"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
+      <IconButton
+        selected={isSelected}
+        onClick={() => {
+          setIsSelected((e) => !e);
+        }}
+        color="success"
+      >
+        <FingerPrintIcon />
+      </IconButton>
+      <br />
     </>
   );
 };

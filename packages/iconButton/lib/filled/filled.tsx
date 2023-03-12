@@ -4,7 +4,7 @@ import useFilledIconButtonEvents from "./useFilledIconButtonEvents";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color: "primary" | "secondary" | "tertiary" | "error";
+  color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
   children: React.ReactElement;
   selected?: boolean;
 }

@@ -3,7 +3,7 @@ import FilledIconButton from "./filled/filled";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color: "primary" | "secondary" | "tertiary" | "error";
+  color: "primary" | "secondary" | "tertiary" | "error" | "warning" | "success";
   variant: "filled" | "filledTonal" | "outlined" | "standard";
   selected?: boolean;
   children: React.ReactElement;
