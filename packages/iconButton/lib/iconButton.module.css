@@ -65,9 +65,167 @@
   --iconClickColor: var(--error-container500);
 }
 
-.iconButton svg {
+.iconButton {
+  --containerColor: #111111;
+  --labelColor: #111111;
+  background-color: transparent;
+  position: relative;
+
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: box-shadow ease 0.1s;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: var(--containerColor);
+}
+
+.icon svg {
+  fill: var(--labelColor);
+  stroke: var(--labelColor);
+}
+.small {
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+}
+
+.small svg {
   width: 24px;
   height: 24px;
-  fill: var(--iconColor);
-  stroke: var(var(--iconColor));
+}
+
+.medium {
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
+}
+
+.medium svg {
+  width: 30px;
+  height: 30px;
+}
+
+.large {
+  height: 96px;
+  width: 96px;
+  border-radius: 28px;
+}
+
+.large svg {
+  width: 36px;
+  height: 36px;
+}
+
+.defaultShadow {
+  box-shadow: var(--shadow3dp);
+}
+.smallShadow {
+  box-shadow: var(--shadow1dp);
+}
+
+.content {
+  position: relative;
+  color: var(--labelColor);
+  font-family: var(--md-sys-typescale-label-large-font-family-name);
+  font-style: var(--md-sys-typescale-label-large-font-family-style);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-size: var(--md-sys-typescale-label-large-font-size);
+  font-weight: var(--md-sys-typescale-label-large-font-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
+  padding: 0px 16px;
+}
+
+.small {
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+}
+
+.small svg {
+  width: 24px;
+  height: 24px;
+}
+
+.medium {
+  height: 60px;
+  width: 60px;
+  border-radius: 16px;
+}
+
+.medium svg {
+  width: 30px;
+  height: 30px;
+}
+
+.large {
+  height: 96px;
+  width: 96px;
+  border-radius: 28px;
+}
+
+.large svg {
+  width: 36px;
+  height: 36px;
+}
+
+.withText {
+  height: 56px;
+  min-width: fit-content;
+  border-radius: 16px;
+}
+
+.contentWithIcon {
+  padding: 0px 16px 0px 10px;
+}
+
+.icon {
+  position: relative;
+}
+
+.iconWithText {
+  padding-left: 16px;
+}
+.iconWithText svg {
+  width: 24px;
+  height: 24px;
+}
+
+.primary {
+  --containerColor: var(--md-sys-color-primary-container);
+  --labelColor: var(--md-sys-color-on-primary-container);
+}
+
+.secondary {
+  --containerColor: var(--md-sys-color-secondary-container);
+  --labelColor: var(--md-sys-color-on-secondary-container);
+}
+
+.tertiary {
+  --containerColor: var(--md-sys-color-tertiary-container);
+  --labelColor: var(--md-sys-color-on-tertiary-container);
+}
+
+.error {
+  --containerColor: var(--md-sys-color-error-container);
+  --labelColor: var(--md-sys-color-on-error-container);
+}
+
+.warning {
+  --containerColor: var(--md-sys-color-filledTonal-warning);
+  --labelColor: var(--md-sys-color-on-filledTonal-warning);
+}
+
+.success {
+  --containerColor: var(--md-sys-color-filledTonal-success);
+  --labelColor: var(--md-sys-color-on-filledTonal-success);
 }

@@ -1,0 +1,98 @@
+.filled {
+  --containerColor: #111111;
+  --labelColor: #111111;
+  background-color: transparent;
+  position: relative;
+
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: box-shadow ease 0.1s;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--containerColor);
+}
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--labelColor);
+  stroke: var(--labelColor);
+}
+
+.primary {
+  --containerColor: var(--md-sys-color-primary);
+  --labelColor: var(--md-sys-color-on-primary);
+}
+
+.secondary {
+  --containerColor: var(--md-sys-color-secondary-container);
+  --labelColor: var(--md-sys-color-on-secondary-container);
+}
+
+.tertiary {
+  --containerColor: var(--md-sys-color-tertiary-container);
+  --labelColor: var(--md-sys-color-on-tertiary-container);
+}
+
+.error {
+  --containerColor: var(--md-sys-color-error-container);
+  --labelColor: var(--md-sys-color-on-error-container);
+}
+
+.warning {
+  --containerColor: var(--md-sys-color-filledTonal-warning);
+  --labelColor: var(--md-sys-color-on-filledTonal-warning);
+}
+
+.success {
+  --containerColor: var(--md-sys-color-filledTonal-success);
+  --labelColor: var(--md-sys-color-on-filledTonal-success);
+}
+
+.notToggle {
+  --containerColor: var(--md-sys-color-primary);
+  --labelColor: var(--md-sys-color-on-primary);
+}
+
+.selected {
+  --containerColor: var(--md-sys-color-primary);
+  --labelColor: var(--md-sys-color-on-primary);
+}
+
+.notSelected {
+  --containerColor: var(--md-sys-color-surface-variant);
+  --labelColor: var(--md-sys-color-primary);
+}
+
+.filled:disabled {
+  cursor: default;
+}
+
+.filled:disabled .container {
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 12%;
+}
+
+.filled:disabled .icon svg {
+  fill: var(--md-sys-color-on-surface);
+  stroke: var(--md-sys-color-on-surface);
+  opacity: 38%;
+}
