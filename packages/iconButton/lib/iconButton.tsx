@@ -1,5 +1,6 @@
 import React from "react";
 import FilledIconButton from "./filled/filled";
+import FilledTonalIconButton from "./filledTonal/filledTonal";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -16,7 +17,12 @@ const IconButton = ({
   ...props
 }: IconButtonProps) => {
   return (
-    <>{variant === "filled" && <FilledIconButton {...props} color={color} />}</>
+    <>
+      {variant === "filled" && <FilledIconButton {...props} color={color} />}{" "}
+      {variant === "filledTonal" && (
+        <FilledTonalIconButton {...props} color={color} />
+      )}
+    </>
   );
 };
 
