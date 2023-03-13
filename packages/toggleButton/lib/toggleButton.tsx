@@ -15,6 +15,13 @@ interface ToggleButton
   items: ToggleButtonItems[];
   multiple?: boolean;
   corner?: "circle" | "rounded" | "square";
+  color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "error"
+    | "warning"
+    | "success";
   onChange?: (newItems: ToggleButtonItems[]) => void;
 }
 
@@ -23,10 +30,14 @@ const ToggleButton = ({
   multiple = false,
   onChange,
   corner = "circle",
+  color = "secondary",
   ...props
 }: ToggleButton) => {
   return (
-    <div {...props} className={`${style.holder} ${style[corner]}`}>
+    <div
+      {...props}
+      className={`${style.holder} ${style[corner]} ${style[color]}`}
+    >
       {items.map((item, index) => {
         return (
           <Button

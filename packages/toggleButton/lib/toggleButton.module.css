@@ -1,7 +1,7 @@
 .holder {
   --containerColorNoSelected: none;
-  --containerColorSelected: var(--md-sys-color-secondary-container);
   --labelColorNoSelected: var(--md-sys-color-on-surface);
+  --containerColorSelected: var(--md-sys-color-secondary-container);
   --labelColorSelected: var(--md-sys-color-on-secondary-container);
   width: fit-content;
   display: flex;
@@ -145,4 +145,34 @@
 
 .square {
   --corner: 0px;
+}
+
+.secondary {
+  --containerColorSelected: var(--md-sys-color-secondary-container);
+  --labelColorSelected: var(--md-sys-color-on-secondary-container);
+}
+
+.primary {
+  --containerColorSelected: var(--md-sys-color-primary-container);
+  --labelColorSelected: var(--md-sys-color-on-primary-container);
+}
+
+.tertiary {
+  --containerColorSelected: var(--md-sys-color-tertiary-container);
+  --labelColorSelected: var(--md-sys-color-on-tertiary-container);
+}
+
+.error {
+  --containerColorSelected: var(--md-sys-color-error-container);
+  --labelColorSelected: var(--md-sys-color-on-error-container);
+}
+
+.warning {
+  --containerColorSelected: var(--md-sys-color-filledTonal-warning);
+  --labelColorSelected: var(--md-sys-color-on-filledTonal-warning);
+}
+
+.success {
+  --containerColorSelected: var(--md-sys-color-filledTonal-success);
+  --labelColorSelected: var(--md-sys-color-on-filledTonal-success);
 }

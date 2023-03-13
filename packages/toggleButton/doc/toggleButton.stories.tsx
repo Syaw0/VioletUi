@@ -57,6 +57,7 @@ export const ToggleBtn = () => {
       />
       <br />
       <ToggleButton
+        color="success"
         onChange={(newItems) => {
           setState2(newItems);
         }}
