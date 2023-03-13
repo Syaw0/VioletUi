@@ -2,126 +2,147 @@ import React from "react";
 import Snackbar from "../lib/snackbar";
 import IconSuccess from "./icons/successIcon";
 import IconClose from "./icons/closeIcon";
-export default { title: "Snackbar" };
 
-export const Snack = () => (
-  <>
-    <Snackbar
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
+const colors = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "error",
+  "warning",
+  "success",
+  "default",
+];
+
+export default {
+  title: "Snackbar",
+  component: Snackbar,
+  // parameters: {
+  //   docs: {
+  //     page: () => {
+  //       return <h1>Snackbar</h1>;
+  //     },
+  //   },
+  // },
+  argTypes: {
+    color: {
+      name: "color",
+      type: { name: "string", required: false },
+      defaultValue: "primary",
+      description: "specific the color of button",
+      table: {
+        type: { summary: "string", detail: "" },
+        defaultValue: { summary: "primary" },
+      },
+      control: "select",
+      options: colors,
+    },
+    children: {
+      name: "children",
+      type: { name: "React.ReactElement", required: false },
+      defaultValue: "Snacks Are Hots.",
+      description: "specific the icon of button",
+      table: {
+        type: { summary: "React.ReactElement", detail: "" },
+        defaultValue: { summary: "null" },
+      },
+      control: "text",
+    },
+    startIcon: {
+      name: "startIcon",
+      type: { name: "React.ReactElement", required: false },
+      defaultValue: <IconSuccess />,
+      description: "specific first place in the snackbar with icon.",
+      table: {
+        type: { summary: "React.ReactElement", detail: "" },
+        defaultValue: { summary: "null" },
+      },
+      control: "radio",
+      options: [true, false],
+      mapping: {
+        true: <IconSuccess />,
+        false: null,
+      },
+    },
+    endIcon: {
+      name: "endIcon",
+      type: { name: "Object", required: false },
+      defaultValue: { icon: <IconClose />, onclick() {} },
+      description:
+        "specific first place in the snackbar with icon and some handler.",
+      table: {
+        type: {
+          summary: "Object",
+          detail: `
+        <Snackbar endIcon={
+          {
+            icon:<Icon/>,
+            onClick:()=>{}
+          }
+        }>
+        
+</Snackbar>
+        `,
         },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      this is snackbar this is snackbar thi
-    </Snackbar>
-
-    <br />
-
-    <Snackbar
-      action={{
-        name: "Undo",
-        onClick() {
-          console.log("hello");
+        defaultValue: { summary: "null" },
+      },
+      control: "radio",
+      options: [true, false],
+      mapping: {
+        true: { icon: <IconClose />, onClick: () => {} },
+        false: null,
+      },
+    },
+    action: {
+      name: "action",
+      type: { name: "Object", required: false },
+      defaultValue: { name: "Undo", onclick() {} },
+      description: "specify a action button to handle something.",
+      table: {
+        type: {
+          summary: "Object",
+          detail: `
+        <Snackbar action={
+          {
+            name:"Undo",
+            onClick:()=>{}
+          }
+        }>
+        
+</Snackbar>
+        `,
         },
+        defaultValue: { summary: "null" },
+      },
+      control: "radio",
+      options: [true, false],
+      mapping: {
+        true: { name: "Undo", onClick: () => {} },
+        false: null,
+      },
+    },
+  },
+};
+const Template = (args) => {
+  const com: any = [];
+  colors.forEach((c) => {
+    com.push(
+      <div>
+        <Snackbar {...args} color={c}></Snackbar> <br />
+      </div>
+    );
+  });
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
-      Operation was successful
-    </Snackbar>
+      {com}
+    </div>
+  );
+};
 
-    <br />
-    <Snackbar
-      color="primary"
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
-        },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      Operation was successful
-    </Snackbar>
-
-    <br />
-    <Snackbar
-      color="secondary"
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
-        },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      Operation was successful
-    </Snackbar>
-
-    <br />
-    <Snackbar
-      color="tertiary"
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
-        },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      Operation was successful
-    </Snackbar>
-
-    <br />
-    <Snackbar
-      color="error"
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
-        },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      Operation was successful
-    </Snackbar>
-
-    <br />
-    <Snackbar
-      color="warning"
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
-        },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      Operation was successful
-    </Snackbar>
-
-    <br />
-    <Snackbar
-      color="success"
-      action={{
-        name: "Action",
-        onClick() {
-          console.log("hello");
-        },
-      }}
-      startIcon={<IconSuccess />}
-      endIcon={{ icon: <IconClose /> }}
-    >
-      Operation was successful
-    </Snackbar>
-
-    <br />
-  </>
-);
+export const Snack = Template.bind({});
+Snack.args = {};
