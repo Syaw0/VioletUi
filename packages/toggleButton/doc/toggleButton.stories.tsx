@@ -52,6 +52,15 @@ export const ToggleBtn = () => {
         onChange={(newItems) => {
           setState2(newItems);
         }}
+        corner="rounded"
+        items={state2}
+      />
+      <br />
+      <ToggleButton
+        onChange={(newItems) => {
+          setState2(newItems);
+        }}
+        corner="square"
         items={state2}
       />
     </>

@@ -14,7 +14,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   overflow: hidden;
   position: relative;
-  border-radius: 20px;
+  border-radius: var(--corner);
 }
 
 .button {
@@ -127,10 +127,22 @@
 .startBtn {
   border: 1px solid var(--md-sys-color-outline);
   border-right: none;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: var(--corner) 0px 0px var(--corner);
 }
 .endBtn {
   border: 1px solid var(--md-sys-color-outline);
   border-left: none;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px var(--corner) var(--corner) 0px;
+}
+
+.circle {
+  --corner: 20px;
+}
+
+.rounded {
+  --corner: 8px;
+}
+
+.square {
+  --corner: 0px;
 }

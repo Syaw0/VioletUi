@@ -13,18 +13,20 @@ export interface ToggleButtonItems {
 interface ToggleButton
   extends Omit<React.ComponentPropsWithoutRef<"div">, "onChange"> {
   items: ToggleButtonItems[];
-  onChange?: (newItems: ToggleButtonItems[]) => void;
   multiple?: boolean;
+  corner?: "circle" | "rounded" | "square";
+  onChange?: (newItems: ToggleButtonItems[]) => void;
 }
 
 const ToggleButton = ({
   items,
   multiple = false,
   onChange,
+  corner = "circle",
   ...props
 }: ToggleButton) => {
   return (
-    <div {...props} className={`${style.holder}`}>
+    <div {...props} className={`${style.holder} ${style[corner]}`}>
       {items.map((item, index) => {
         return (
           <Button

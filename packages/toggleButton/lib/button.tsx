@@ -23,7 +23,7 @@ const Button = ({ item, multiple, index, items, onChange }: ButtonProps) => {
     isHover,
     setIsHover
   );
-  const handleClick = (e: React.MouseEvent, item: ToggleButtonItems) => {
+  const handleClick = (item: ToggleButtonItems) => {
     if (onChange == null) {
       return;
     }
@@ -54,8 +54,8 @@ const Button = ({ item, multiple, index, items, onChange }: ButtonProps) => {
       onFocus={handleFocus}
       onMouseOver={handleHover}
       ref={btn}
-      onClick={(e) => {
-        handleClick(e, item);
+      onClick={() => {
+        handleClick(item);
       }}
       disabled={item.disable != null ? item.disable : false}
       className={`${style.button} ${
