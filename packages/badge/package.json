@@ -29,6 +29,7 @@
     "test": "node ./__tests__/@violetui/text.test.js"
   },
   "devDependencies": {
+    "@violetui/icon_button": "^0.1.0",
     "@violetui/vui-builder": "^0.1.0",
     "react": "^18.2.0",
     "typescript": "^4.9.5"

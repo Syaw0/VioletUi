@@ -1,26 +1,42 @@
-.holder {
+.badge {
   width: fit-content;
   position: relative;
 }
 
 .badgeHolder {
+  background-color: var(--md-sys-color-error);
   position: absolute;
-  right: 0;
-  top: 0;
-  transform: translate(60%, -60%);
-  background-color: var(--primary-container);
-  padding: 0.3rem;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 16px;
-  height: 20px;
-  width: fit-content;
 }
 
 .badgeHolder p {
-  font-size: var(--labelLarge);
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 600;
-  color: var(--on-primary-container);
+  font-family: var(--md-sys-typescale-label-small-font-family-name);
+  font-style: var(--md-sys-typescale-label-small-font-family-style);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  font-size: var(--md-sys-typescale-label-small-font-size);
+  font-weight: var(--md-sys-typescale-label-small-font-weight);
+  letter-spacing: var(--md-sys-typescale-label-small-letter-spacing);
+  color: var(--md-sys-color-on-error);
+  user-select: none;
+}
+
+.small {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  right: 6px;
+  top: 6px;
+}
+
+.large {
+  min-width: 16px;
+  max-width: 34px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 4px;
+  bottom: 22px;
+  left: 22px;
 }

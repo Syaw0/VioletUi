@@ -6,21 +6,22 @@ interface BadgeProps extends React.ComponentPropsWithoutRef<"div"> {
   content: number;
   color?: "primary" | "secondary" | "tertiary";
   hideBadge?: boolean;
-  max?: number;
+
+  variant?: "small" | "large";
 }
 
 const Badge = ({
   color = "primary",
   hideBadge = false,
   content,
-  max = 99,
+  variant = "large",
   ...props
 }: BadgeProps) => {
   return (
-    <div className={style.holder}>
+    <div className={style.badge}>
       {!hideBadge && (
-        <div className={style.badgeHolder} {...props}>
-          <p>{content > max ? `${max}+` : content}</p>
+        <div className={`${style.badgeHolder} ${style[variant]}`} {...props}>
+          {variant == "large" && <p>{content > 999 ? `${999}+` : content}</p>}
         </div>
       )}
       {props.children}

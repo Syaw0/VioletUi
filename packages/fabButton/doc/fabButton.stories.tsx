@@ -49,7 +49,7 @@ export default {
     text: {
       name: "text",
       type: { name: "string", required: false },
-      defaultValue: "",
+      defaultValue: "Compose",
       description: "specific the text of fab button",
       table: {
         type: { summary: "string", detail: "" },
@@ -85,7 +85,7 @@ export default {
     children: {
       name: "children",
       type: { name: "ReactElement", required: false },
-      defaultValue: null,
+      defaultValue: <WriteIcon />,
       description: "specific the icon of fab button",
       table: {
         type: { summary: "ReactElement", detail: "" },

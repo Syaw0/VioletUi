@@ -1,12 +1,33 @@
 import React, { useState } from "react";
 import Badge from "../lib/badge";
 import TestIcon from "./testIcon";
+import IconButton from "@violetui/icon_button";
+
 export default { title: "Badge" };
 
 export const Badge1 = () => (
-  <Badge content={0}>
-    <TestIcon />
-  </Badge>
+  <>
+    <Badge content={0}>
+      <IconButton variant="standard">
+        <TestIcon />
+      </IconButton>
+    </Badge>
+
+    <br />
+
+    <Badge content={0} variant="small">
+      <IconButton variant="standard" color="secondary">
+        <TestIcon />
+      </IconButton>
+    </Badge>
+    <br />
+
+    <Badge content={1000} variant="large">
+      <IconButton variant="standard" color="tertiary">
+        <TestIcon />
+      </IconButton>
+    </Badge>
+  </>
 );
 
 export const Badge2 = () => (
