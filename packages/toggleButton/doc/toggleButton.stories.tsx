@@ -3,67 +3,145 @@ import ToggleButton from "../lib/toggleButton";
 import AlignCenter from "./alignCenter";
 import AlignLeft from "./alignLeft";
 import AlignRight from "./alignRight";
-import FingerPrintIcon from "./fingerPrintIcon";
 
-export default { title: "ToggleButton" };
+const colors = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "error",
+  "warning",
+  "success",
+];
 
-export const ToggleBtn = () => {
-  const [state, setState] = useState<any>([
-    { selected: false, text: "Button", icon: <FingerPrintIcon /> },
-    {
-      selected: false,
-      text: "Button Wit",
-      icon: <FingerPrintIcon />,
+export default {
+  title: "Toggle Button",
+  component: ToggleButton,
+  // parameters: {
+  //   docs: {
+  //     page: () => {
+  //       return <h1>Toggle Button</h1>;
+  //     },
+  //   },
+  // },
+  argTypes: {
+    color: {
+      name: "color",
+      type: { name: "string", required: false },
+      defaultValue: "primary",
+      description: "specific the color of button",
+      table: {
+        type: { summary: "string", detail: "" },
+        defaultValue: { summary: "primary" },
+      },
+      control: "select",
+      options: colors,
     },
-    {
-      selected: true,
-      text: "Button",
-      icon: <FingerPrintIcon />,
-      disable: true,
+
+    multiple: {
+      name: "multiple",
+      type: { name: "boolean", required: false },
+      defaultValue: "false",
+      description: "specific that choose multiple item or not",
+      table: {
+        type: { summary: "boolean", detail: "" },
+        defaultValue: { summary: "false" },
+      },
+      control: "radio",
+      options: [true, false],
     },
+    onChange: {
+      name: "onChange",
+      type: { name: "function", required: false },
+      defaultValue: "null",
+      description:
+        "when an change happen in the toggle state this function receive new items to set in states.",
+      table: {
+        type: {
+          summary: "function",
+          detail: "<ToggleButton onChange={(e:newItems)=>{setItems(e)}} />",
+        },
+        defaultValue: { summary: "null" },
+      },
+      control: "radio",
+    },
+    corner: {
+      name: "corner",
+      type: { name: "string", required: false },
+      defaultValue: "circle",
+      description: "specify the corner radius of toggle button",
+      table: {
+        type: {
+          summary: "string",
+          detail: "<ToggleButton corner={'square'|'rounded'|'circle'} />",
+        },
+        defaultValue: { summary: "circle" },
+      },
+      control: "select",
+      options: ["circle", "square", "rounded"],
+    },
+    items: {
+      name: "items",
+      type: { name: "array", required: false },
+      defaultValue: "null",
+      description:
+        "the list of elements you want to control in the toggle button.",
+      table: {
+        type: {
+          summary: "array",
+          detail: `<ToggleButton items={
+            [
+              {selected:true,
+                text?:'button',
+                icon?:<Icon/>,
+                disable?:false},              
+
+              {selected:false,
+                text?:'button2',
+                icon?:<Icon2/>,
+              disable?:false}
+            ]
+            } />`,
+        },
+        defaultValue: { summary: "null" },
+      },
+      control: "radio",
+    },
+  },
+};
+
+const Com = (...args: any) => {
+  const [state, setState] = useState([
+    { text: "Button1", icon: <AlignLeft />, selected: false },
+    { text: "Button1", icon: <AlignCenter />, selected: false },
+    { text: "Button1", icon: <AlignRight />, selected: false },
   ]);
-  const [state2, setState2] = useState<any>([
-    { selected: false, icon: <AlignLeft /> },
-    {
-      selected: false,
-      icon: <AlignCenter />,
-    },
-    {
-      selected: false,
-      icon: <AlignRight />,
-    },
-  ]);
-
-  const handle = (e: any, type: string) => {
-    setState((s) => ({ ...s, [type]: !s[type] }));
+  const handle = (e: any) => {
+    setState(e);
   };
-
   return (
-    <>
-      <ToggleButton
-        multiple
-        onChange={(newItems) => {
-          setState(newItems);
-        }}
-        items={state}
-      />
+    <div>
+      <ToggleButton {...args[0]} onChange={handle} items={state}></ToggleButton>
       <br />
-      <ToggleButton
-        onChange={(newItems) => {
-          setState2(newItems);
-        }}
-        corner="rounded"
-        items={state2}
-      />
-      <br />
-      <ToggleButton
-        color="success"
-        onChange={(newItems) => {
-          setState2(newItems);
-        }}
-        corner="square"
-        items={state2}
-      />
-    </>
+    </div>
   );
 };
+
+const Template = (args) => {
+  const com: any = [];
+  colors.forEach((c) => {
+    com.push(<Com {...args} color={c} />);
+  });
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {com}
+    </div>
+  );
+};
+
+export const Toggle = Template.bind({});
+Toggle.args = {};
