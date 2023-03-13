@@ -1,51 +1,44 @@
 import style from "./toggleButton.module.css";
 import React from "react";
 import "../../../t.css";
+import Button from "./button";
 
-interface ToggleButton extends React.ComponentPropsWithoutRef<"div"> {
-  selected?: boolean;
-  value: string;
-  disabled?: boolean;
-  changeHandler?: (e: React.MouseEvent, newValue: string | string[]) => void;
-  groupValue?: string | string[];
+export interface ToggleButtonItems {
+  selected: boolean;
+  icon?: React.ReactElement;
+  text?: string;
+  disable?: boolean;
+}
+
+interface ToggleButton
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "onChange"> {
+  items: ToggleButtonItems[];
+  multiple?: boolean;
+  corner?: "circle" | "rounded" | "square";
+  onChange?: (newItems: ToggleButtonItems[]) => void;
 }
 
 const ToggleButton = ({
-  selected = false,
-  changeHandler,
-  value,
-  groupValue,
-  disabled,
+  items,
+  multiple = false,
+  onChange,
+  corner = "circle",
   ...props
 }: ToggleButton) => {
-  const handleClick = (e: React.MouseEvent) => {
-    if (changeHandler != null && groupValue != null) {
-      changeHandler(e, getNewValues());
-    }
-  };
-
-  const getNewValues = () => {
-    if (typeof groupValue != "string" && groupValue != null) {
-      return selected
-        ? groupValue.filter((v) => v != value)
-        : [...groupValue, value];
-    } else {
-      return selected ? "" : value;
-    }
-  };
-
   return (
-    <div
-      {...props}
-      className={`${style.holder} ${selected ? style.selected : ""} ${
-        disabled ? style.disabled : ""
-      } `}
-      onClick={(e) => {
-        handleClick(e);
-        props && props.onClick && props.onClick(e);
-      }}
-    >
-      {props.children}
+    <div {...props} className={`${style.holder} ${style[corner]}`}>
+      {items.map((item, index) => {
+        return (
+          <Button
+            index={index}
+            item={item}
+            items={items}
+            key={index}
+            onChange={onChange}
+            multiple={multiple}
+          />
+        );
+      })}
     </div>
   );
 };

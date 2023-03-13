@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { ToggleButtonItems } from "./toggleButton2";
-import style from "./toggleButton2.module.css";
+import { ToggleButtonItems } from "./toggleButton";
+import style from "./toggleButton.module.css";
 import useToggleButtonEvents from "./useToggleButtonEvents";
 
 interface ButtonProps {

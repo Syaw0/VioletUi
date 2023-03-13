@@ -1,40 +1,148 @@
 .holder {
-  border: 1.5px solid var(--on-background200);
+  --containerColorNoSelected: none;
+  --containerColorSelected: var(--md-sys-color-secondary-container);
+  --labelColorNoSelected: var(--md-sys-color-on-surface);
+  --labelColorSelected: var(--md-sys-color-on-secondary-container);
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-radius: 5px;
-  padding: 0.2rem;
   transition: background-color 0.3s;
+  height: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--corner);
 }
 
-.holder:hover {
-  background-color: var(--on-background200);
-}
-.holder svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--on-background800);
-  stroke: var(--on-background800);
+.button {
+  height: 100%;
+  padding: 0px 24px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: box-shadow ease 0.1s;
 }
 
-.disabled {
-  background-color: var(--on-background50);
-  pointer-events: none;
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.disabled svg {
-  fill: var(--on-background400);
-  stroke: var(--on-background400);
+.text {
+  position: relative;
+  font-family: var(--md-sys-typescale-label-large-font-family-name);
+  font-style: var(--md-sys-typescale-label-large-font-family-style);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-size: var(--md-sys-typescale-label-large-font-size);
+  font-weight: var(--md-sys-typescale-label-large-font-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
+  white-space: nowrap;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon {
+  padding: 0px 8px 0px 0px;
+}
+
+.iconWithNoPadding {
+  padding: 0;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.selected .container {
+  background-color: var(--containerColorSelected);
+}
+
+.selected .icon svg {
+  fill: var(--labelColorSelected);
+  stroke: var(--labelColorSelected);
+}
+
+.selected .text {
+  color: var(--labelColorSelected);
 }
 
 .selected {
-  background-color: var(--on-background100);
+  --labelColor: var(--labelColorSelected);
 }
 
-.selected svg {
-  fill: var(--on-background);
-  stroke: var(--on-background);
+.notSelected {
+  --labelColor: var(--labelColorNoSelected);
+}
+
+.notSelected .text {
+  color: var(--labelColorNoSelected);
+}
+
+.notSelected .container {
+  background-color: var(--containerColorNoSelected);
+}
+
+.notSelected .icon svg {
+  fill: var(--labelColorNoSelected);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.button:disabled .container {
+  opacity: 12%;
+}
+
+.button:disabled .text {
+  opacity: 36%;
+  color: var(--md-sys-color-on-surface);
+}
+
+.button:disabled .icon svg {
+  opacity: 36%;
+  fill: var(--md-sys-color-on-surface);
+  stroke: var(--md-sys-color-on-surface);
+}
+.withBorder {
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.startBtn {
+  border: 1px solid var(--md-sys-color-outline);
+  border-right: none;
+  border-radius: var(--corner) 0px 0px var(--corner);
+}
+.endBtn {
+  border: 1px solid var(--md-sys-color-outline);
+  border-left: none;
+  border-radius: 0px var(--corner) var(--corner) 0px;
+}
+
+.circle {
+  --corner: 20px;
+}
+
+.rounded {
+  --corner: 8px;
+}
+
+.square {
+  --corner: 0px;
 }
