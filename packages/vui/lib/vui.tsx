@@ -4,7 +4,6 @@ import Alert from "@violetui/alert";
 import Tooltip from "@violetui/tooltip";
 import Badge from "@violetui/badge";
 import ToggleButton from "@violetui/toggle_button";
-import ToggleButtonGroup from "@violetui/toggle_button_group";
 import IconButton from "@violetui/icon_button";
 import LoadingButton from "@violetui/loading_button";
 import Avatar from "@violetui/avatar";
@@ -19,7 +18,6 @@ export {
   Tooltip,
   Badge,
   ToggleButton,
-  ToggleButtonGroup,
   IconButton,
   LoadingButton,
   Avatar,
