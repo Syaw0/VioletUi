@@ -14,6 +14,14 @@ interface SnackbarProps extends React.ComponentPropsWithoutRef<"div"> {
     onClick?: (e: React.MouseEvent, ...args: any) => void;
   };
   startIcon?: React.ReactElement;
+  color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "error"
+    | "warning"
+    | "success"
+    | "default";
 }
 
 const Snackbar = ({
@@ -22,10 +30,14 @@ const Snackbar = ({
   action,
   endIcon,
   startIcon,
+  color = "default",
   ...props
 }: SnackbarProps) => {
   return (
-    <div {...props} className={`${style.snackbar} ${className}`}>
+    <div
+      {...props}
+      className={`${style.snackbar} ${style[color]} ${className}`}
+    >
       {startIcon != null && (
         <span className={style.startIcon}>{startIcon}</span>
       )}

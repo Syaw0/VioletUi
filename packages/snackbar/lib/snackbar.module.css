@@ -1,7 +1,7 @@
 .snackbar {
   min-height: 48px;
   display: flex;
-  background-color: var(--md-sys-color-inverse-surface);
+  background-color: var(--snackContainerColor);
   box-shadow: var(--shadow3dp);
   border-radius: 8px;
   padding: 0px 8px 0px 16px;
@@ -9,17 +9,21 @@
   justify-content: flex-start;
   align-items: center;
   width: fit-content;
+
+  --snackContainerColor: none;
+  --snackLabelColor: none;
+  --snackActionColor: none;
 }
 
 .startIcon svg {
   width: 24px;
   height: 24px;
-  fill: var(--md-sys-color-inverse-on-surface);
-  stroke: var(--md-sys-color-inverse-on-surface);
+  fill: var(--snackLabelColor);
+  stroke: var(--snackLabelColor);
 }
 
 .text {
-  color: var(--md-sys-color-inverse-on-surface);
+  color: var(--snackLabelColor);
   font-family: var(--md-sys-typescale-body-medium-font-family-name);
   font-style: var(--md-sys-typescale-body-medium-font-family-style);
   line-height: var(--md-sys-typescale-body-medium-line-height);
@@ -30,13 +34,13 @@
 }
 
 .actionButton {
-  --labelColor: var(--md-sys-color-inverse-primary);
+  --labelColor: var(--snackActionColor);
 }
 
 .endIconButton {
-  --labelColorNotToggle: var(--md-sys-color-inverse-on-surface);
-  --labelColorNotSelected: var(--md-sys-color-inverse-on-surface);
-  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+  --labelColorNotToggle: var(--snackLabelColor);
+  --labelColorNotSelected: var(--snackLabelColor);
+  --labelColorSelected: var(--snackLabelColor);
 }
 
 .startIcon,
@@ -54,4 +58,42 @@
 
 .startIcon {
   padding-right: 12px;
+}
+
+.default {
+  --snackContainerColor: var(--md-sys-color-inverse-surface);
+  --snackLabelColor: var(--md-sys-color-inverse-on-surface);
+  --snackActionColor: var(--md-sys-color-inverse-primary);
+}
+
+.primary {
+  --snackContainerColor: var(--md-sys-color-primary);
+  --snackLabelColor: var(--md-sys-color-on-primary);
+  --snackActionColor: var(--md-sys-color-on-primary);
+}
+
+.secondary {
+  --snackContainerColor: var(--md-sys-color-secondary);
+  --snackLabelColor: var(--md-sys-color-on-secondary);
+  --snackActionColor: var(--md-sys-color-on-secondary);
+}
+.tertiary {
+  --snackContainerColor: var(--md-sys-color-tertiary);
+  --snackLabelColor: var(--md-sys-color-on-tertiary);
+  --snackActionColor: var(--md-sys-color-on-tertiary);
+}
+.error {
+  --snackContainerColor: var(--md-sys-color-error);
+  --snackLabelColor: var(--md-sys-color-on-error);
+  --snackActionColor: var(--md-sys-color-on-error);
+}
+.success {
+  --snackContainerColor: var(--md-sys-color-success);
+  --snackLabelColor: var(--md-sys-color-on-success);
+  --snackActionColor: var(--md-sys-color-on-success);
+}
+.warning {
+  --snackContainerColor: var(--md-sys-color-warning);
+  --snackLabelColor: var(--md-sys-color-on-warning);
+  --snackActionColor: var(--md-sys-color-on-warning);
 }
