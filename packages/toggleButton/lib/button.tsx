@@ -8,9 +8,10 @@ interface ButtonProps {
   item: ToggleButtonItems;
   items: ToggleButtonItems[];
   index: number;
+  multiple: boolean;
 }
 
-const Button = ({ item, index, items, onChange }: ButtonProps) => {
+const Button = ({ item, multiple, index, items, onChange }: ButtonProps) => {
   const btn: any = useRef(null);
   const [isClicked, setIsClicked] = useState(false);
   const [isHover, setIsHover] = useState(false);
@@ -26,14 +27,26 @@ const Button = ({ item, index, items, onChange }: ButtonProps) => {
     if (onChange == null) {
       return;
     }
-    onChange(
-      items.map((i) => {
+    let newItems: ToggleButtonItems[] = [];
+
+    if (multiple) {
+      newItems = items.map((i) => {
         if (i === item) {
           i.selected = !i.selected;
         }
         return i;
-      })
-    );
+      });
+    } else {
+      newItems = items.map((i) => {
+        if (i === item) {
+          i.selected = !i.selected;
+        } else {
+          i.selected = false;
+        }
+        return i;
+      });
+    }
+    onChange(newItems);
   };
   return (
     <button
@@ -65,7 +78,7 @@ const Button = ({ item, index, items, onChange }: ButtonProps) => {
           {item.icon}
         </span>
       )}
-      {item.text != null && <span className={style.text}>{item.text}</span>}
+      {item.text != null && <p className={style.text}>{item.text}</p>}
     </button>
   );
 };

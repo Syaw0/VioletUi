@@ -8,7 +8,7 @@ import FingerPrintIcon from "./fingerPrintIcon";
 export default { title: "ToggleButton" };
 
 export const ToggleBtn = () => {
-  const [state, setState] = useState([
+  const [state, setState] = useState<any>([
     { selected: false, text: "Button", icon: <FingerPrintIcon /> },
     {
       selected: false,
@@ -22,17 +22,38 @@ export const ToggleBtn = () => {
       disable: true,
     },
   ]);
+  const [state2, setState2] = useState<any>([
+    { selected: false, icon: <AlignLeft /> },
+    {
+      selected: false,
+      icon: <AlignCenter />,
+    },
+    {
+      selected: false,
+      icon: <AlignRight />,
+    },
+  ]);
 
   const handle = (e: any, type: string) => {
     setState((s) => ({ ...s, [type]: !s[type] }));
   };
 
   return (
-    <ToggleButton
-      onChange={(newItems) => {
-        setState(newItems);
-      }}
-      items={state}
-    />
+    <>
+      <ToggleButton
+        multiple
+        onChange={(newItems) => {
+          setState(newItems);
+        }}
+        items={state}
+      />
+      <br />
+      <ToggleButton
+        onChange={(newItems) => {
+          setState2(newItems);
+        }}
+        items={state2}
+      />
+    </>
   );
 };

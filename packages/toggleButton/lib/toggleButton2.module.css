@@ -1,4 +1,8 @@
 .holder {
+  --containerColorNoSelected: none;
+  --containerColorSelected: var(--md-sys-color-secondary-container);
+  --labelColorNoSelected: var(--md-sys-color-on-surface);
+  --labelColorSelected: var(--md-sys-color-on-secondary-container);
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -6,15 +10,11 @@
   cursor: pointer;
   transition: background-color 0.3s;
   height: 40px;
-  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  --containerColorNoSelected: #111111;
-  --containerColorSelected: #111111;
-
-  --labelColorNoSelected: #111111;
-  --labelColorSelected: #111111;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
 }
 
 .button {
@@ -70,10 +70,36 @@
 }
 
 .selected .container {
-  background-color: aliceblue;
+  background-color: var(--containerColorSelected);
+}
+
+.selected .icon svg {
+  fill: var(--labelColorSelected);
+  stroke: var(--labelColorSelected);
+}
+
+.selected .text {
+  color: var(--labelColorSelected);
+}
+
+.selected {
+  --labelColor: var(--labelColorSelected);
 }
 
 .notSelected {
+  --labelColor: var(--labelColorNoSelected);
+}
+
+.notSelected .text {
+  color: var(--labelColorNoSelected);
+}
+
+.notSelected .container {
+  background-color: var(--containerColorNoSelected);
+}
+
+.notSelected .icon svg {
+  fill: var(--labelColorNoSelected);
 }
 
 .button:disabled {
@@ -89,14 +115,13 @@
   color: var(--md-sys-color-on-surface);
 }
 
-.button:disabled .icon {
+.button:disabled .icon svg {
   opacity: 36%;
   fill: var(--md-sys-color-on-surface);
   stroke: var(--md-sys-color-on-surface);
 }
 .withBorder {
   border: 1px solid var(--md-sys-color-outline);
-  /* border-left: none; */
 }
 
 .startBtn {
@@ -106,6 +131,6 @@
 }
 .endBtn {
   border: 1px solid var(--md-sys-color-outline);
-  /* border-left: none; */
+  border-left: none;
   border-radius: 0px 20px 20px 0px;
 }

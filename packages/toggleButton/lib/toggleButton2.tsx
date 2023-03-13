@@ -14,9 +14,15 @@ interface ToggleButton
   extends Omit<React.ComponentPropsWithoutRef<"div">, "onChange"> {
   items: ToggleButtonItems[];
   onChange?: (newItems: ToggleButtonItems[]) => void;
+  multiple?: boolean;
 }
 
-const ToggleButton = ({ items, onChange, ...props }: ToggleButton) => {
+const ToggleButton = ({
+  items,
+  multiple = false,
+  onChange,
+  ...props
+}: ToggleButton) => {
   return (
     <div {...props} className={`${style.holder}`}>
       {items.map((item, index) => {
@@ -27,6 +33,7 @@ const ToggleButton = ({ items, onChange, ...props }: ToggleButton) => {
             items={items}
             key={index}
             onChange={onChange}
+            multiple={multiple}
           />
         );
       })}
