@@ -4,21 +4,27 @@ import "../../../t.css";
 
 interface BadgeProps extends React.ComponentPropsWithoutRef<"div"> {
   content?: number;
-  color?: "primary" | "secondary" | "tertiary";
+  color?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "error"
+    | "warning"
+    | "success";
   hideBadge?: boolean;
 
   variant?: "small" | "large";
 }
 
 const Badge = ({
-  color = "primary",
+  color = "error",
   hideBadge = false,
   content,
   variant = "large",
   ...props
 }: BadgeProps) => {
   return (
-    <div className={style.badge}>
+    <div className={`${style.badge} ${style[color]}`}>
       {!hideBadge && (
         <div className={`${style.badgeHolder} ${style[variant]}`} {...props}>
           {variant == "large" && content != null && (

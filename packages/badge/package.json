@@ -1,10 +1,9 @@
 {
   "name": "@violetui/badge",
   "version": "0.1.0",
-  "description": "> TODO: description",
+  "description": "Vui Badge Component Repository.",
   "author": "Siavash <siamhb7@protonmail.com>",
-  "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/badge.cjs.js",
   "module": "dist/badge.esm.js",
   "src": "lib/badge.tsx",
@@ -14,8 +13,7 @@
     "test": "__tests__"
   },
   "files": [
-    "dist",
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
