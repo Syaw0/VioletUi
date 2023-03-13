@@ -1,9 +1,8 @@
 {
   "name": "@violetui/snackbar",
   "version": "0.1.0",
-  "description": "> TODO: description",
+  "description": "Vui Snackbar Component Repository.",
   "author": "Siavash <siamhb7@protonmail.com>",
-  "homepage": "",
   "license": "MIT",
   "main": "dist/snackbar.cjs.js",
   "module": "dist/snackbar.esm.js",
