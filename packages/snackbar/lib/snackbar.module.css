@@ -1,0 +1,57 @@
+.snackbar {
+  min-height: 48px;
+  display: flex;
+  background-color: var(--md-sys-color-inverse-surface);
+  box-shadow: var(--shadow3dp);
+  border-radius: 8px;
+  padding: 0px 8px 0px 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+
+.startIcon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--md-sys-color-inverse-on-surface);
+  stroke: var(--md-sys-color-inverse-on-surface);
+}
+
+.text {
+  color: var(--md-sys-color-inverse-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font-family-name);
+  font-style: var(--md-sys-typescale-body-medium-font-family-style);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-size: var(--md-sys-typescale-body-medium-font-size);
+  font-weight: var(--md-sys-typescale-body-medium-font-weight);
+  letter-spacing: var(--md-sys-typescale-body-medium-letter-spacing);
+  width: 100%;
+}
+
+.actionButton {
+  --labelColor: var(--md-sys-color-inverse-primary);
+}
+
+.endIconButton {
+  --labelColorNotToggle: var(--md-sys-color-inverse-on-surface);
+  --labelColorNotSelected: var(--md-sys-color-inverse-on-surface);
+  --labelColorSelected: var(--md-sys-color-inverse-on-surface);
+}
+
+.startIcon,
+.text,
+.actionButton,
+.endIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  justify-content: flex-start;
+  padding: 12px 12px 12px 0px;
+}
+
+.startIcon {
+  padding-right: 12px;
+}

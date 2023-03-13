@@ -34,5 +34,9 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@violetui/button": "^0.1.0",
+    "@violetui/icon_button": "^0.1.0"
   }
 }

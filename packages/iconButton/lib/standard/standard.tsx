@@ -35,7 +35,6 @@ const StandardIconButton = ({
       isHover,
       setIsHover
     );
-
   return (
     <button
       {...props}

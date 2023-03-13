@@ -6,7 +6,7 @@ import StandardIconButton from "./standard/standard";
 
 export interface IconButtonProps
   extends React.ComponentPropsWithoutRef<"button"> {
-  color:
+  color?:
     | "primary"
     | "secondary"
     | "tertiary"
@@ -14,14 +14,13 @@ export interface IconButtonProps
     | "warning"
     | "success"
     | "neutral";
-  variant: "filled" | "filledTonal" | "outlined" | "standard";
+  variant?: "filled" | "filledTonal" | "outlined" | "standard";
   selected?: boolean;
   children: React.ReactElement;
 }
 
 const IconButton = ({
   color = "primary",
-  className = "",
   variant = "filled",
   ...props
 }: IconButtonProps) => {
