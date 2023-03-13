@@ -3,7 +3,7 @@ import React from "react";
 import "../../../t.css";
 
 interface BadgeProps extends React.ComponentPropsWithoutRef<"div"> {
-  content: number;
+  content?: number;
   color?: "primary" | "secondary" | "tertiary";
   hideBadge?: boolean;
 
@@ -21,7 +21,9 @@ const Badge = ({
     <div className={style.badge}>
       {!hideBadge && (
         <div className={`${style.badgeHolder} ${style[variant]}`} {...props}>
-          {variant == "large" && <p>{content > 999 ? `${999}+` : content}</p>}
+          {variant == "large" && content != null && (
+            <p>{content > 999 ? `${999}+` : content}</p>
+          )}
         </div>
       )}
       {props.children}
