@@ -1,8 +1,9 @@
 import style from "./toggleButton2.module.css";
 import React from "react";
 import "../../../t.css";
+import Button from "./button";
 
-interface ToggleButtonItems {
+export interface ToggleButtonItems {
   selected: boolean;
   icon?: React.ReactElement;
   text?: string;
@@ -16,47 +17,17 @@ interface ToggleButton
 }
 
 const ToggleButton = ({ items, onChange, ...props }: ToggleButton) => {
-  const handleClick = (e: React.MouseEvent, item: ToggleButtonItems) => {
-    if (onChange == null) {
-      return;
-    }
-    onChange(
-      items.map((i) => {
-        if (i === item) {
-          i.selected = !i.selected;
-        }
-        return i;
-      })
-    );
-  };
   return (
     <div {...props} className={`${style.holder}`}>
       {items.map((item, index) => {
         return (
-          <button
-            onClick={(e) => {
-              handleClick(e, item);
-            }}
-            disabled={item.disable != null ? item.disable : false}
+          <Button
+            index={index}
+            item={item}
+            items={items}
             key={index}
-            className={`${style.button} ${
-              item.selected ? style.selected : style.notSelected
-            } `}
-          >
-            <div
-              className={`${style.container} ${
-                index != items.length - 1 ? style.withBorder : ""
-              }  ${index == 0 ? style.startBtn : ""} ${
-                index == items.length - 1 ? style.endBtn : ""
-              }`}
-            ></div>
-            {item.icon != null && (
-              <span className={style.icon}>{item.icon}</span>
-            )}
-            {item.text != null && (
-              <span className={style.text}>{item.text}</span>
-            )}
-          </button>
+            onChange={onChange}
+          />
         );
       })}
     </div>
