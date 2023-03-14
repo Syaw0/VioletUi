@@ -11,6 +11,7 @@ import AvatarGroup from "@violetui/avatar_group";
 import TextField from "@violetui/text_field";
 import FabButton from "@violetui/fab_button";
 import Snackbar from "@violetui/snackbar";
+import Card from "@violetui/card";
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   TextField,
   FabButton,
   Snackbar,
+  Card,
 };

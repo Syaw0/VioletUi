@@ -34,6 +34,7 @@
     "@violetui/avatar_group": "^0.1.0",
     "@violetui/badge": "^0.1.0",
     "@violetui/button": "^0.1.0",
+    "@violetui/card": "^0.1.0",
     "@violetui/fab_button": "^0.1.0",
     "@violetui/icon_button": "^0.1.0",
     "@violetui/loading_button": "^0.1.0",
